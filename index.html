@@ -11,7 +11,7 @@
     <meta property="og:title" content="Portfolio Kristy Natasha Yohanes" />
     <meta property="og:type" content="website" />
     <meta property="og:description" content="Web App Portfolio" />
-    <meta property="og:image" content="https://knatasha.carrd.co/assets/images/card.jpg?v=59470ebd" />
+    <meta property="og:image" content="https://knatasha.carrd.co/assets/images/card.jpg?v=646918fd" />
     <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:image:width" content="1280" />
     <meta property="og:image:height" content="800" />
@@ -215,6 +215,8 @@
             --site-language-flex-alignment: flex-start;
             --site-language-indent-left: 1;
             --site-language-indent-right: 0;
+            --site-language-margin-left: 0;
+            --site-language-margin-right: auto;
             --viewport-height: 100vh;
         }
 
@@ -311,6 +313,8 @@
             --flex-alignment: var(--site-language-flex-alignment);
             --indent-left: var(--site-language-indent-left);
             --indent-right: var(--site-language-indent-right);
+            --margin-left: var(--site-language-margin-left);
+            --margin-right: var(--site-language-margin-right);
             --border-radius-tl: 0;
             --border-radius-tr: 0;
             --border-radius-br: 0;
@@ -878,6 +882,142 @@
             line-height: 1.2;
         }
 
+        #text13:not(:first-child) {
+            margin-top: 2rem !important;
+        }
+
+        #text13:not(:last-child) {
+            margin-bottom: 2rem !important;
+        }
+
+        #text13 {
+            text-align: justify;
+            color: #FFFFFF;
+            font-family: 'Inter', sans-serif;
+            font-size: 1em;
+            line-height: 1.25;
+            font-weight: 300;
+        }
+
+        #text13 mark {
+            background-color: transparent;
+        }
+
+        #text13 a {
+            color: #7A82FF;
+            text-decoration: none;
+        }
+
+        #text13 a:hover {
+            color: #747989;
+        }
+
+        #text13 span.p:nth-child(n + 2) {
+            margin-top: 1.875rem;
+        }
+
+        #text17:not(:first-child) {
+            margin-top: 2rem !important;
+        }
+
+        #text17:not(:last-child) {
+            margin-bottom: 2rem !important;
+        }
+
+        #text17 {
+            text-align: justify;
+            color: #FFFFFF;
+            font-family: 'Inter', sans-serif;
+            font-size: 1em;
+            line-height: 1.25;
+            font-weight: 300;
+        }
+
+        #text17 mark {
+            background-color: transparent;
+        }
+
+        #text17 a {
+            color: #7A82FF;
+            text-decoration: none;
+        }
+
+        #text17 a:hover {
+            color: #747989;
+        }
+
+        #text17 span.p:nth-child(n + 2) {
+            margin-top: 1.875rem;
+        }
+
+        #text18:not(:first-child) {
+            margin-top: 2rem !important;
+        }
+
+        #text18:not(:last-child) {
+            margin-bottom: 2rem !important;
+        }
+
+        #text18 {
+            text-align: justify;
+            color: #FFFFFF;
+            font-family: 'Inter', sans-serif;
+            font-size: 1em;
+            line-height: 1.25;
+            font-weight: 300;
+        }
+
+        #text18 mark {
+            background-color: transparent;
+        }
+
+        #text18 a {
+            color: #7A82FF;
+            text-decoration: none;
+        }
+
+        #text18 a:hover {
+            color: #747989;
+        }
+
+        #text18 span.p:nth-child(n + 2) {
+            margin-top: 1.875rem;
+        }
+
+        #text19:not(:first-child) {
+            margin-top: 2rem !important;
+        }
+
+        #text19:not(:last-child) {
+            margin-bottom: 2rem !important;
+        }
+
+        #text19 {
+            text-align: justify;
+            color: #FFFFFF;
+            font-family: 'Inter', sans-serif;
+            font-size: 1em;
+            line-height: 1.25;
+            font-weight: 300;
+        }
+
+        #text19 mark {
+            background-color: transparent;
+        }
+
+        #text19 a {
+            color: #7A82FF;
+            text-decoration: none;
+        }
+
+        #text19 a:hover {
+            color: #747989;
+        }
+
+        #text19 span.p:nth-child(n + 2) {
+            margin-top: 1.875rem;
+        }
+
         #text24:not(:first-child) {
             margin-top: 2rem !important;
         }
@@ -1413,6 +1553,8 @@
             --flex-alignment: flex-end;
             --indent-left: 0;
             --indent-right: 1;
+            --margin-left: auto;
+            --margin-right: 0;
         }
 
         #container05:not(:first-child) {
@@ -1989,6 +2131,7 @@
 
         .buttons li {
             max-width: 100%;
+            text-align: var(--alignment);
         }
 
         .buttons li a {
@@ -2048,7 +2191,8 @@
         }
 
         .buttons.style2 {
-            justify-content: center;
+            --flex-alignment: center;
+            --alignment: center;
             gap: 0.75rem;
             flex-direction: row;
             flex-wrap: wrap;
@@ -2111,7 +2255,8 @@
         }
 
         .buttons.style5 {
-            justify-content: center;
+            --flex-alignment: center;
+            --alignment: center;
             gap: 0.75rem;
             flex-direction: row;
             flex-wrap: wrap;
@@ -2216,150 +2361,6 @@
             transform: scale(1.0425);
         }
 
-        .list {
-            display: block;
-        }
-
-        .list ul,
-        .list ol {
-            display: inline-block;
-            max-width: 100%;
-            text-align: var(--site-language-alignment);
-            vertical-align: middle;
-        }
-
-        .list ul li,
-        .list ol li {
-            direction: var(--site-language-direction);
-            display: flex;
-            position: relative;
-        }
-
-        .list ul li:before,
-        .list ol li:before {
-            background-repeat: no-repeat;
-            content: '';
-            display: block;
-            flex-grow: 0;
-            flex-shrink: 0;
-            font-variant: normal !important;
-            letter-spacing: 0 !important;
-            order: 1;
-            position: relative;
-        }
-
-        .list ul li:after,
-        .list ol li:after {
-            content: '';
-            display: block;
-            flex-grow: 0;
-            flex-shrink: 0;
-            order: 2;
-            pointer-events: none;
-        }
-
-        .list ul li p,
-        .list ol li p {
-            flex-grow: 1;
-            flex-shrink: 1;
-            order: 3;
-        }
-
-        .list ul li:first-child,
-        .list ol li:first-child {
-            margin-top: 0 !important;
-        }
-
-        .list.style2 {
-            color: #FFFFFF;
-            font-family: 'Inter', sans-serif;
-            font-size: 1em;
-            line-height: 1.375;
-            font-weight: 300;
-        }
-
-        .list.style2 mark {
-            color: #7284A6;
-            background-color: transparent;
-        }
-
-        .list.style2 a {
-            color: #7A82FF;
-            text-decoration: none;
-        }
-
-        .list.style2 a:hover {
-            color: #747989;
-        }
-
-        .list.style2 ul {
-            width: 100%;
-        }
-
-        .list.style2 ul li {
-            margin-top: 0.5rem;
-        }
-
-        .list.style2 ul li:after {
-            width: 0.625rem;
-        }
-
-        .list.style2 ul li:before {
-            background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%2040%2040%22%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2220%22%20r%3D%2210%22%20fill%3D%22%23FFFFFF%22%20%2F%3E%3C%2Fsvg%3E');
-            border-radius: 0.875rem;
-            background-position: left 60%;
-            background-repeat: no-repeat;
-            background-size: contain;
-            height: 1.375rem;
-            line-height: 1.375rem;
-            min-width: 0.64453125rem;
-        }
-
-        .list.style1 {
-            color: #FFFFFF;
-            font-family: 'Inter', sans-serif;
-            font-size: 1em;
-            line-height: 1.375;
-            font-weight: 300;
-        }
-
-        .list.style1 mark {
-            color: #7284A6;
-            background-color: transparent;
-        }
-
-        .list.style1 a {
-            color: #7A82FF;
-            text-decoration: none;
-        }
-
-        .list.style1 a:hover {
-            color: #747989;
-        }
-
-        .list.style1 ul {
-            width: 100%;
-        }
-
-        .list.style1 ul li {
-            margin-top: 0.5rem;
-        }
-
-        .list.style1 ul li:after {
-            width: 0.625rem;
-        }
-
-        .list.style1 ul li:before {
-            background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%2040%2040%22%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2220%22%20r%3D%2210%22%20fill%3D%22%23FFFFFF%22%20%2F%3E%3C%2Fsvg%3E');
-            border-radius: 0.875rem;
-            background-position: left 60%;
-            background-repeat: no-repeat;
-            background-size: contain;
-            height: 1.375rem;
-            line-height: 1.375rem;
-            min-width: 0.64453125rem;
-        }
-
         .table-wrapper {
             max-width: 100%;
             -webkit-overflow-scrolling: touch;
@@ -2435,6 +2436,105 @@
         #table01 th:last-child,
         #table01 td:last-child {
             padding-right: 0;
+        }
+
+        .list {
+            display: block;
+        }
+
+        .list ul,
+        .list ol {
+            display: inline-block;
+            max-width: 100%;
+            text-align: var(--site-language-alignment);
+            vertical-align: middle;
+        }
+
+        .list ul li,
+        .list ol li {
+            direction: var(--site-language-direction);
+            display: flex;
+            position: relative;
+        }
+
+        .list ul li:before,
+        .list ol li:before {
+            background-repeat: no-repeat;
+            content: '';
+            display: block;
+            flex-grow: 0;
+            flex-shrink: 0;
+            font-variant: normal !important;
+            letter-spacing: 0 !important;
+            order: 1;
+            position: relative;
+        }
+
+        .list ul li:after,
+        .list ol li:after {
+            content: '';
+            display: block;
+            flex-grow: 0;
+            flex-shrink: 0;
+            order: 2;
+            pointer-events: none;
+        }
+
+        .list ul li p,
+        .list ol li p {
+            flex-grow: 1;
+            flex-shrink: 1;
+            order: 3;
+        }
+
+        .list ul li:first-child,
+        .list ol li:first-child {
+            margin-top: 0 !important;
+        }
+
+        .list.style1 {
+            color: #FFFFFF;
+            font-family: 'Inter', sans-serif;
+            font-size: 1em;
+            line-height: 1.375;
+            font-weight: 300;
+        }
+
+        .list.style1 mark {
+            color: #7284A6;
+            background-color: transparent;
+        }
+
+        .list.style1 a {
+            color: #7A82FF;
+            text-decoration: none;
+        }
+
+        .list.style1 a:hover {
+            color: #747989;
+        }
+
+        .list.style1 ul {
+            width: 100%;
+        }
+
+        .list.style1 ul li {
+            margin-top: 0.5rem;
+        }
+
+        .list.style1 ul li:after {
+            width: 0.625rem;
+        }
+
+        .list.style1 ul li:before {
+            background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%2040%2040%22%3E%3Ccircle%20cx%3D%2220%22%20cy%3D%2220%22%20r%3D%2210%22%20fill%3D%22%23FFFFFF%22%20%2F%3E%3C%2Fsvg%3E');
+            border-radius: 0.875rem;
+            background-position: left 60%;
+            background-repeat: no-repeat;
+            background-size: contain;
+            height: 1.375rem;
+            line-height: 1.375rem;
+            min-width: 0.64453125rem;
         }
 
         #footer {
@@ -2556,6 +2656,8 @@
                 --flex-alignment: center;
                 --indent-left: 1;
                 --indent-right: 1;
+                --margin-left: auto;
+                --margin-right: auto;
             }
 
             #main>.inner {
@@ -2705,6 +2807,66 @@
                 line-height: 1.125;
             }
 
+            #text13:not(:first-child) {
+                margin-top: 1.5rem !important;
+            }
+
+            #text13:not(:last-child) {
+                margin-bottom: 1.5rem !important;
+            }
+
+            #text13 {
+                letter-spacing: 0rem;
+                width: 100%;
+                font-size: 0.75em;
+                line-height: 1.25;
+            }
+
+            #text17:not(:first-child) {
+                margin-top: 1.5rem !important;
+            }
+
+            #text17:not(:last-child) {
+                margin-bottom: 1.5rem !important;
+            }
+
+            #text17 {
+                letter-spacing: 0rem;
+                width: 100%;
+                font-size: 0.75em;
+                line-height: 1.25;
+            }
+
+            #text18:not(:first-child) {
+                margin-top: 1.5rem !important;
+            }
+
+            #text18:not(:last-child) {
+                margin-bottom: 1.5rem !important;
+            }
+
+            #text18 {
+                letter-spacing: 0rem;
+                width: 100%;
+                font-size: 0.75em;
+                line-height: 1.25;
+            }
+
+            #text19:not(:first-child) {
+                margin-top: 1.5rem !important;
+            }
+
+            #text19:not(:last-child) {
+                margin-bottom: 1.5rem !important;
+            }
+
+            #text19 {
+                letter-spacing: 0rem;
+                width: 100%;
+                font-size: 0.75em;
+                line-height: 1.25;
+            }
+
             #text24:not(:first-child) {
                 margin-top: 1.5rem !important;
             }
@@ -2844,6 +3006,8 @@
                 --flex-alignment: flex-end;
                 --indent-left: 0;
                 --indent-right: 1;
+                --margin-left: auto;
+                --margin-right: 0;
             }
 
             #container05:not(:first-child) {
@@ -3171,20 +3335,15 @@
                 width: 1em;
             }
 
-            .list.style2 {
+            #table01 {
                 letter-spacing: 0rem;
                 font-size: 1em;
                 line-height: 1.375;
             }
 
-            .list.style2 ul li:after {
-                width: 0.625rem;
-            }
-
-            .list.style2 ul li:before {
-                height: 1.375rem;
-                line-height: 1.375rem;
-                min-width: 0.64453125rem;
+            #table01 th,
+            #table01 td {
+                padding: 0.5rem 0.6875rem;
             }
 
             .list.style1 {
@@ -3201,17 +3360,6 @@
                 height: 1.375rem;
                 line-height: 1.375rem;
                 min-width: 0.64453125rem;
-            }
-
-            #table01 {
-                letter-spacing: 0rem;
-                font-size: 1em;
-                line-height: 1.375;
-            }
-
-            #table01 th,
-            #table01 td {
-                padding: 0.5rem 0.6875rem;
             }
 
             #footer {
@@ -3302,6 +3450,22 @@
             h3.style13,
             p.style13 {
                 font-size: 2.5em;
+            }
+
+            #text13 {
+                font-size: 0.75em;
+            }
+
+            #text17 {
+                font-size: 0.75em;
+            }
+
+            #text18 {
+                font-size: 0.75em;
+            }
+
+            #text19 {
+                font-size: 0.75em;
             }
 
             #text24 {
@@ -3405,18 +3569,8 @@
                 gap: 0.5625rem;
             }
 
-            .list.style2 {
+            #table01 {
                 font-size: 1em;
-            }
-
-            .list.style2 ul li:after {
-                width: 0.625rem;
-            }
-
-            .list.style2 ul li:before {
-                height: 1.375rem;
-                line-height: 1.375rem;
-                min-width: 0.64453125rem;
             }
 
             .list.style1 {
@@ -3431,10 +3585,6 @@
                 height: 1.375rem;
                 line-height: 1.375rem;
                 min-width: 0.64453125rem;
-            }
-
-            #table01 {
-                font-size: 1em;
             }
         }
     </style>
@@ -3508,7 +3658,7 @@
                 <section id="home-section">
                     <div id="image01" class="style2 image">
                         <span class="frame">
-                            <img src="assets/images/image01.jpg?v=59470ebd" alt="" />
+                            <img src="assets/images/image01.jpg?v=646918fd" alt="" />
                         </span>
                     </div>
                     <h1 id="text16" class="style6">
@@ -3520,60 +3670,64 @@
                     </h1>
                     <p id="text15" class="style5">
                         <span class="p">I am an AI/ML developer who loves to immerse myself in technology and hands-on
-                            development: experimenting with machine learning, geospatial analysis, coding
-                            challenges, cloud automation, web development, and Raspberry Pi projects to explore data
-                            science applications
-                            within geoscience and environmental fields. To unwind, I find joy in the occasional thrill
-                            of wall climbing and archery during my free time.</span>
+                            development: experimenting with machine learning, geospatial analysis, coding challenges,
+                            cloud automation, web development, and Raspberry Pi projects to explore data science
+                            applications within geoscience and environmental fields. To unwind, I find joy in the
+                            occasional thrill of wall climbing and archery during my free time.</span>
                         <span class="p">Here&#39;s my contact info, CV, and portfolio of my qualifications. You can
                             download the PDF version of my portfolio (with certifications) below:</span>
                     </p>
                     <ul id="icons05" class="icons">
                         <li>
                             <a class="n01"
-                                href="/cdn-cgi/l/email-protection#315a43584245485f50455042595001000071565c50585d1f525e5c"
-                                aria-label="Email">
-                                <svg>
+                                href="/cdn-cgi/l/email-protection#2a415843595e53444b5e4b59424b1a1b1b6a4d474b434604494547">
+                                <svg aria-labelledby="icon-title">
+                                    <title id="icon-title">Email</title>
                                     <use xlink:href="#icon-c0646d28bbeb18e39eb973f96b44bd0f"></use>
                                 </svg>
                                 <span class="label">Email</span>
                             </a>
                         </li>
                         <li>
-                            <a class="n02" href="https://wa.me/6287886583513" aria-label="WhatsApp">
-                                <svg>
+                            <a class="n02" href="https://wa.me/6287886583513">
+                                <svg aria-labelledby="icon-title">
+                                    <title id="icon-title">WhatsApp</title>
                                     <use xlink:href="#icon-e9633646f45121eab610a3d30c929019"></use>
                                 </svg>
                                 <span class="label">WhatsApp</span>
                             </a>
                         </li>
                         <li>
-                            <a class="n03" href="https://www.linkedin.com/in/kristynatasha/" aria-label="LinkedIn">
-                                <svg>
+                            <a class="n03" href="https://www.linkedin.com/in/kristynatasha/">
+                                <svg aria-labelledby="icon-title">
+                                    <title id="icon-title">LinkedIn</title>
                                     <use xlink:href="#icon-bf393d6ea48a4e69e1ed58a3563b94a5"></use>
                                 </svg>
                                 <span class="label">LinkedIn</span>
                             </a>
                         </li>
                         <li>
-                            <a class="n04" href="https://bit.ly/cvkristynatasha" aria-label="CV">
-                                <svg>
+                            <a class="n04" href="https://bit.ly/cvkristynatasha">
+                                <svg aria-labelledby="icon-title">
+                                    <title id="icon-title">CV</title>
                                     <use xlink:href="#icon-396f473e8a8386b5ca989ade22d6ada7"></use>
                                 </svg>
                                 <span class="label">CV</span>
                             </a>
                         </li>
                         <li>
-                            <a class="n05" href="https://github.com/kristynatasha" aria-label="GitHub">
-                                <svg>
+                            <a class="n05" href="https://github.com/kristynatasha">
+                                <svg aria-labelledby="icon-title">
+                                    <title id="icon-title">GitHub</title>
                                     <use xlink:href="#icon-8c4b37645de3c276d895d87df51ba614"></use>
                                 </svg>
                                 <span class="label">GitHub</span>
                             </a>
                         </li>
                         <li>
-                            <a class="n06" href="https://bit.ly/portfoliokristynatasha" aria-label="PDF Document">
-                                <svg>
+                            <a class="n06" href="https://bit.ly/portfoliokristynatasha">
+                                <svg aria-labelledby="icon-title">
+                                    <title id="icon-title">PDF Document</title>
                                     <use xlink:href="#icon-42aae34beb9f8aa4413eae733dcb95b4"></use>
                                 </svg>
                                 <span class="label">PDF Document</span>
@@ -3587,8 +3741,9 @@
                                 <div>
                                     <ul id="icons02" class="icons">
                                         <li>
-                                            <a class="n01" href="#" aria-label="Apple Books">
-                                                <svg>
+                                            <a class="n01" href="#">
+                                                <svg aria-labelledby="icon-title">
+                                                    <title id="icon-title">Apple Books</title>
                                                     <use xlink:href="#icon-7a0fb2568fa850cbc2e1937e79944cc1"></use>
                                                 </svg>
                                                 <span class="label">Apple Books</span>
@@ -3598,8 +3753,9 @@
                                 </div>
                                 <div>
                                     <p id="text24">
-                                        I hold a Bachelor&#39;s degree from <strong>Institute of
-                                            Technology Bandung (ITB),</strong> Indonesia.
+                                        I hold a Bachelor&#39;s degree from <strong>Institute of Technology Bandung
+                                            (ITB)</strong>
+                                        , Indonesia.
                                     </p>
                                 </div>
                             </div>
@@ -3611,8 +3767,9 @@
                                 <div>
                                     <ul id="icons01" class="icons">
                                         <li>
-                                            <a class="n01" href="#" aria-label="Google Developers">
-                                                <svg>
+                                            <a class="n01" href="#">
+                                                <svg aria-labelledby="icon-title">
+                                                    <title id="icon-title">Google Developers</title>
                                                     <use xlink:href="#icon-9765c5f16048e2504be091e398e0e8ec"></use>
                                                 </svg>
                                                 <span class="label">Google Developers</span>
@@ -3633,8 +3790,9 @@
                                 <div>
                                     <ul id="icons03" class="icons">
                                         <li>
-                                            <a class="n01" href="#" aria-label="Cloud">
-                                                <svg>
+                                            <a class="n01" href="#">
+                                                <svg aria-labelledby="icon-title">
+                                                    <title id="icon-title">Cloud</title>
                                                     <use xlink:href="#icon-e4009e971530d408f0e96eaa01207ee4"></use>
                                                 </svg>
                                                 <span class="label">Cloud</span>
@@ -3643,31 +3801,8 @@
                                     </ul>
                                 </div>
                                 <div>
-                                    <p id="text04">I am also proficient in SQL, BI tools, GIS, VM, GCF, Docker,
-                                        and K8s.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="container06" class="container columns">
-                        <div class="wrapper">
-                            <div class="inner" data-onvisible-trigger="1">
-                                <div>
-                                    <ul id="icons01" class="icons">
-                                        <li>
-                                            <a class="n01" href="#" aria-label="Google Developers">
-                                                <svg>
-                                                    <use xlink:href="#icon-9765c5f16048e2504be091e398e0e8ec"></use>
-                                                </svg>
-                                                <span class="label">Google Developers</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <p id="text04">I have implemented models for anomaly detection, fraud prevention,
-                                        and personalized recommendations, using API integration and building scalable
-                                        backend systems.</p>
+                                    <p id="text04">I am also proficient in SQL, BI tools, GIS, VM, GCF, Docker, and K8s.
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -3680,10 +3815,10 @@
                     <div id="container02" class="style1 container default">
                         <div class="wrapper">
                             <div class="inner" data-onvisible-trigger="1">
-                                <h2 id="text07" class="style2">Projects &amp; Case Studies</h2>
+                                <h2 id="text07" class="style2">Projects &amp;Case Studies</h2>
                                 <div id="image03" class="image">
                                     <span class="frame">
-                                        <img src="assets/images/image03.jpg?v=59470ebd" alt="" />
+                                        <img src="assets/images/image03.jpg?v=646918fd" alt="" />
                                     </span>
                                 </div>
                                 <p id="text08" class="style5">
@@ -3701,7 +3836,8 @@
                                     <li>
                                         <a href="https://drive.google.com/file/d/1MvMYpH865OfiwLfzt2uhZTW0iV33_Spz/view"
                                             class="button n01">
-                                            <svg>
+                                            <svg aria-labelledby="icon-title">
+                                                <title id="icon-title">Arrow Right (Light)</title>
                                                 <use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use>
                                             </svg>
                                             <span class="label">Find out more</span>
@@ -3714,7 +3850,7 @@
                     <div id="container03" class="style1 container default">
                         <div class="wrapper">
                             <div class="inner" data-onvisible-trigger="1">
-                                <h2 id="text06" class="style2">Achievements &amp; Publications</h2>
+                                <h2 id="text06" class="style2">Achievements &amp;Publications</h2>
                                 <div id="list03" class="style1 list">
                                     <ul>
                                         <li>
@@ -3729,17 +3865,17 @@
                                 <p id="text14" class="style14">
                                     <span class="p">
                                         <strong>
-                                            <span style="color: #9CB3FF">PUBLISHED: </span>
+                                            <span style="color: #9CB3FF">PUBLISHED</span>
                                         </strong>
-                                        Propagation Characteristics of Madden Julian Oscillation in the Indonesian
+                                        : Propagation Characteristics of Madden Julian Oscillation in the Indonesian
                                         Maritime Continent: Case Studies for 2020-2022, Agromet Journal, doi: <a
                                             href="https://doi.org/10.29244/j.agromet.38.1.1-12">10.29244/j.agromet.38.1.1-12</a>
                                     </span>
                                     <span class="p">
                                         <strong>
-                                            <span style="color: #9CB3FF">PREPRINT / UNDER REVIEW: </span>
+                                            <span style="color: #9CB3FF">PREPRINT / UNDER REVIEW</span>
                                         </strong>
-                                        An Elementary Approach to Predicting Indonesian Monsoon Index: Combining
+                                        : An Elementary Approach to Predicting Indonesian Monsoon Index: Combining
                                         Ann-Arima Hybrid Method and Practical Use
                                     </span>
                                 </p>
@@ -3747,7 +3883,8 @@
                                     <li>
                                         <a href="https://www.researchgate.net/profile/Kristy-Yohanes"
                                             class="button n01">
-                                            <svg>
+                                            <svg aria-labelledby="icon-title">
+                                                <title id="icon-title">Arrow Right (Light)</title>
                                                 <use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use>
                                             </svg>
                                             <span class="label">ResearchGate</span>
@@ -3763,17 +3900,17 @@
                                 <h2 id="text10" class="style2">GitHub: Mock Projects</h2>
                                 <div id="image04" class="image">
                                     <span class="frame">
-                                        <img src="assets/images/image04.jpg?v=59470ebd" alt="" />
+                                        <img src="assets/images/image04.jpg?v=646918fd" alt="" />
                                     </span>
                                 </div>
                                 <p id="text01" class="style5">One of my enjoyable side projects I&#39;m proud of is the
                                     YouTube video recommendation insights project. I utilized the YouTube Data API and
-                                    NLP to analyze user watch histories, uncovering insights into video
+                                    NLP to analyze users&#39;watch histories, uncovering insights into video
                                     recommendations. Key features include OAuth 2.0 integration, transcript analysis,
                                     keyword extraction, visualization, and data export capabilities.</p>
                                 <div id="image02" class="image">
                                     <span class="frame">
-                                        <img src="assets/images/image02.jpg?v=59470ebd" alt="" />
+                                        <img src="assets/images/image02.jpg?v=646918fd" alt="" />
                                     </span>
                                 </div>
                                 <p id="text11" class="style5">Another one is on Customer Goods Data Modeling project
@@ -3785,7 +3922,8 @@
                                     <li>
                                         <a href="https://github.com/natgluons/YouTube-Transcript-NLTK"
                                             class="button n01">
-                                            <svg>
+                                            <svg aria-labelledby="icon-title">
+                                                <title id="icon-title">Arrow Right (Light)</title>
                                                 <use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use>
                                             </svg>
                                             <span class="label">Check out my codes</span>
@@ -3804,29 +3942,29 @@
                                         <li>
                                             <p>
                                                 <strong>
-                                                    <span style="color: #9CB3FF">AML and Data Governance: </span>
+                                                    <span style="color: #9CB3FF">AML and Data Governance</span>
                                                 </strong>
-                                                Risk-Based Mentoring Program for Crimes of Money Laundering and
+                                                : Risk-Based Mentoring Program for Crimes of Money Laundering and
                                                 Terrorism Financing in Human Trafficking and Financial Technology Crimes
-                                                - PPATK
+                                                - PPATK 2024
                                             </p>
                                         </li>
                                         <li>
                                             <p>
                                                 <strong>
-                                                    <span style="color: #9CB3FF">Data Science: </span>
+                                                    <span style="color: #9CB3FF">Data Science</span>
                                                 </strong>
-                                                Certificate of Competencies - Kalbe Nutritionals Data Scientist
-                                                Project Based Internship Program
+                                                : Certificate of Competencies - Kalbe Nutritionals Data Scientist
+                                                Project Based Internship Program 2023
                                             </p>
                                         </li>
                                         <li>
                                             <p>
                                                 <strong>
-                                                    <span style="color: #9CB3FF">Full-Stack Development: </span>
+                                                    <span style="color: #9CB3FF">Full-Stack Development</span>
                                                 </strong>
-                                                Certificate of Competencies - BTPN Syariah Fullstack Developer
-                                                Project Based Internship Program
+                                                : Certificate of Competencies - BTPN Syariah Fullstack Developer Project
+                                                Based Internship Program
                                             </p>
                                         </li>
                                     </ul>
@@ -3836,13 +3974,19 @@
                                     <ul>
                                         <li>
                                             <p>Google Cloud Professional Machine Learning Engineer Cert Prep: 1-6 -
-                                                LinkedIn Learning</p>
+                                                Google Developers</p>
+                                        </li>
+                                        <li>
+                                            <p>Artificial Intelligence on Microsoft Azure - Microsoft</p>
+                                        </li>
+                                        <li>
+                                            <p>The Full Stack - Meta</p>
                                         </li>
                                         <li>
                                             <p>SQL for Data Science - UC Davis</p>
                                         </li>
                                         <li>
-                                            <p>Python for Data Science, AI &amp; Development - IBM</p>
+                                            <p>Python for Data Science, AI &amp;Development - IBM</p>
                                         </li>
                                         <li>
                                             <p>Intro to Data Analytics - RevoU</p>
@@ -3858,12 +4002,6 @@
                                         </li>
                                         <li>
                                             <p>Power BI Essential Training - LinkedIn Learning</p>
-                                        </li>
-                                        <li>
-                                            <p>Artificial Intelligence on Microsoft Azure - Microsoft</p>
-                                        </li>
-                                        <li>
-                                            <p>The Full Stack - Meta</p>
                                         </li>
                                         <li>
                                             <p>Companies and Climate Change - ESSEC Business School</p>
@@ -3885,142 +4023,129 @@
                         <div class="wrapper">
                             <div class="inner" data-onvisible-trigger="1">
                                 <h1 id="text12" class="style13">WORK EXPERIENCE</h1>
-
-                                <!-- Data Analyst - LinkAja -->
-                                <ul id="buttons10" class="style3 buttons">
+                                <ul id="buttons07" class="style3 buttons">
                                     <li>
                                         <a href="https://www.linkedin.com/in/kristynatasha/" class="button n01">Data
                                             Analyst - LinkAja</a>
                                     </li>
                                 </ul>
-
-                                <ul id="list07" class="style1 list">
-                                    <li>• <span style="font-weight: bold;">Model development:</span></li>
-                                    <li>- Implemented PCA and Isolation Forest for anomaly detection in
-                                        merchant-customer transactions.</li>
-                                    <li>- Implemented Random Forest and Network Analysis to map illegal
-                                        online gambling transactions.</li>
-                                    <li>- Developed semi-supervised Relational Graph Convolution Network
-                                        (RGCN) model for collusion risk assessment.</li>
-                                    <li>- Developed a gradient boosting model that utilizes the
-                                        (RGCN) model for collusion risk assessment.</li>
-                                    <li>• <span style="font-weight: bold;">ML deployment:</span> Utilized GCP cloud
-                                        automation tools including Cloud
-                                        Functions
-                                        and Virtual Machine for model deployment.</li>
-                                    <li>• <span style="font-weight: bold;">BAU:</span> Utilized device intelligence to
-                                        monitor tampering, cyberattacks,
-                                        account takeovers, and computer vision for eKYC verification.</li>
-                                </ul>
-
-                                <!-- Data Scientist - Kalbe Nutritionals -->
-                                <ul id="buttons10" class="style3 buttons">
+                                <p id="text13">
+                                    <span class="p">
+                                        • Model development:<br />
+                                        - Implemented PCA and Isolation Forest for anomaly detection in
+                                        merchant-customer transactions.<br />
+                                        - Implemented Random Forest and Network Analysis to map illegal online gambling
+                                        transactions.<br />
+                                        - Developed semi-supervised Relational Graph Convolution Network (RGCN) model
+                                        for collusion risk assessment.<br />
+                                        - Developed a gradient boosting model that utilizes the (RGCN) model for
+                                        collusion risk assessment.<br />
+                                        • ML deployment: Utilized GCP cloud automation tools including Cloud Functions
+                                        and Virtual Machine for model deployment.<br />• BAU: Utilized device
+                                        intelligence to monitor tampering, cyberattacks, account takeovers, and computer
+                                        vision for eKYC verification.
+                                    </span>
+                                </p>
+                                <ul id="buttons08" class="style3 buttons">
                                     <li>
                                         <a href="https://www.linkedin.com/in/kristynatasha/" class="button n01">Data
                                             Scientist - Kalbe Nutritionals</a>
                                     </li>
                                 </ul>
-
-                                <ul id="list07" class="style1 list">
-                                    <li>Utilized PostgreSQL in DBeaver for data exploration, developed interactive
-                                        Tableau dashboards, employed ARIMA
-                                        time-series regression in Python to estimate daily product quantities for
-                                        inventory management, and applied K-Means
-                                        marketing strategies and providing personalized promotions based on
-                                        customer segmentations.</li>
-                                </ul>
-
-                                <!-- AI Engineer / NLP Developer - Seikat AI Software House -->
-                                <ul id="buttons10" class="style3 buttons">
+                                <p id="text17">Utilized PostgreSQL in DBeaver for data exploration, developed
+                                    interactive Tableau dashboards, employed ARIMA time-series regression in Python to
+                                    estimate daily product quantities for inventory management, and applied K-Means
+                                    marketing strategies and providing personalized promotions based on customer
+                                    segmentations.</p>
+                                <ul id="buttons09" class="style3 buttons">
                                     <li>
                                         <a href="https://www.linkedin.com/in/kristynatasha/" class="button n01">AI
                                             Engineer / NLP Developer - Seikat AI Software House</a>
                                     </li>
                                 </ul>
-
-                                <ul id="list07" class="style1 list">
-                                    <li>Designed and deployed a Flask-based recommendation system API incorporating NLP
-                                        techniques such as topic modeling, named
-                                        entity recognition, and sentiment analysis, utilizing Docker for
-                                        containerization and Kubernetes for scalable
-                                        deployment, enhancing personalized job matching between seekers and listers.
+                                <p id="text18">Designed and deployed a Flask-based recommendation system API
+                                    incorporating NLP techniques such as topic modeling, named entity recognition, and
+                                    sentiment analysis, utilizing Docker for containerization and Kubernetes for
+                                    scalable deployment, enhancing personalized job matching between seekers and
+                                    listers.</p>
+                                <ul id="buttons06" class="style3 buttons">
+                                    <li>
+                                        <a href="https://www.linkedin.com/in/kristynatasha/" class="button n01">Previous
+                                            Work Experiences</a>
+                                    </li>
+                                </ul>
+                                <p id="text19">
+                                    <span class="p">
+                                        • Machine Learning Researcher - EST Research Group ITB<br />
+                                        • Full-Stack Developer Internship - BTPN Syariah<br />
+                                        • Front-End Developer Internship - Core Initiative Studio<br />
+                                        • Data Science Research Internship - LAPAN/Indonesian National Aeronautics
+                                        &amp;Space Administration<br />• GIS Data Analyst Internship - Garda Caah
+                                    </span>
+                                </p>
+                                <div id="table01" class="table-wrapper">
+                                    <div class="table-inner">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        <strong>Tech Stacks</strong>
+                                                    </th>
+                                                    <th>&nbsp;</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Programming Languages:</td>
+                                                    <td>Python, SQL, Go, Javascript, C++</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Libraries/Tools:</td>
+                                                    <td>ML (SciKit Learn, Keras, XGBoost, TensorFlow, PyTorch, OpenCV),
+                                                        NLP (NLTK, HuggingFace), Visualization (Matplotlib, Seaborn,
+                                                        Pandas, NumPy), Graph Networks (NetworkX, RGCNconv, HGTconv)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Databases:</td>
+                                                    <td>PostgreSQL, BigQuery</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Development:</td>
+                                                    <td>IDEs (VS Code, DBeaver), Version Control (Git), Backend
+                                                        Frameworks (Flask, Django, Gin)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Deployment:</td>
+                                                    <td>VM, Cloud Functions, Docker, Kubernetes</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <ul id="buttons01" class="style2 buttons">
+                                    <li>
+                                        <a href="#home" class="button n01">
+                                            <svg aria-labelledby="icon-title">
+                                                <title id="icon-title">Arrow Left</title>
+                                                <use xlink:href="#icon-fe5d5fdb64e50b34c3e536f93a94c91e"></use>
+                                            </svg>
+                                            <span class="label">Back</span>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Previous Work Experiences Button -->
-                    <ul id="buttons10" class="style3 buttons">
-                        <li>
-                            <a href="https://www.linkedin.com/in/kristynatasha/" class="button n01">Previous Work
-                                Experiences</a>
-                        </li>
-                    </ul>
-
-                    <!-- Previous Work Experiences List -->
-                    <ul id="list07" class="style1 list">
-                        <li>• Machine Learning Researcher - EST Research Group ITB</li>
-                        <li>• Full-Stack Developer Internship - BTPN Syariah</li>
-                        <li>• Front-End Developer Internship - Core Initiative Studio</li>
-                        <li>• Data Science Research Internship - LAPAN/Indonesian National Aeronautics & Space
-                            Administration</li>
-                        <li>• GIS Data Analyst Internship - Garda Caah</li>
-                    </ul>
-                    <div id="table01" class="table-wrapper">
-                        <div class="table-inner">
-                            <table>
-                                <caption>Tech Stacks</caption>
-                                <tbody>
-                                    <tr>
-                                        <td>Programming Languages:</td>
-                                        <td>Python, SQL, Go</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Libraries/Tools:</td>
-                                        <td>ML (SciKit Learn, Keras, XGBoost, TensorFlow, PyTorch, OpenCV), NLP (NLTK,
-                                            HuggingFace), Visualization (Matplotlib, Seaborn, Pandas, NumPy), Graph
-                                            Networks (NetworkX, RGCNconv, HGTconv)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Databases:</td>
-                                        <td>PostgreSQL, BigQuery</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Development:</td>
-                                        <td>IDEs (VS Code, DBeaver), Version Control (Git), Backend Frameworks (Flask,
-                                            Django, Gin)</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Deployment:</td>
-                                        <td>VM, Cloud Functions, Docker, Kubernetes</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                </section>
+                <footer id="footer">
+                    <div id="credits" class="icc-credits">
+                        <span>
+                        </span>
                     </div>
-                    <ul id="buttons01" class="style2 buttons">
-                        <li>
-                            <a href="#home" class="button n01">
-                                <svg>
-                                    <use xlink:href="#icon-fe5d5fdb64e50b34c3e536f93a94c91e"></use>
-                                </svg>
-                                <span class="label">Back</span>
-                            </a>
-                        </li>
-                    </ul>
+                </footer>
             </div>
         </div>
-    </div>
-    </section>
-    <footer id="footer">
-        <div id="credits" class="icc-credits">
-            <span>
-            </span>
-        </div>
-    </footer>
-    </div>
-    </div>
     </div>
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script>
@@ -4111,6 +4236,21 @@
                     for (i = 0; i < ss.length; i++)
                         f(ss[i]);
                     return a;
+                }
+                , escapeHtml = function (s) {
+                    if (s === '' || s === null || s === undefined)
+                        return '';
+                    var a = {
+                        '&': '&amp;',
+                        '<': '&lt;',
+                        '>': '&gt;',
+                        '"': '&quot;',
+                        "'": &#39; ',
+                    };
+                    s = s.replace(/[&<>"']/g, function (x) {
+                        return a[x];
+                    });
+                    return s;
                 }
                 , thisHash = function () {
                     var h = location.hash ? location.hash.substring(1) : null, a;
@@ -4785,6 +4925,7 @@
             var onvisible = {
                 effects: {
                     'blur-in': {
+                        type: 'transition',
                         transition: function (speed, delay) {
                             return 'opacity ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '') + ', ' + 'filter ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
                         },
@@ -4798,6 +4939,7 @@
                         },
                     },
                     'zoom-in': {
+                        type: 'transition',
                         transition: function (speed, delay) {
                             return 'opacity ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '') + ', ' + 'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
                         },
@@ -4811,6 +4953,7 @@
                         },
                     },
                     'zoom-out': {
+                        type: 'transition',
                         transition: function (speed, delay) {
                             return 'opacity ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '') + ', ' + 'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
                         },
@@ -4824,6 +4967,7 @@
                         },
                     },
                     'slide-left': {
+                        type: 'transition',
                         transition: function (speed, delay) {
                             return 'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
                         },
@@ -4835,6 +4979,7 @@
                         },
                     },
                     'slide-right': {
+                        type: 'transition',
                         transition: function (speed, delay) {
                             return 'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
                         },
@@ -4846,6 +4991,7 @@
                         },
                     },
                     'flip-forward': {
+                        type: 'transition',
                         transition: function (speed, delay) {
                             return 'opacity ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '') + ', ' + 'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
                         },
@@ -4860,6 +5006,7 @@
                         },
                     },
                     'flip-backward': {
+                        type: 'transition',
                         transition: function (speed, delay) {
                             return 'opacity ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '') + ', ' + 'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
                         },
@@ -4874,6 +5021,7 @@
                         },
                     },
                     'flip-left': {
+                        type: 'transition',
                         transition: function (speed, delay) {
                             return 'opacity ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '') + ', ' + 'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
                         },
@@ -4888,6 +5036,7 @@
                         },
                     },
                     'flip-right': {
+                        type: 'transition',
                         transition: function (speed, delay) {
                             return 'opacity ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '') + ', ' + 'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
                         },
@@ -4902,6 +5051,7 @@
                         },
                     },
                     'tilt-left': {
+                        type: 'transition',
                         transition: function (speed, delay) {
                             return 'opacity ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '') + ', ' + 'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
                         },
@@ -4915,6 +5065,7 @@
                         },
                     },
                     'tilt-right': {
+                        type: 'transition',
                         transition: function (speed, delay) {
                             return 'opacity ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '') + ', ' + 'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
                         },
@@ -4928,6 +5079,7 @@
                         },
                     },
                     'fade-right': {
+                        type: 'transition',
                         transition: function (speed, delay) {
                             return 'opacity ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '') + ', ' + 'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
                         },
@@ -4941,6 +5093,7 @@
                         },
                     },
                     'fade-left': {
+                        type: 'transition',
                         transition: function (speed, delay) {
                             return 'opacity ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '') + ', ' + 'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
                         },
@@ -4954,6 +5107,7 @@
                         },
                     },
                     'fade-down': {
+                        type: 'transition',
                         transition: function (speed, delay) {
                             return 'opacity ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '') + ', ' + 'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
                         },
@@ -4967,6 +5121,7 @@
                         },
                     },
                     'fade-up': {
+                        type: 'transition',
                         transition: function (speed, delay) {
                             return 'opacity ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '') + ', ' + 'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
                         },
@@ -4980,6 +5135,7 @@
                         },
                     },
                     'fade-in': {
+                        type: 'transition',
                         transition: function (speed, delay) {
                             return 'opacity ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
                         },
@@ -4991,20 +5147,20 @@
                         },
                     },
                     'fade-in-background': {
-                        custom: true,
-                        transition: function (speed, delay) {
+                        type: 'manual',
+                        rewind: function () {
+                            this.style.removeProperty('--onvisible-delay');
+                            this.style.removeProperty('--onvisible-background-color');
+                        },
+                        play: function (speed, delay) {
                             this.style.setProperty('--onvisible-speed', speed + 's');
                             if (delay)
                                 this.style.setProperty('--onvisible-delay', delay + 's');
-                        },
-                        rewind: function () {
-                            this.style.removeProperty('--onvisible-background-color');
-                        },
-                        play: function () {
                             this.style.setProperty('--onvisible-background-color', 'rgba(0,0,0,0.001)');
                         },
                     },
                     'zoom-in-image': {
+                        type: 'transition',
                         target: 'img',
                         transition: function (speed, delay) {
                             return 'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
@@ -5017,6 +5173,7 @@
                         },
                     },
                     'zoom-out-image': {
+                        type: 'transition',
                         target: 'img',
                         transition: function (speed, delay) {
                             return 'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
@@ -5029,6 +5186,7 @@
                         },
                     },
                     'focus-image': {
+                        type: 'transition',
                         target: 'img',
                         transition: function (speed, delay) {
                             return 'transform ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '') + ', ' + 'filter ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
@@ -5042,10 +5200,138 @@
                             this.style.filter = 'none';
                         },
                     },
+                    'wipe-up': {
+                        type: 'transition',
+                        transition: function (speed, delay) {
+                            return 'mask-size ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
+                        },
+                        rewind: function (intensity) {
+                            this.style.maskComposite = 'exclude';
+                            this.style.maskRepeat = 'no-repeat';
+                            this.style.maskImage = 'linear-gradient(0deg, black 100%, transparent 100%)';
+                            this.style.maskPosition = '0% 100%';
+                            this.style.maskSize = '100% 0%';
+                        },
+                        play: function () {
+                            this.style.maskSize = '110% 110%';
+                        },
+                    },
+                    'wipe-down': {
+                        type: 'transition',
+                        transition: function (speed, delay) {
+                            return 'mask-size ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
+                        },
+                        rewind: function (intensity) {
+                            this.style.maskComposite = 'exclude';
+                            this.style.maskRepeat = 'no-repeat';
+                            this.style.maskImage = 'linear-gradient(0deg, black 100%, transparent 100%)';
+                            this.style.maskPosition = '0% 0%';
+                            this.style.maskSize = '100% 0%';
+                        },
+                        play: function () {
+                            this.style.maskSize = '110% 110%';
+                        },
+                    },
+                    'wipe-left': {
+                        type: 'transition',
+                        transition: function (speed, delay) {
+                            return 'mask-size ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
+                        },
+                        rewind: function (intensity) {
+                            this.style.maskComposite = 'exclude';
+                            this.style.maskRepeat = 'no-repeat';
+                            this.style.maskImage = 'linear-gradient(90deg, black 100%, transparent 100%)';
+                            this.style.maskPosition = '100% 0%';
+                            this.style.maskSize = '0% 100%';
+                        },
+                        play: function () {
+                            this.style.maskSize = '110% 110%';
+                        },
+                    },
+                    'wipe-right': {
+                        type: 'transition',
+                        transition: function (speed, delay) {
+                            return 'mask-size ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
+                        },
+                        rewind: function (intensity) {
+                            this.style.maskComposite = 'exclude';
+                            this.style.maskRepeat = 'no-repeat';
+                            this.style.maskImage = 'linear-gradient(90deg, black 100%, transparent 100%)';
+                            this.style.maskPosition = '0% 0%';
+                            this.style.maskSize = '0% 100%';
+                        },
+                        play: function () {
+                            this.style.maskSize = '110% 110%';
+                        },
+                    },
+                    'wipe-diagonal': {
+                        type: 'transition',
+                        transition: function (speed, delay) {
+                            return 'mask-size ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
+                        },
+                        rewind: function (intensity) {
+                            this.style.maskComposite = 'exclude';
+                            this.style.maskRepeat = 'no-repeat';
+                            this.style.maskImage = 'linear-gradient(45deg, black 50%, transparent 50%)';
+                            this.style.maskPosition = '0% 100%';
+                            this.style.maskSize = '0% 0%';
+                        },
+                        play: function () {
+                            this.style.maskSize = '220% 220%';
+                        },
+                    },
+                    'wipe-reverse-diagonal': {
+                        type: 'transition',
+                        transition: function (speed, delay) {
+                            return 'mask-size ' + speed + 's ease' + (delay ? ' ' + delay + 's' : '');
+                        },
+                        rewind: function (intensity) {
+                            this.style.maskComposite = 'exclude';
+                            this.style.maskRepeat = 'no-repeat';
+                            this.style.maskImage = 'linear-gradient(135deg, transparent 50%, black 50%)';
+                            this.style.maskPosition = '100% 100%';
+                            this.style.maskSize = '0% 0%';
+                        },
+                        play: function () {
+                            this.style.maskSize = '220% 220%';
+                        },
+                    },
+                    'pop-in': {
+                        type: 'animate',
+                        keyframes: function (intensity) {
+                            let diff = (intensity + 1) * 0.025;
+                            return [{
+                                opacity: 0,
+                                transform: 'scale(' + (1 - diff) + ')',
+                            }, {
+                                opacity: 1,
+                                transform: 'scale(' + (1 + diff) + ')',
+                            }, {
+                                opacity: 1,
+                                transform: 'scale(' + (1 - (diff * 0.25)) + ')',
+                                offset: 0.9,
+                            }, {
+                                opacity: 1,
+                                transform: 'scale(1)',
+                            }];
+                        },
+                        options: function (speed) {
+                            return {
+                                duration: speed,
+                                iterations: 1,
+                            };
+                        },
+                        rewind: function () {
+                            this.style.opacity = 0;
+                        },
+                        play: function () {
+                            this.style.opacity = 1;
+                        },
+                    },
                 },
                 regex: new RegExp('([a-zA-Z0-9\.\,\-\_\"\'\?\!\:\;\#\@\#$\%\&\(\)\{\}]+)', 'g'),
                 add: function (selector, settings) {
-                    var _this = this, style = settings.style in this.effects ? settings.style : 'fade', speed = parseInt('speed' in settings ? settings.speed : 1000) / 1000, intensity = ((parseInt('intensity' in settings ? settings.intensity : 5) / 10) * 1.75) + 0.25, delay = parseInt('delay' in settings ? settings.delay : 0) / 1000, replay = 'replay' in settings ? settings.replay : false, stagger = 'stagger' in settings ? (parseInt(settings.stagger) >= 0 ? (parseInt(settings.stagger) / 1000) : false) : false, staggerOrder = 'staggerOrder' in settings ? settings.staggerOrder : 'default', staggerSelector = 'staggerSelector' in settings ? settings.staggerSelector : null, threshold = parseInt('threshold' in settings ? settings.threshold : 3), state = 'state' in settings ? settings.state : null, effect = this.effects[style], scrollEventThreshold;
+                    var _this = this, style = settings.style in this.effects ? settings.style : 'fade', speed = parseInt('speed' in settings ? settings.speed : 0), intensity = parseInt('intensity' in settings ? settings.intensity : 5), delay = parseInt('delay' in settings ? settings.delay : 0), replay = 'replay' in settings ? settings.replay : false, stagger = 'stagger' in settings ? (parseInt(settings.stagger) >= 0 ? parseInt(settings.stagger) : false) : false, staggerOrder = 'staggerOrder' in settings ? settings.staggerOrder : 'default', staggerSelector = 'staggerSelector' in settings ? settings.staggerSelector : null, threshold = parseInt('threshold' in settings ? settings.threshold : 3), state = 'state' in settings ? settings.state : null, effect = this.effects[style], enter, leave, scrollEventThreshold;
                     if ('CARRD_DISABLE_ANIMATION' in window) {
                         if (style == 'fade-in-background')
                             $$(selector).forEach(function (e) {
@@ -5071,47 +5357,86 @@
                             scrollEventThreshold = 0.475;
                             break;
                     }
+                    switch (effect.type) {
+                        default:
+                        case 'transition':
+                            intensity = ((intensity / 10) * 1.75) + 0.25;
+                            enter = function (children, staggerDelay = 0) {
+                                var _this = this, transitionOrig;
+                                if (effect.target)
+                                    _this = this.querySelector(effect.target);
+                                transitionOrig = _this.style.transition;
+                                _this.style.setProperty('backface-visibility', 'hidden');
+                                _this.style.transition = effect.transition.apply(_this, [speed / 1000, (delay + staggerDelay) / 1000]);
+                                effect.play.apply(_this, [intensity, !!children]);
+                                setTimeout(function () {
+                                    _this.style.removeProperty('backface-visibility');
+                                    _this.style.transition = transitionOrig;
+                                }, (speed + delay + staggerDelay) * 2);
+                            }
+                                ;
+                            leave = function (children) {
+                                var _this = this, transitionOrig;
+                                if (effect.target)
+                                    _this = this.querySelector(effect.target);
+                                transitionOrig = _this.style.transition;
+                                _this.style.setProperty('backface-visibility', 'hidden');
+                                _this.style.transition = effect.transition.apply(_this, [speed / 1000]);
+                                effect.rewind.apply(_this, [intensity, !!children]);
+                                setTimeout(function () {
+                                    _this.style.removeProperty('backface-visibility');
+                                    _this.style.transition = transitionOrig;
+                                }, speed * 2);
+                            }
+                                ;
+                            break;
+                        case 'animate':
+                            enter = function (children, staggerDelay = 0) {
+                                var _this = this, transitionOrig;
+                                if (effect.target)
+                                    _this = this.querySelector(effect.target);
+                                setTimeout(() => {
+                                    effect.play.apply(_this, []);
+                                    _this.animate(effect.keyframes.apply(_this, [intensity]), effect.options.apply(_this, [speed, delay]));
+                                }
+                                    , delay + staggerDelay);
+                            }
+                                ;
+                            leave = function (children) {
+                                var _this = this, transitionOrig;
+                                if (effect.target)
+                                    _this = this.querySelector(effect.target);
+                                let a = _this.animate(effect.keyframes.apply(_this, [intensity]), effect.options.apply(_this, [speed, delay]));
+                                a.reverse();
+                                a.addEventListener('finish', () => {
+                                    effect.rewind.apply(_this, []);
+                                }
+                                );
+                            }
+                                ;
+                            break;
+                        case 'manual':
+                            enter = function (children, staggerDelay = 0) {
+                                var _this = this, transitionOrig;
+                                if (effect.target)
+                                    _this = this.querySelector(effect.target);
+                                effect.play.apply(_this, [speed / 1000, (delay + staggerDelay) / 1000, intensity]);
+                            }
+                                ;
+                            leave = function (children) {
+                                var _this = this, transitionOrig;
+                                if (effect.target)
+                                    _this = this.querySelector(effect.target);
+                                effect.rewind.apply(_this, [intensity, !!children]);
+                            }
+                                ;
+                            break;
+                    }
                     $$(selector).forEach(function (e) {
-                        var children, enter, leave, targetElement, triggerElement;
+                        var children, targetElement, triggerElement;
                         if (stagger !== false && staggerSelector == ':scope > *')
                             _this.expandTextNodes(e);
                         children = (stagger !== false && staggerSelector) ? e.querySelectorAll(staggerSelector) : null;
-                        enter = function (staggerDelay = 0) {
-                            var _this = this, transitionOrig;
-                            if (effect.target)
-                                _this = this.querySelector(effect.target);
-                            if (!effect.custom) {
-                                transitionOrig = _this.style.transition;
-                                _this.style.setProperty('backface-visibility', 'hidden');
-                                _this.style.transition = effect.transition(speed, delay + staggerDelay);
-                            } else
-                                effect.transition.apply(_this, [speed, delay + staggerDelay]);
-                            effect.play.apply(_this, [intensity, !!children]);
-                            if (!effect.custom)
-                                setTimeout(function () {
-                                    _this.style.removeProperty('backface-visibility');
-                                    _this.style.transition = transitionOrig;
-                                }, (speed + delay + staggerDelay) * 1000 * 2);
-                        }
-                            ;
-                        leave = function () {
-                            var _this = this, transitionOrig;
-                            if (effect.target)
-                                _this = this.querySelector(effect.target);
-                            if (!effect.custom) {
-                                transitionOrig = _this.style.transition;
-                                _this.style.setProperty('backface-visibility', 'hidden');
-                                _this.style.transition = effect.transition(speed);
-                            } else
-                                effect.transition.apply(_this, [speed]);
-                            effect.rewind.apply(_this, [intensity, !!children]);
-                            if (!effect.custom)
-                                setTimeout(function () {
-                                    _this.style.removeProperty('backface-visibility');
-                                    _this.style.transition = transitionOrig;
-                                }, speed * 1000 * 2);
-                        }
-                            ;
                         if (effect.target)
                             targetElement = e.querySelector(effect.target);
                         else
@@ -5138,7 +5463,7 @@
                             threshold: scrollEventThreshold,
                             enter: children ? function () {
                                 var staggerDelay = 0, childHandler = function (e) {
-                                    enter.apply(e, [staggerDelay]);
+                                    enter.apply(e, [children, staggerDelay]);
                                     staggerDelay += stagger;
                                 }, a;
                                 if (staggerOrder == 'default') {
@@ -5161,7 +5486,7 @@
                                 : enter,
                             leave: (replay ? (children ? function () {
                                 children.forEach(function (e) {
-                                    leave.apply(e);
+                                    leave.apply(e, [children]);
                                 });
                             }
                                 : leave) : null),
@@ -5176,7 +5501,7 @@
                             continue;
                         s = x.nodeValue;
                         s = s.replace(this.regex, function (x, a) {
-                            return '<text-node>' + a + '</text-node>';
+                            return '<text-node>' + escapeHtml(a) + '</text-node>';
                         });
                         w = document.createElement('text-node');
                         w.innerHTML = s;
@@ -5204,7 +5529,7 @@
                 intensity: 2,
                 threshold: 3,
                 delay: 0,
-                replay: true
+                replay: false
             });
             onvisible.add('#icons05', {
                 style: 'fade-right',
@@ -5214,7 +5539,7 @@
                 delay: 0,
                 stagger: 125,
                 staggerSelector: ':scope > li',
-                replay: true
+                replay: false
             });
             onvisible.add('h1.style16, h2.style16, h3.style16, p.style16', {
                 style: 'fade-up',
@@ -5224,7 +5549,7 @@
                 delay: 750,
                 stagger: 250,
                 staggerSelector: ':scope > *',
-                replay: true
+                replay: false
             });
             onvisible.add('#container01', {
                 style: 'flip-left',
@@ -5232,7 +5557,7 @@
                 intensity: 1,
                 threshold: 3,
                 delay: 750,
-                replay: true
+                replay: false
             });
             onvisible.add('#container05', {
                 style: 'flip-left',
@@ -5240,7 +5565,7 @@
                 intensity: 1,
                 threshold: 3,
                 delay: 750,
-                replay: true
+                replay: false
             });
             onvisible.add('#container06', {
                 style: 'flip-left',
@@ -5248,7 +5573,7 @@
                 intensity: 1,
                 threshold: 3,
                 delay: 750,
-                replay: true
+                replay: false
             });
             onvisible.add('h1.style13, h2.style13, h3.style13, p.style13', {
                 style: 'zoom-out',
@@ -5262,33 +5587,15 @@
             });
             onvisible.add('.buttons.style3', {
                 style: 'fade-up',
-                speed: 5,
+                speed: 1000,
                 intensity: 1,
                 threshold: 3,
                 delay: 0,
                 replay: false
             });
-            onvisible.add('.list.style2', {
-                style: 'fade-up',
-                speed: 5,
-                intensity: 5,
-                threshold: 3,
-                delay: 0,
-                stagger: 250,
-                staggerSelector: ':scope ul > li, :scope ol > li',
-                replay: true
-            });
-            onvisible.add('.list.style1', {
-                style: 'fade-up',
-                speed: 5,
-                intensity: 5,
-                threshold: 3,
-                delay: 0,
-                replay: true
-            });
             onvisible.add('#table01', {
                 style: 'fade-up',
-                speed: 5,
+                speed: 1750,
                 intensity: 5,
                 threshold: 3,
                 delay: 250,
@@ -5308,7 +5615,7 @@
                 intensity: 1,
                 threshold: 3,
                 delay: 250,
-                replay: true
+                replay: false
             });
             onvisible.add('h1.style2, h2.style2, h3.style2, p.style2', {
                 style: 'fade-up',
@@ -5318,7 +5625,7 @@
                 delay: 0,
                 stagger: 125,
                 staggerSelector: ':scope > *',
-                replay: true
+                replay: false
             });
             onvisible.add('#image04', {
                 style: 'flip-left',
@@ -5352,13 +5659,21 @@
                 delay: 0,
                 replay: true
             });
+            onvisible.add('.list.style1', {
+                style: 'fade-up',
+                speed: 1000,
+                intensity: 5,
+                threshold: 3,
+                delay: 0,
+                replay: false
+            });
             onvisible.add('h1.style14, h2.style14, h3.style14, p.style14', {
                 style: 'fade-up',
                 speed: 1000,
                 intensity: 2,
                 threshold: 3,
                 delay: 500,
-                replay: true
+                replay: false
             });
         }
         )();
