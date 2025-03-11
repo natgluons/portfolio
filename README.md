@@ -47,3 +47,17 @@ git push origin main
 - View local: http://localhost:8000
 - Push changes: `git add . && git commit -m "message" && git push origin main`
 - View live: https://natgluons.github.io/portfolio/
+
+### Hard Reset to Remote Version
+If you need to discard all local changes and reset to the remote repository version:
+```bash
+# Fetch the latest state from the remote
+git fetch origin
+
+# Reset your local main branch to match the remote main branch
+git reset --hard origin/main
+
+# Clean up any untracked files and directories
+git clean -fd
+```
+This will discard all local changes, untracked files, and reset your local repository to exactly match the remote version.
