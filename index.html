@@ -3622,6 +3622,18 @@
             margin-bottom: 1.5rem;
         }
 
+        .email-btn, .services-btn {
+            padding: 0.5em 1em;
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            text-decoration: none;
+        }
+
+        .email-btn {
+            background-color: #546296;
+            color: white;
+        }
+
         .work-item {
             margin-bottom: 1.5rem;
         }
@@ -3791,12 +3803,11 @@
                         <em style="opacity: 1; transform: none; font-size: 0.8em;">an <strong>AI/ML Engineer</strong></em>
                     </h1>
                     <div id="buttons04" class="style1 buttons" style="opacity: 1; transform: none; display: flex; justify-content: flex-start; width: 60%;">
-                        <!-- <a class="n01" href="mailto:kristynatasha011@gmail.com" style="background-color: #546296; padding: 0.5em 1em; margin-right: 5px; border-radius: 12px; font-family: 'Inter', sans-serif; color: white; text-decoration: none;"><span class="label">Hire Me</span></a> -->
-                        <a href="mailto:kristynatasha011@gmail.com" class="n01 button" style="background-color: #546296; padding: 0.5em 1em; margin-right: 5px; border-radius: 12px; font-family: 'Inter', sans-serif; color: white; text-decoration: none; cursor: pointer; z-index: 100;"><span class="label">Hire Me</span></a>
-                        <a href="#services" class="button n01" style="padding: 0.5em 1em; border-radius: 12px; font-family: 'Inter', sans-serif; text-decoration: none;"><span class="label">Services</span></a>
-                        <!-- <a href="#service" class="button n01" style="padding: 0.5em 1em; border-radius: 12px; font-family: 'Inter', sans-serif; text-decoration: none;" id="services-button"><span class="label">Services</span></a> -->
+                        <!-- Email button - using the working structure -->
+                        <a class="n01 email-btn" href="mailto:kristynatasha011@gmail.com" style="background-color: #546296; padding: 0.5em 1em; margin-right: 5px; border-radius: 12px; font-family: 'Inter', sans-serif; color: white; text-decoration: none;"><span class="label">Hire Me</span></a>
+                        <!-- Services button - keep original structure but with unique class -->
+                        <a href="#services" class="n01 services-btn" style="padding: 0.5em 1em; border-radius: 12px; font-family: 'Inter', sans-serif; text-decoration: none; background-color: white; color: #343442;"><span class="label">Services</span></a>
                     </div>
-
                     <p id="text15" class="style5" style="opacity: 1; transform: none;"><span class="p">
                             <span class="p">With 4+ years of experience in Python and SQL, I specialize in AI/ML, including fraud detection, anomaly detection, and backend systems. I also offer IT services, including landing pages, web development, and more.
                                 <br><br>
