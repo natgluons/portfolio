@@ -3622,18 +3622,6 @@
             margin-bottom: 1.5rem;
         }
 
-        .email-btn, .services-btn {
-            padding: 0.5em 1em;
-            border-radius: 12px;
-            font-family: 'Inter', sans-serif;
-            text-decoration: none;
-        }
-
-        .email-btn {
-            background-color: #546296;
-            color: white;
-        }
-
         .work-item {
             margin-bottom: 1.5rem;
         }
@@ -3730,6 +3718,32 @@
         .project-features strong {
             color: rgba(255, 255, 255, 0.95);
         }
+
+        /* Common styles for all buttons */
+        .work-btn, .hire-btn, .services-btn {
+            padding: 0.5em 1em;
+            border-radius: 12px;
+            font-family: 'Inter', sans-serif;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Specific styles for each button */
+        .work-btn {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .hire-btn {
+            background-color: #546296;
+            color: white;
+        }
+
+        .services-btn {
+            background-color: white;
+            color: #343442;
+        }
     </style>
 </head>
 
@@ -3803,13 +3817,12 @@
                         <em style="opacity: 1; transform: none; font-size: 0.8em;">an <strong>AI/ML Engineer</strong></em>
                     </h1>
                     <div id="buttons04" class="style1 buttons" style="opacity: 1; transform: none; display: flex; justify-content: flex-start; width: 60%;">
-                        <!-- Email button - using the working structure -->
-                        <a class="n01 email-btn" href="mailto:kristynatasha011@gmail.com" style="background-color: #546296; padding: 0.5em 1em; margin-right: 5px; border-radius: 12px; font-family: 'Inter', sans-serif; color: white; text-decoration: none;"><span class="label">Hire Me</span></a>
-                        <!-- Services button - keep original structure but with unique class -->
-                        <a href="#services" class="n01 services-btn" style="padding: 0.5em 1em; border-radius: 12px; font-family: 'Inter', sans-serif; text-decoration: none; background-color: white; color: #343442;"><span class="label">Services</span></a>
+                        <a href="mailto:kristynatasha011@gmail.com" class="hire-btn n01" style="background-color: #546296; padding: 0.5em 1em; margin-right: 5px; border-radius: 12px; font-family: 'Inter', sans-serif; color: white; text-decoration: none;"><span class="label">Hire Me</span></a>
+                        <a href="#services" class="services-btn n01" style="padding: 0.5em 1em; border-radius: 12px; font-family: 'Inter', sans-serif; text-decoration: none; background-color: white; color: #343442;"><span class="label">Services</span></a>
                     </div>
+
                     <p id="text15" class="style5" style="opacity: 1; transform: none;"><span class="p">
-                            <span class="p">With 4+ years of experience in Python and SQL, I specialize in AI/ML, including fraud detection, anomaly detection, and backend systems. I also offer IT services, including landing pages, web development, and more.
+                            <span class="p">With 4+ years of experience in Python and SQL, I specialize in AI/ML, including fraud detection, chatbot development, and personalized recommendations. I also offer IT services, focusing on AI/ML solutions and landing page development.
                                 <br><br>
                                 Beyond coding, I enjoy hands-on projects, from cloud deployments to Arduino. To unwind, I go wall climbing and practice archery in my free time.
                                 <br>
@@ -3856,7 +3869,7 @@
                                         <br>
                                         <br>
                                         I have implemented advanced models for anomaly detection, fraud
-                                        prevention, personalized recommendations, and built scalable backend systems.
+                                        prevention, personalized recommendations, and chatbot development.
                                     </p>
                                 </div>
                             </div>
@@ -3894,10 +3907,10 @@
                                 <p id="text02" style="width: 100%; text-align: left;">Here are the services I provide:
                                     <br>
                                     <br>
-                                    <span style="font-weight: bold;">1. AI/ML Development:</span> Builds predictive models, NLP solutions, Fraud Detection, and Computer Vision systems. Optional deployment on VMs, GCF, K8s (usage-based pricing).
+                                    <span style="font-weight: bold;">1. AI/ML Development:</span> Builds predictive models, NLP solutions, Fraud Detection, Chatbot, and Computer Vision systems. Optional deployment on VMs, GCF, K8s (usage-based pricing).
                                     <br>
                                     <br>
-                                    <span style="font-weight: bold;">2. Web Development:</span> Custom static landing pages (portfolios/company info) and dynamic sites with booking systems. Optional Cloudflare hosting & domain management (cost varies).
+                                    <span style="font-weight: bold;">2. Web Development:</span> Custom static landing pages (portfolios/company info). Optional Cloudflare hosting & domain management (cost varies).
                                     <br>
                                     <br>
                                     <span style="font-weight: bold;">3. UI/UX Design:</span> Custom Mobile/Web UI design for enhanced user experience.
@@ -3944,7 +3957,7 @@
                                 </svg><span class="label">PDF Document</span></a></li> -->
                     </ul>
                     <ul id="buttons03" class="style5 buttons" style="opacity: 1; transform: none;">
-                        <li><a href="#workexperience" class="button n01">View my work experience</a></li>
+                        <li><a href="#workexperience" class="work-btn n01">View my work experience</a></li>
                     </ul>
                     <div id="container02" class="style1 container default">
                         <div class="wrapper">
@@ -4249,20 +4262,6 @@
                                             </span>
                                         </p>
                                     </div>
-
-                                    <!-- <button class="expand-btn" style="width: 100%;  background-color: #343442; color: white;">Data Scientist - Kalbe
-                                        Nutritionals</button>
-                                    <div class="expand-content">
-                                        <p id="text17">
-                                            • Utilized PostgreSQL in DBeaver for daily data exploration and developed
-                                            interactive Tableau dashboards for monitoring.<br>
-                                            • Accomplished 100% completion in 2 sprints: Employed ARIMA time-series
-                                            regression in Python for daily product quantity
-                                            estimation and applied K-Means Clustering to optimize marketing strategies
-                                            and provide personalized promotions based on
-                                            customer segments.
-                                        </p>
-                                    </div> -->
 
                                     <button class="expand-btn" style="width: 100%;">Previous Work Experiences</button>
                                     <div class="expand-content">
