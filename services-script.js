@@ -15,16 +15,27 @@ document.addEventListener("DOMContentLoaded", function () {
                 e.preventDefault();
                 e.stopPropagation();
                 
-                setTimeout(function() {
+                // Check if we're already on the work experience page - don't override that URL
+                if (window.location.hash === '#workexperience') {
+                    // Just scroll to the services section without changing URL
                     const targetSection = document.getElementById(targetId);
                     if (targetSection) {
                         targetSection.scrollIntoView({behavior: 'smooth'});
-                        history.pushState(null, null, '#' + targetId);
-                        console.log("Scrolled to " + targetId);
-                    } else {
-                        console.error("Section " + targetId + " not found");
+                        console.log("Scrolled to " + targetId + " (without changing URL)");
                     }
-                }, 10);
+                } else {
+                    // Normal behavior - scroll and update URL
+                    setTimeout(function() {
+                        const targetSection = document.getElementById(targetId);
+                        if (targetSection) {
+                            targetSection.scrollIntoView({behavior: 'smooth'});
+                            history.pushState(null, null, '#' + targetId);
+                            console.log("Scrolled to " + targetId);
+                        } else {
+                            console.error("Section " + targetId + " not found");
+                        }
+                    }, 10);
+                }
                 
                 return false;
             });
