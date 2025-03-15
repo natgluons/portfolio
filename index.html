@@ -4424,9 +4424,9 @@
                                         </table>
                                     </div>
                                 </div>
-                                <ul id="buttons01" class="style2 buttons" style="opacity: 1; transform: none;">
-                                    <li><a href="#home" class="button n01"><svg aria-labelledby="icon-title">
-                                                <title id="icon-title">Arrow Left</title>
+                                <ul id="buttons01-back" class="style2 buttons" style="opacity: 1; transform: none;">
+                                    <li><a href="#" class="back-btn" id="custom-back-button" style="background-color: #343442; color: #ffffff;"><svg aria-labelledby="back-icon-title">
+                                                <title id="back-icon-title">Arrow Left</title>
                                                 <use xlink:href="#icon-fe5d5fdb64e50b34c3e536f93a94c91e"></use>
                                             </svg><span class="label">Back</span></a></li>
                                 </ul>
@@ -4446,19 +4446,19 @@
     <!-- <script src="services-script.js"></script>
     <script src="workexp-script.js"></script> -->
     <script>
-    document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function () {
         // Get references to key elements
         const workExpSection = document.getElementById('workexperience');
         const servicesSection = document.getElementById('services');
-        
+
         // Initialize expand buttons (from services script)
         const buttons = document.querySelectorAll('.expand-btn');
-        buttons.forEach(button => {
-            button.addEventListener('click', function () {
-                const content = this.nextElementSibling;
-                content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            buttons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const content = this.nextElementSibling;
+                    content.style.display = content.style.display === 'block' ? 'none' : 'block';
+                });
             });
-        });
         
         // Check for special URL parameter instead of using hash
         // Using a parameter avoids hash conflicts
@@ -4590,11 +4590,66 @@ document.addEventListener('DOMContentLoaded', function() {
             window.open('https://drive.google.com/file/d/1MvMYpH865OfiwLfzt2uhZTW0iV33_Spz/view', '_blank');
         });
     }
-});
+        });
+    </script>
+    <script>
+    // Wait for the DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get the custom back button by its unique ID
+        const customBackButton = document.getElementById('custom-back-button');
+        
+        if (customBackButton) {
+            // Remove any existing event listeners
+            const newBackButton = customBackButton.cloneNode(true);
+            customBackButton.parentNode.replaceChild(newBackButton, customBackButton);
+            
+            // Add our custom event listener
+            newBackButton.addEventListener('click', function(e) {
+                // Prevent default behavior
+                e.preventDefault();
+                e.stopPropagation();
+                
+                console.log("Custom back button clicked");
+                
+                // Show all sections except work experience
+                document.querySelectorAll('section').forEach(section => {
+                    if (section.id === 'workexperience') {
+                        section.style.display = 'none';
+                    } else {
+                        section.style.display = 'block';
+                    }
+                });
+                
+                // Find the work experience button
+                const workExpButton = document.querySelector('.work-btn');
+                if (workExpButton) {
+                    console.log("Found work experience button, scrolling to it");
+                    
+                    // Small delay to ensure DOM updates first
+                    setTimeout(function() {
+                        // Scroll to the work experience button
+                        workExpButton.scrollIntoView({behavior: 'smooth', block: 'center'});
+                        
+                        // Update URL without hash
+                        history.pushState(null, null, window.location.pathname);
+                        
+                        console.log("Scrolled to work experience button");
+                    }, 100);
+                } else {
+                    console.log("Work experience button not found");
+                }
+                
+                return false;
+            });
+        }
+    });
 </script>
 </body>
 
 </html>
+
+```
+</script>
 
 ```
 </script>
