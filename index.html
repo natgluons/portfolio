@@ -3752,6 +3752,32 @@
                 width: 100% !important;
             }
         }
+
+        /* Add this CSS to your stylesheet or in a <style> tag */
+        .more-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .more-btn svg {
+            width: 1.5em;
+            height: 1.5em;
+            margin-right: 0.5em;
+            fill: currentColor;
+        }
+
+        /* Ensure the button is clickable */
+        #buttons05-more li {
+            position: relative;
+            z-index: 10;
+        }
     </style>
 </head>
 
@@ -3990,7 +4016,7 @@
                                     • Optional UI/UX Design via Figma – Custom web & mobile interfaces, SaaS dashboards, and branding-focused landing pages. Also available for personal portfolios like this one!
                                     <br>
                                     <br>
-                                    Why Work with Me?
+                                    <span style="font-weight: bold;">Why Work with Me?</span>
                                     <br>
                                     ✔️ End-to-End Execution – AI models + automated pipelines + front-end delivery.
                                     <br>
@@ -3999,7 +4025,7 @@
                                     ✔️ Automation & Scalability – Optimized for efficiency & real-world use.
                                     <br>
                                     <br>
-                                    📩 Let’s collaborate!
+                                    <span style="font-weight: bold;">Let's collaborate!</span>
                                     <br>
                                     📧 Email: <a href="mailto:kristynatasha011@gmail.com">kristynatasha011@gmail.com</a>
                                     <br>
@@ -4068,9 +4094,9 @@
                                         • Enhanced decision-making strategies through AI-driven predictive analytics. <br>
                                         </span>
                                 </p>
-                                    <ul id="buttons04" class="style1 buttons" style="opacity: 1; transform: none;">
+                                    <ul id="buttons05-more" class="style1 buttons" style="opacity: 1; transform: none;">
                                         <li><a href="https://drive.google.com/file/d/1MvMYpH865OfiwLfzt2uhZTW0iV33_Spz/view"
-                                                class="button n01"><svg aria-labelledby="icon-title">
+                                                class="button n01" style="background-color: #E6E6E6; color: #404547;"><svg aria-labelledby="icon-title">
                                                     <title id="icon-title">Arrow Right (Light)</title>
                                                     <use xlink:href="#icon-67ad41ecc66a1b1cd00d0d3b20c00017"></use>
                                                 </svg><span class="label">Find out more</span></a></li>
@@ -4130,7 +4156,7 @@
                                     style="opacity: 0; transform-origin: 50% 50%; transform: perspective(1000px) rotateY(27.375deg);">
                                     <span class="frame"><img src="assets/images/image04.jpg?v=59470ebd" alt=""></span>
                                 </div>
-                                <p id="text01" class="style5" style="opacity: 1; transform: none;">One of my favorite side projects is a YouTube video recommendation insights tool, where I used the YouTube Data API and NLP to analyze watch history and uncover recommendation patterns.<br>  
+                                <p id="text01" class="style5" style="opacity: 1; transform: none; text-align: left;">One of my favorite side projects is a YouTube video recommendation insights tool, where I used the YouTube Data API and NLP to analyze watch history and uncover recommendation patterns.<br>  
                                     <br>  
                                     <span style="font-weight: bold; font-style: italic;">Key Features</span>  
                                     <br>  
@@ -4143,7 +4169,7 @@
                                     style="opacity: 0; transform-origin: 50% 50%; transform: perspective(1000px) rotateY(27.375deg);">
                                     <span class="frame"><img src="assets/images/image02.jpg?v=59470ebd" alt=""></span>
                                 </div>
-                                <p id="text11" class="style5" style="opacity: 1; transform: none;">Another side project is a Customer Goods Data Modeling project that tackles industrial challenges through predictive modeling for daily sales quantity and customer segmentation.<br>  
+                                <p id="text11" class="style5" style="opacity: 1; transform: none; text-align: left;">Another side project is a Customer Goods Data Modeling project that tackles industrial challenges through predictive modeling for daily sales quantity and customer segmentation.<br>  
                                     <br>  
                                     <span style="font-weight: bold; font-style: italic;">Key Features</span>  
                                     <br>  
@@ -4554,6 +4580,21 @@
         });
     });
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Ensure the "Find out more" button works
+    const moreBtn = document.querySelector('#buttons05-more .button.n01');
+    if (moreBtn) {
+        moreBtn.addEventListener('click', function() {
+            // Just open the link directly
+            window.open('https://drive.google.com/file/d/1MvMYpH865OfiwLfzt2uhZTW0iV33_Spz/view', '_blank');
+        });
+    }
+});
+</script>
 </body>
 
 </html>
+
+```
+</script>
