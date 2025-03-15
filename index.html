@@ -3778,6 +3778,49 @@
             position: relative;
             z-index: 10;
         }
+
+        /* Add this CSS to your stylesheet or in a <style> tag */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border: 2px solid white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 10px;
+        }
+
+        .zoomable {
+            cursor: zoom-in;
+            transition: transform 0.3s;
+        }
+
+        .zoomable:hover {
+            transform: scale(1.05);
+        }
     </style>
 </head>
 
@@ -4643,6 +4686,55 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
+</script>
+
+<!-- Add this HTML at the end of your body -->
+<div id="lightbox" class="lightbox">
+    <button class="lightbox-close">&times;</button>
+    <img id="lightbox-img" src="" alt="Zoomed image">
+</div>
+
+<!-- Add this JavaScript at the end of your body -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Find all images you want to make zoomable
+    const images = document.querySelectorAll('.image img, .gallery img'); // Adjust selector as needed
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.lightbox-close');
+    
+    // Add zoomable class and click event to each image
+    images.forEach(img => {
+        img.classList.add('zoomable');
+        img.addEventListener('click', function() {
+            lightboxImg.src = this.src;
+            lightbox.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        });
+    });
+    
+    // Close lightbox when clicking the close button
+    closeBtn.addEventListener('click', function() {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = ''; // Restore scrolling
+    });
+    
+    // Close lightbox when clicking outside the image
+    lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+    });
+    
+    // Close lightbox with Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && lightbox.style.display === 'flex') {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+    });
+});
 </script>
 </body>
 
