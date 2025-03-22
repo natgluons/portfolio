@@ -61,3 +61,62 @@ git reset --hard origin/main
 git clean -fd
 ```
 This will discard all local changes, untracked files, and reset your local repository to exactly match the remote version.
+
+### Working with Branches
+
+#### Creating and Using a Feature Branch
+When working on new features or fixes, it's best to use a separate branch:
+
+1. Create a new branch for your feature/changes:
+```bash
+# Create and switch to a new branch
+git checkout -b feature-name
+```
+
+2. Make your changes, commit them to the branch:
+```bash
+git add .
+git commit -m "Description of your changes"
+```
+
+3. Push the branch to GitHub:
+```bash
+git push origin feature-name
+```
+
+#### Merging Back to Main
+When your changes are ready to be merged to the main branch:
+
+1. Switch back to the main branch:
+```bash
+git checkout main
+```
+
+2. Pull the latest changes from remote main:
+```bash
+git pull origin main
+```
+
+3. Merge your feature branch:
+```bash
+git merge feature-name
+```
+
+4. Resolve any conflicts if they occur
+   
+5. Push the updated main to GitHub:
+```bash
+git push origin main
+```
+
+6. Optional: Delete the feature branch when no longer needed:
+```bash
+# Delete local branch
+git branch -d feature-name
+
+# Delete remote branch
+git push origin --delete feature-name
+```
+```
+
+These instructions cover the full workflow from creating a branch to merging back to main and cleaning up afterward. This approach helps keep the main branch stable while you work on new features or changes.
