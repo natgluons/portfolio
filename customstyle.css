@@ -3820,3 +3820,132 @@ th {
 .zoomable:hover {
     transform: scale(1.05);
 }
+
+/* Timeline Container */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* The vertical line */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background: #8899cc;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+/* Timeline items */
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+/* Left items */
+.timeline-item.left {
+    left: 0;
+}
+
+/* Right items */
+.timeline-item.right {
+    left: 50%;
+}
+
+/* The actual content */
+.timeline-content {
+    padding: 20px;
+    background: #2c2c38;
+    border-radius: 6px;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Arrows for timeline items */
+.timeline-item.left .timeline-content::after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 20px;
+    border: 10px solid transparent;
+    border-left-color: #2c2c38;
+}
+
+.timeline-item.right .timeline-content::after {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 20px;
+    border: 10px solid transparent;
+    border-right-color: #2c2c38;
+}
+
+/* Circles on the timeline */
+.timeline-item::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    background: #8899cc;
+    border: 4px solid #343442;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    z-index: 1;
+}
+
+.timeline-item.left::before {
+    right: -12px;
+}
+
+.timeline-item.right::before {
+    left: -12px;
+}
+
+/* Maintain your existing expand button styles but adjust for timeline */
+.timeline .expand-btn {
+    width: 100%;
+    background-color: #343442;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .timeline::after {
+        left: 31px;
+    }
+    
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+    
+    .timeline-item.right {
+        left: 0;
+    }
+    
+    .timeline-item.left::before,
+    .timeline-item.right::before {
+        left: 18px;
+    }
+    
+    .timeline-item.left .timeline-content::after,
+    .timeline-item.right .timeline-content::after {
+        left: -10px;
+        border-right-color: #2c2c38;
+        border-left-color: transparent;
+    }
+}

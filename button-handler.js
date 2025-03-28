@@ -26,9 +26,18 @@ document.addEventListener("DOMContentLoaded", function() {
     // Initialize expand buttons
     const buttons = document.querySelectorAll('.expand-btn');
     buttons.forEach(button => {
-        button.addEventListener('click', function() {
-            const content = this.nextElementSibling;
-            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        const content = button.nextElementSibling;
+        content.style.display = 'none'; // Ensure content starts collapsed
+        const detailText = document.createElement('div');
+        detailText.textContent = '▶ Show Details';
+        detailText.style.cursor = 'pointer'; // Make detail text clickable
+        detailText.style.color = 'grey'; // Set text color to soft grey
+        detailText.style.font = 'inherit'; // Inherit font style
+        content.parentNode.insertBefore(detailText, content); // Insert detail text before content
+        detailText.addEventListener('click', function() {
+            const isExpanded = content.style.display === 'block';
+            content.style.display = isExpanded ? 'none' : 'block';
+            detailText.textContent = isExpanded ? '▶ Show Details' : '▼ Hide Details';
         });
     });
 
