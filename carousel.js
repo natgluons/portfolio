@@ -7,20 +7,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const dotsContainer = document.querySelector('.carousel-dots');
     let currentIndex = 0;
     let autoScrollInterval;
+    let dots = [];
 
     // Initialize dots
-    carouselItems.forEach((_, index) => {
-        const dot = document.createElement('span');
-        dot.className = 'dot';
-        dot.dataset.index = index;
-        dotsContainer.appendChild(dot);
-    });
-    const dots = document.querySelectorAll('.dot');
-    dots[0].classList.add('active');
+    function generateDots() {
+        if (!dotsContainer) {
+            console.error('Dots container not found in the HTML.');
+            return;
+        }
+        dotsContainer.innerHTML = ''; // Clear existing dots
+        carouselItems.forEach((_, index) => {
+            const dot = document.createElement('span');
+            dot.className = 'dot';
+            dot.dataset.index = index;
+            dotsContainer.appendChild(dot);
+        });
+        dots = document.querySelectorAll('.dot');
+        highlightCurrentDot();
+    }
+
+    generateDots();
 
     // Update carousel position and dots
     function updateCarousel() {
         carouselContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+        highlightCurrentDot();
+    }
+
+    // Highlight the current dot
+    function highlightCurrentDot() {
         dots.forEach(dot => dot.classList.remove('active'));
         dots[currentIndex].classList.add('active');
     }
@@ -47,23 +62,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Event listeners
-    nextButton.addEventListener('click', () => {
-        resetAutoScroll();
-        nextSlide();
-    });
-
-    prevButton.addEventListener('click', () => {
-        resetAutoScroll();
-        prevSlide();
-    });
-
-    dots.forEach(dot => {
-        dot.addEventListener('click', () => {
+    if (nextButton) {
+        nextButton.addEventListener('click', () => {
             resetAutoScroll();
-            currentIndex = parseInt(dot.dataset.index);
-            updateCarousel();
+            nextSlide();
         });
-    });
+    }
+
+    if (prevButton) {
+        prevButton.addEventListener('click', () => {
+            resetAutoScroll();
+            prevSlide();
+        });
+    }
+
+    if (dotsContainer) {
+        dotsContainer.addEventListener('click', (event) => {
+            if (event.target.classList.contains('dot')) {
+                resetAutoScroll();
+                currentIndex = parseInt(event.target.dataset.index);
+                updateCarousel();
+            }
+        });
+    }
 
     // Initialize auto-scroll
     startAutoScroll();
