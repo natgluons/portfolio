@@ -3826,7 +3826,7 @@ th {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    /* padding: 20px; */
 }
 
 /* The vertical line */
@@ -3929,7 +3929,7 @@ th {
     
     .timeline-item {
         width: 100%;
-        padding-left: 70px;
+        /* padding-left: 70px; */
         padding-right: 25px;
     }
     
