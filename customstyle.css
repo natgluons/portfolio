@@ -5,9 +5,9 @@
   /* card color */
   --color-card-pink-neon: #ff71b6; 
   --color-card-orange-neon: #fbae55;
-  --color-card-blue-neon: #6caccf ;
+  --color-card-blue-neon: #7bb9db ;
   --color-card-yellow-neon: #ebde3f;
-  --color-card-green-neon: #45c77b;
+  --color-card-green-neon: #4ed687;
 
   /* black and white */
   --color-offwhite: #ffffff; 
@@ -1028,9 +1028,13 @@ p.style13>* {
     text-align: justify;
     color: var(--color-black-text);
     font-family: 'Inter', sans-serif;
-    font-size: 1.125em;
+    font-size: 1.2em;
     line-height: 1.25;
     font-weight: 300;
+}
+
+#text24 strong {
+    font-weight: bold !important;
 }
 
 #text24 mark {
@@ -2219,7 +2223,7 @@ p.style14 span.p:nth-child(n + 2) {
 }
 
 .buttons.style3:not(:first-child) {
-    margin-top: 2rem !important;
+    margin-top: 2\rem !important;
 }
 
 .buttons.style3:not(:last-child) {
@@ -2331,11 +2335,11 @@ p.style14 span.p:nth-child(n + 2) {
 }
 
 .buttons.style5:not(:first-child) {
-    margin-top: 3.625rem !important;
+    margin-top: 2rem !important;
 }
 
 .buttons.style5:not(:last-child) {
-    margin-bottom: 3.625rem !important;
+    margin-bottom: 2rem !important;
 }
 
 .buttons.style5 li a {
@@ -2534,7 +2538,11 @@ th {
 }
 
 .list p strong:first-of-type {
-    font-size: 1.1em;
+    font-size: 1.2em;
+}
+
+#list03 ul li p strong {
+    font-size: 1em; 
 }
 
 .list ul,
@@ -2688,7 +2696,7 @@ th {
 .icc-credits span::after {
     background-image: linear-gradient(30deg, #A464A1 15%, var(--color-magenta) 85%);
     border-radius: inherit;
-    box-shadow: 0 0.25em 1.25em 0 rgba(0, 0, 0, 0.25);
+    /* box-shadow: 0 0.25em 1.25em 0 rgba(0, 0, 0, 0.25); */
     content: '';
     display: block;
     height: calc(100% + 2px);
@@ -3870,6 +3878,15 @@ th {
     z-index: 10;
 }
 
+#buttons03 a {
+  background-color: var(--color-card-yellow-neon);
+  border-radius: 50px; 
+}
+
+#buttons03 {
+  background-color: transparent;
+}
+
 .lightbox {
     display: none;
     position: fixed;
@@ -3925,39 +3942,53 @@ th {
 }
 
 .services-intro {
-    margin-bottom: 30px;
+    margin: 0px;
 }
 
 .services-intro p {
     font-family: 'Inter', sans-serif;
-    font-size: 1.2em;
+    font-size: 1.3em;
     color: var(--color-black-text);
-    line-height: 1.6;
+    line-height: 1.2;
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
-    padding: 15px;
+    padding: 0px;
 }
 
-.services-divider {
-    width: 50%;
-    margin: 30px auto;
-    border: none;
-    height: 1px;
-    background: linear-gradient(to right, transparent, var(--color-blacker-black), transparent);
+/* Media query for small screens*/
+@media screen and (max-width: 600px) {
+.services-intro p {
+    font-size: 1em; 
+  }
+}
+
+.dot-divider {
+  width: 100%;
+  margin: 40px auto;
+  text-align: center;
+  /* The magic here: use a repeated background image */
+  background-image: radial-gradient(circle, var(--color-card-pink-neon) 3px, transparent 1px);
+  background-size: 10px 20px; /* Space out the dots */
+  height: 20px; /* Adjust height to center the dots */
 }
 
 .services-container {
     font-family: 'Inter', sans-serif;
     color: var(--color-black-text);
+    background-color: var(--color-card-orange-neon);
     border-radius: 15px;
     padding: 35px;
     margin-bottom: 40px;
     margin-left: 0px;
     margin-right: auto;
-    box-shadow: 0 3px 10px;
+    /* box-shadow: 0 3px 10px; */
     width: 100%;
     position: relative;
+}
+
+#services-container-difcolor {
+    background-color: var(--color-card-pink-neon);
 }
 
 .services-container .services-wrapper {
@@ -4015,7 +4046,7 @@ th {
     color: var(--color-black-text);
     line-height: 1.6;
     margin: 0;
-    padding-left: 20px;
+    padding-left: 0px;
 }
 /* service card section ends here */
 
