@@ -447,6 +447,11 @@ body.is-instant:after {
     font-size: 1.15em
 }
 
+#icons05 {
+    font-size: clamp(1.5em, 5vw, 3em); 
+    gap: 1.625rem;
+}
+
 .image {
     display: block;
     line-height: 0;
@@ -1160,8 +1165,12 @@ p.style14 span.p:nth-child(n + 2) {
     display: flex;
     justify-content: center;
     border-radius: 100%; /* Ensures the button is a perfect circle */
-    height: 60px; /* Fixed height in pixels */
-    width: 60px; /* Fixed width in pixels, equal to the height */
+    height: 4em; /* Flexible height using em units */
+    width: 4em;  /* Flexible width using em units, equal to the height */
+    min-height: 30px; /* Minimum size for accessibility */
+    min-width: 30px;
+    max-height: 100px; /* Maximum size to prevent excessive scaling */
+    max-width: 100px;
 }
 
 .icons li a svg {
@@ -1194,16 +1203,34 @@ p.style14 span.p:nth-child(n + 2) {
     transform: scale(1.1475);
 }
 
-/* Specific color variations for each icon set.*/
-#icons01 a { background-color: var(--color-card-orange-neon); }
-#icons01 a svg { fill: var(--color-blacker-black); }
-#icons02 a { background-color: var(--color-card-pink-neon); }
-#icons02 a svg { fill: var(--color-blacker-black); }
-#icons03 a { background-color: var(--color-card-blue-neon); }
-#icons03 a svg { fill: var(--color-blacker-black); }
-#icons04 a { background-color: var(--color-card-green-neon); }
-#icons04 a svg { fill: var(--color-blacker-black); }
+/* Specific color variations for each icon */
+.icon-github a {
+  background-color: var(--color-card-orange-neon);
+}
+.icon-github a svg {
+  fill: var(--color-blacker-black);
+}
 
+.icon-huggingface a {
+  background-color: var(--color-card-pink-neon);
+}
+.icon-huggingface a svg {
+  fill: var(--color-blacker-black);
+}
+
+.icon-linkedin a {
+  background-color: var(--color-card-blue-neon);
+}
+.icon-linkedin a svg {
+  fill: var(--color-blacker-black);
+}
+
+.icon-whatsapp a {
+  background-color: var(--color-card-green-neon);
+}
+.icon-whatsapp a svg {
+  fill: var(--color-blacker-black);
+}
 /* icon section finishes here */
 
 .container {
@@ -1551,11 +1578,10 @@ p.style14 span.p:nth-child(n + 2) {
 #container03>.wrapper {
     display: block;
     margin: 0 auto 0 0;
-    width: 60rem;
+    width: 100rem;
     background-color: var(--color-card-blue-neon);
     border-radius: 3rem;
 }
-
 #container03>.wrapper>.inner {
     --gutters: 3rem;
     --padding-horizontal: 3rem;
@@ -3502,6 +3528,7 @@ th {
     }
 
     #icons05 {
+        font-size: 2em;
         gap: 1.21875rem;
     }
 
@@ -3516,52 +3543,20 @@ th {
     #icons02 {
         gap: 0.375rem;
     }
-
-    #container01>.wrapper>.inner {
-        --gutters: 2.25rem;
-        --padding-horizontal: 1.5rem;
-        --padding-vertical: 1.5rem;
+    
+    #container01 > .wrapper > .inner,
+    #container02 > .wrapper > .inner,
+    #container03 > .wrapper > .inner,
+    #container04 > .wrapper > .inner {
+        padding: 2rem; /* Restore the padding for the inner content */
     }
 
-    #container01.columns>.wrapper>.inner>.full {
-        min-height: 25.5rem;
-    }
-
-    #container02>.wrapper>.inner {
-        --gutters: 2.25rem;
-        --padding-horizontal: 1.5rem;
-        --padding-vertical: 1.5rem;
-    }
-
-    #container02.columns>.wrapper>.inner>.full {
-        min-height: 25.5rem;
-    }
-
-    #container04>.wrapper>.inner {
-        --gutters: 2.25rem;
-        --padding-horizontal: 1.5rem;
-        --padding-vertical: 1.5rem;
-    }
-
-    #container04.columns>.wrapper>.inner>.full {
-        min-height: 25.5rem;
-    }
-
-    .container.style1>.wrapper>.inner {
-        --gutters: 2.25rem;
-        --padding-horizontal: 1.5rem;
-        --padding-vertical: 1.5rem;
-    }
-
-    .container.style1.columns>.wrapper>.inner>.full {
-        min-height: 25.5rem;
-    }
-
-    .container.style3>.wrapper>.inner {
-        --gutters: calc(var(--padding-vertical) * 2);
-        --padding-horizontal: 0rem;
-        --padding-vertical: 0rem;
-        --spacing: 1.78125rem;
+    #container01 > .wrapper,
+    #container02 > .wrapper,
+    #container03 > .wrapper,
+    #container04 > .wrapper {
+        width: 100%;
+        margin: 0;
     }
 
     .buttons.style3 {
@@ -3608,8 +3603,8 @@ th {
 }
 
 #workexperience a button {
-    color: var(--color-link) !important; /* Forces the text to be blue */
-    border-color: var(--color-link) !important; /* Forces the border to be blue */
+    color: var(--color-link) !important;
+    border-color: var(--color-link) !important; 
 }
 
 .expand-btn {
