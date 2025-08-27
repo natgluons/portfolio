@@ -30,6 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
         content.style.display = 'none'; // Ensure content starts collapsed
         const detailText = document.createElement('div');
         detailText.textContent = '▶ Show Details';
+        detailText.style.fontFamily = 'inherit';
         detailText.style.cursor = 'pointer'; // Make detail text clickable
         detailText.style.color = 'grey'; // Set text color to soft grey
         detailText.style.font = 'inherit'; // Inherit font style
