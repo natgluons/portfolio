@@ -23,38 +23,51 @@
   --thumb-color-dark: #81d4fa; /* Light blue for dark mode thumb */
 }
 
+/* theme toggle switch css starts */
+
+.top-right-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
 /* Base styles for the toggle wrapper and labels */
 .theme-switch-wrapper {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 0.5em;
 }
 
 .theme-label {
     font-size: 1em;
     font-weight: bold;
-    color: var(--text-color); /* Assuming you have a text color variable */
+    color: var(--color-black-text);
+     font-family: 'Inter', sans-serif;
 }
 
-/* Styles for the toggle switch itself */
+/* Flexible toggle switch */
 .theme-toggle-switch {
-    width: 60px;
-    height: 30px;
+    --switch-width: clamp(1.5em, 8vw, 3em);
+    --switch-height: clamp(0.6em, 4vw, 1.5em);
+    --thumb-size: clamp(1em, 6vw, 1.5em);
+    width: var(--switch-width);
+    height: var(--switch-height);
     background-color: var(--track-color-light);
-    border-radius: 30px;
+    border-radius: var(--switch-height);
     position: relative;
     cursor: pointer;
     transition: background-color 0.4s ease;
 }
 
 .theme-thumb {
-    width: 26px;
-    height: 26px;
+    width: var(--thumb-size);
+    height: var(--thumb-size);
     background-color: var(--thumb-color-light);
     border-radius: 50%;
     position: absolute;
-    top: 2px;
-    left: 2px;
+    top: calc((var(--switch-height) - var(--thumb-size)) / 2);
+    left: calc((var(--switch-height) - var(--thumb-size)) / 2);
     transition: transform 0.4s ease;
 }
 
@@ -65,9 +78,20 @@ html[data-theme='dark'] .theme-toggle-switch {
 
 html[data-theme='dark'] .theme-thumb {
     background-color: var(--thumb-color-dark);
-    transform: translateX(30px); /* Move the thumb to the right */
+    transform: translateX(calc(var(--switch-width) - var(--switch-height)));
 }
-  
+
+/* Responsive adjustments for very small screens */
+@media (max-width: 480px) {
+    .theme-label {
+        font-size: 0.85em;
+    }
+    .theme-switch-wrapper {
+        gap: 0.25em;
+    }
+}
+/* theme toggle switch css ends */
+
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
  {
     margin: 0;
