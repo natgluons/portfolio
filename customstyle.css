@@ -16,6 +16,56 @@
   
   /* link color */
   --color-link: #3842ad; 
+
+  --track-color-light: #fbe4a9; /* Yellowish for light mode track */
+  --thumb-color-light: #fddb60; /* Sun-like yellow for light mode thumb */
+  --track-color-dark: #203f56; /* Dark blue for dark mode track */
+  --thumb-color-dark: #81d4fa; /* Light blue for dark mode thumb */
+}
+
+/* Base styles for the toggle wrapper and labels */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.theme-label {
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--text-color); /* Assuming you have a text color variable */
+}
+
+/* Styles for the toggle switch itself */
+.theme-toggle-switch {
+    width: 60px;
+    height: 30px;
+    background-color: var(--track-color-light);
+    border-radius: 30px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.4s ease;
+}
+
+.theme-thumb {
+    width: 26px;
+    height: 26px;
+    background-color: var(--thumb-color-light);
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.4s ease;
+}
+
+/* Styles for dark theme */
+html[data-theme='dark'] .theme-toggle-switch {
+    background-color: var(--track-color-dark);
+}
+
+html[data-theme='dark'] .theme-thumb {
+    background-color: var(--thumb-color-dark);
+    transform: translateX(30px); /* Move the thumb to the right */
 }
   
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
@@ -1089,93 +1139,70 @@ p.style14 span.p:nth-child(n + 2) {
 }
 
 /* icon section starts here */
-.icons-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem; /* Adjust the gap between icon lists */
-        }
+.icons {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Ensures vertical alignment */
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
 
-        .icons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            letter-spacing: 0;
-            padding: 0;
-            list-style: none;
-            margin: 0; /* Remove default margins */
-        }
+.icons li {
+    position: relative;
+    z-index: 1;
+}
 
-        .icons li {
-            position: relative;
-            z-index: 1;
-        }
+.icons li a {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    border-radius: 100%; /* Ensures the button is a perfect circle */
+    height: 60px; /* Fixed height in pixels */
+    width: 60px; /* Fixed width in pixels, equal to the height */
+}
 
-        .icons li a {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
+.icons li a svg {
+    display: block;
+    position: relative;
+    height: 65%;
+    width: 65%;
+}
 
-        .icons li a svg {
-            display: block;
-            position: relative;
-        }
+.icons li a + svg {
+    display: block;
+    height: 100%;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
 
-        .icons li a + svg {
-            display: block;
-            height: 100%;
-            left: 0;
-            pointer-events: none;
-            position: absolute;
-            top: 0;
-            width: 100%;
-            z-index: -1;
-        }
+.icons li a .label {
+    display: none;
+}
 
-        .icons li a .label {
-            display: none;
-        }
+.icons li a:hover {
+    transform: scale(1.1475);
+}
 
-        /*
-         * General styles for all icons.
-         */
-        .icons {
-            font-size: 2em;
-            gap: 0rem;
-        }
+.icons li a:hover + svg {
+    transform: scale(1.1475);
+}
 
-        .icons li a {
-            border-radius: 100%;
-            height: 2em;
-            width: 2em;
-            transition: transform 0.375s ease, color 0.375s ease, background-color 0.375s ease, border-color 0.375s ease;
-        }
-
-        .icons li a svg {
-            height: 65%;
-            width: 65%;
-            transition: fill 0.375s ease;
-        }
-
-        .icons li a:hover {
-            transform: scale(1.1475);
-        }
-
-        .icons li a:hover + svg {
-            transform: scale(1.1475);
-        }
-
-        /* Specific color variations for each icon set.*/
-        #icons01 a { background-color: var(--color-card-orange-neon); }
-        #icons01 a svg { fill: var(--color-blacker-black); }
-        #icons02 a { background-color: var(--color-card-pink-neon); }
-        #icons02 a svg { fill: var(--color-blacker-black); }
-        #icons03 a { background-color: var(--color-card-blue-neon); }
-        #icons03 a svg { fill: var(--color-blacker-black); }
-        #icons04 a { background-color: var(--color-card-green-neon); }
-        #icons04 a svg { fill: var(--color-blacker-black); }
+/* Specific color variations for each icon set.*/
+#icons01 a { background-color: var(--color-card-orange-neon); }
+#icons01 a svg { fill: var(--color-blacker-black); }
+#icons02 a { background-color: var(--color-card-pink-neon); }
+#icons02 a svg { fill: var(--color-blacker-black); }
+#icons03 a { background-color: var(--color-card-blue-neon); }
+#icons03 a svg { fill: var(--color-blacker-black); }
+#icons04 a { background-color: var(--color-card-green-neon); }
+#icons04 a svg { fill: var(--color-blacker-black); }
 
 /* icon section finishes here */
 

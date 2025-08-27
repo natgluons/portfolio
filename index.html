@@ -18,6 +18,14 @@
     <link rel="stylesheet" href="customstyle.css">
 </head>
 
+<div class="theme-switch-wrapper" style="position: absolute; top: 10px; right: 30px; z-index: 1000; display: flex; align-items: center; background: rgba(255,255,255,0.7); padding: 16px 36px; border-radius: 28px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); font-family: 'Inter', sans-serif; font-size: 1.35em;">
+    <div class="theme-label left-label" style="margin-right: 16px;">Light</div>
+    <div id="theme-toggle" class="theme-toggle-switch">
+        <span id="theme-thumb" class="theme-thumb"></span>
+    </div>
+    <div class="theme-label right-label" style="margin-left: 16px;">Dark</div>
+</div>
+
 <body class="vsc-initialized is-ready"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
         xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 40" display="none" width="0" height="0">
         <symbol id="icon-c0646d28bbeb18e39eb973f96b44bd0f" viewBox="0 0 40 40">
@@ -107,7 +115,7 @@
                                 <title id="icon-title">Email</title>
                                 <use xlink:href="#icon-c0646d28bbeb18e39eb973f96b44bd0f"></use>
                             </svg>
-                            <span class="label" style="padding: 2px; margin-top: 4.5px;"><bold>Hire Me</bold></span>
+                            <span class="label" style="padding: 2px;"><bold>Hire Me</bold></span>
                         </a>
                         <a href="#services" class="services-btn n01" style="padding: 0.5em 1em; border-radius: 12px; font-family: 'Inter', sans-serif; text-decoration: none; display: flex; align-items: center;">
                             <span class="label" style="padding: 0;"><bold>What I Build</bold></span>
@@ -120,38 +128,25 @@
                                 <br><br>
 
                     <div class="icons-container">
-                        <!-- Icon set 1 -->
-                        <ul id="icons01" class="icons">
+                        <ul class="icons">
                             <li>
                                 <a class="n01" href="https://github.com/natgluons">
                                     <svg aria-labelledby="icon-title"><title id="icon-title">GitHub</title><use xlink:href="#icon-8c4b37645de3c276d895d87df51ba614"></use></svg>
                                     <span class="label">GitHub</span>
                                 </a>
                             </li>
-                        </ul>
-
-                        <!-- Icon set 2 -->
-                        <ul id="icons02" class="icons">
                             <li>
                                 <a class="n02" href="https://huggingface.co/natgluons">
                                     <svg aria-labelledby="icon-title"><title id="icon-title">HuggingFace</title><use xlink:href="#icon-huggingface"></use></svg>
                                     <span class="label">HuggingFace</span>
                                 </a>
                             </li>
-                        </ul>
-
-                        <!-- Icon set 3 -->
-                        <ul id="icons03" class="icons">
                             <li>
                                 <a class="n03" href="https://www.linkedin.com/in/kristynatasha/">
                                     <svg aria-labelledby="icon-title"><title id="icon-title">LinkedIn</title><use xlink:href="#icon-bf393d6ea48a4e69e1ed58a3563b94a5"></use></svg>
                                     <span class="label">LinkedIn</span>
                                 </a>
                             </li>
-                        </ul>
-
-                        <!-- Icon set 4 -->
-                        <ul id="icons04" class="icons">
                             <li>
                                 <a class="n04" href="https://wa.me/447380981449">
                                     <svg aria-labelledby="icon-title"><title id="icon-title">WhatsApp</title><use xlink:href="#icon-e9633646f45121eab610a3d30c929019"></use></svg>
@@ -776,6 +771,7 @@
     <script src="js/button-handler.js"></script>
     <script src="js/image-zoom.js"></script>
     <script src="js/carousel.js"></script>
+    <script src="js/theme-toggle.js"></script>
     </script>
 </body>
 </html>
