@@ -3,7 +3,7 @@
   --color-bg: #ffe6fc;
 
   /* card color */
-  --color-card-pink-neon: #ff5eac; 
+  --color-card-pink-neon: #ff71b6; 
   --color-card-orange-neon: #fbae55;
   --color-card-blue-neon: #6caccf ;
   --color-card-yellow-neon: #ebde3f;
@@ -490,7 +490,7 @@ body.is-instant:after {
 }
 
 .carousel-item, .carousel-item a, .carousel-item strong {
-    font-size: 1.15em
+    font-size: 1.1em
 }
 
 #icons05 {
@@ -2534,7 +2534,7 @@ th {
 }
 
 .list p strong:first-of-type {
-    font-size: 1.13em;
+    font-size: 1.1em;
 }
 
 .list ul,
@@ -3919,7 +3919,7 @@ th {
     font-family: 'Plus Jakarta Sans', sans-serif;
     letter-spacing: 0.025rem;
     width: calc(100% + 0.025rem);
-    font-size: 3.25em;
+    font-size: 2.5em;
     line-height: 1.375;
     font-weight: 600;
 }
@@ -3977,6 +3977,7 @@ th {
 
 .services-subtitle {
     font-size: 1.5em;
+    line-height: 1em;
     margin: 0 0 30px 0;
     padding-left: 20px;
     font-family: 'Inter', sans-serif;
@@ -4027,7 +4028,7 @@ th {
     padding: 0.75rem 1.5rem; /* Flexible padding */
     border: 1px solid;
     border-radius: 0.3125rem; /* Flexible border-radius */
-    font-size: 1.1rem; /* Flexible font size */
+    font-size: 1rem; /* Flexible font size */
     cursor: pointer;
     background-color: transparent;
     text-decoration: underline;
