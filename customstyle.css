@@ -12,6 +12,7 @@
   /* black and white */
   --color-offwhite: #ffffff; 
   --color-black-text: #373335;
+  --color-black-text-title: #373335;
   --color-blacker-black: #171717;
   
   /* link color */
@@ -21,6 +22,27 @@
   --thumb-color-light: #fddb60; /* Sun-like yellow for light mode thumb */
   --track-color-dark: #203f56; /* Dark blue for dark mode track */
   --thumb-color-dark: #81d4fa; /* Light blue for dark mode thumb */
+}
+
+html[data-theme='dark'] {
+    /* Background color for dark mode */
+    --color-bg: #1e1f1f; 
+
+    /* Card colors for dark mode (e.g., a darker or different palette) */
+    --color-card-pink-neon: #343442; 
+    --color-card-orange-neon: #343442;
+    --color-card-blue-neon: #343442;
+    --color-card-yellow-neon: #343442;
+    --color-card-green-neon: #343442;
+
+    /* Text and UI colors for dark mode */
+    --color-offwhite: #8a9bca;
+    --color-black-text: #d2d2d2;
+    --color-black-text-title: #8a9bca;
+    --color-blacker-black: #f2f2f2;
+
+    /* Link color for dark mode */
+    --color-link: #bbc3ff; 
 }
 
 /* theme toggle switch css starts */
@@ -474,6 +496,10 @@ body.is-instant:after {
 #icons05 {
     font-size: clamp(1.5em, 5vw, 3em); 
     gap: 1.625rem;
+}
+
+#icons05 svg {
+    fill: var(--color-black-text);
 }
 
 .image {
@@ -1037,6 +1063,14 @@ p.style2 {
     font-weight: 500;
 }
 
+.style2 {
+    color: var(--color-black-text);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: 0.025rem;
+    width: calc(100% + 0.025rem);
+    font-size: 1.3em;
+}
+
 h1.style2 mark,
 h2.style2 mark,
 h3.style2 mark,
@@ -1188,12 +1222,12 @@ p.style14 span.p:nth-child(n + 2) {
     align-items: center;
     display: flex;
     justify-content: center;
-    border-radius: 100%; /* Ensures the button is a perfect circle */
-    height: 4em; /* Flexible height using em units */
-    width: 4em;  /* Flexible width using em units, equal to the height */
-    min-height: 30px; /* Minimum size for accessibility */
+    border-radius: 100%;
+    height: 4em; 
+    width: 4em; 
+    min-height: 30px;
     min-width: 30px;
-    max-height: 100px; /* Maximum size to prevent excessive scaling */
+    max-height: 100px;
     max-width: 100px;
 }
 
@@ -2598,6 +2632,14 @@ th {
     min-width: 0.64453125rem;
 }
 
+#list07 strong {
+    color: var(--color-black-text-title);
+}
+
+#text14 strong {
+    color: var(--color-black-text-title);
+}
+
 #footer {
     margin-top: 1.5rem !important;
 }
@@ -3767,6 +3809,10 @@ th {
     text-align: center;
 }
 
+.hire-btn svg{
+  fill: var(--color-black-text);
+}
+
 /* Specific styles for each button */
 .work-btn {
     background-color: transparent;
@@ -3864,6 +3910,133 @@ th {
 
 .zoomable:hover {
     transform: scale(1.05);
+}
+
+/* WHAT I BUILD Section */
+.services-heading.style16 {
+    text-align: center;
+    color: var(--color-black-text-title);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: 0.025rem;
+    width: calc(100% + 0.025rem);
+    font-size: 3.25em;
+    line-height: 1.375;
+    font-weight: 600;
+}
+
+.services-intro {
+    margin-bottom: 30px;
+}
+
+.services-intro p {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.2em;
+    color: var(--color-black-text);
+    line-height: 1.6;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+.services-divider {
+    width: 50%;
+    margin: 30px auto;
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--color-blacker-black), transparent);
+}
+
+.services-container {
+    font-family: 'Inter', sans-serif;
+    color: var(--color-black-text);
+    border-radius: 15px;
+    padding: 35px;
+    margin-bottom: 40px;
+    margin-left: 0px;
+    margin-right: auto;
+    box-shadow: 0 3px 10px;
+    width: 100%;
+    position: relative;
+}
+
+.services-container .services-wrapper {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    position: relative;
+}
+
+.services-container .services-inner {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    position: relative;
+    text-align: left;
+}
+
+.services-subtitle {
+    font-size: 1.5em;
+    margin: 0 0 30px 0;
+    padding-left: 20px;
+    font-family: 'Inter', sans-serif;
+    color: var(--color-black-text-title);
+}
+
+.service-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: space-between;
+}
+
+.services-card {
+    flex: 1 1 45%;
+    min-width: 250px;
+    background-color: transparent;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px;
+    border: 2px solid var(--color-blacker-black);
+}
+
+.services-card-title {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-family: 'Inter', sans-serif;
+    color: var(--color-black-text);
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.services-card-list {
+    font-family: 'Inter', sans-serif;
+    color: var(--color-black-text);
+    line-height: 1.6;
+    margin: 0;
+    padding-left: 20px;
+}
+/* service card section ends here */
+
+.cv-button-wrapper {
+    text-align: center;
+    margin-bottom: 2rem; /* Using rem for better scaling */
+}
+
+.cv-download-button {
+    padding: 0.75rem 1.5rem; /* Flexible padding */
+    border: 1px solid;
+    border-radius: 0.3125rem; /* Flexible border-radius */
+    font-size: 1.1rem; /* Flexible font size */
+    cursor: pointer;
+    background-color: transparent;
+    text-decoration: underline;
+    color: var(--color-black-text); /* Use a variable for color to support theming */
+}
+
+.cv-download-button:hover {
+    /* Optional: Add a hover effect for user feedback */
+    opacity: 0.8;
 }
 
 /* Timeline Container */
