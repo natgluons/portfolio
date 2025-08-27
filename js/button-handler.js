@@ -30,10 +30,9 @@ document.addEventListener("DOMContentLoaded", function() {
         content.style.display = 'none'; // Ensure content starts collapsed
         const detailText = document.createElement('div');
         detailText.textContent = '▶ Show Details';
-        detailText.style.fontFamily = 'inherit';
+        detailText.style.fontFamily = 'Inter, sans-serif'; // Set font family
         detailText.style.cursor = 'pointer'; // Make detail text clickable
         detailText.style.color = 'grey'; // Set text color to soft grey
-        detailText.style.font = 'inherit'; // Inherit font style
         content.parentNode.insertBefore(detailText, content); // Insert detail text before content
         detailText.addEventListener('click', function() {
             const isExpanded = content.style.display === 'block';

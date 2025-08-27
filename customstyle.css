@@ -2405,6 +2405,10 @@ th {
     padding-right: 0;
 }
 
+.expand-btn {
+    cursor: default !important;
+}
+
 .p strong {
     font-weight: bold !important;
 }
