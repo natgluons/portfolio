@@ -1,0 +1,9 @@
+#f7a84c /* orange */
+#ff50a4 /* pink */
+#5c9abb /* blue */
+#ebde3f /* yellow */
+
+#e26dbb /* soft pink */
+#fd7d8d /* salmon pink */
+#0f6481 /* dark blue */
+#cfb74c /* dark yellow */
