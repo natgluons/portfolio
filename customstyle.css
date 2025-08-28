@@ -4047,9 +4047,9 @@ th {
     line-height: 1.6;
 }
 
-@media (max-width: 725px) {
+@media (max-width: 1080px) {
     .services-card-list {
-        font-size: 0.8em;
+        font-size: 0.9em;
     }
 }
 /* service card section ends here */
