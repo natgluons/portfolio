@@ -4010,7 +4010,6 @@ th {
     font-size: 1.5em;
     line-height: 1em;
     margin: 0 0 30px 0;
-    padding-left: 20px;
     font-family: 'Inter', sans-serif;
     color: var(--color-black-text-title);
 }
@@ -4044,8 +4043,14 @@ th {
 .services-card-list {
     font-family: 'Inter', sans-serif;
     color: var(--color-black-text);
+    font-size: 1em;
     line-height: 1.6;
-    margin: 0;
+}
+
+@media (max-width: 725px) {
+    .services-card-list {
+        font-size: 0.8em;
+    }
 }
 /* service card section ends here */
 
