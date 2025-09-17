@@ -105,13 +105,13 @@
                 <section id="home-section" class="active" style="">
                     <div id="image01" class="style2 image"><span class="frame"><img
                                 src="assets/images/image01.jpg?v=59470ebd" alt=""></span></div>
-                    <h1 id="text16" class="style6">
-                        <em style="opacity: 1; transform: none; font-size: 0.8em;">Hi,</em><br>
-                        <strong style="opacity: 1; transform: none;">I'm <span style="font-weight: bold;">Natasha</span></strong><br>
-                        <em style="opacity: 1; transform: none; font-size: 0.8em;">an <strong>AI/ML Engineer</strong></em><br>
-                        <span style="font-size: 0.4em; opacity: 0.85;">London, UK | (+44) 7380981449</span>
+                            <h1 id="text16" class="style6">
+                        <em class="text-bounce text-bounce-delay-1" style="font-size: 0.8em;">Hi,</em><br>
+                        <strong class="text-bounce text-bounce-delay-2">I'm <span style="font-weight: bold;">Natasha</span></strong><br>
+                        <em class="text-bounce text-bounce-delay-3" style="font-size: 0.8em;">an <strong>AI/ML Engineer</strong></em><br>
+                        <span class="text-bounce text-bounce-delay-4" style="font-size: 0.4em; opacity: 0.85;">London, UK | (+44) 7380981449</span>
                     </h1>
-                    <div id="buttons04" class="style1 buttons mobile-center" style="opacity: 1; transform: none; display: flex; justify-content: flex-start; width: 60%;">
+                    <div id="buttons04" class="style1 buttons mobile-center text-bounce text-bounce-delay-5" style="display: flex; justify-content: flex-start; width: 60%;">
                         <a href="mailto:kristynatasha011@gmail.com" class="hire-btn n01"; style="padding: 0.5em 1em; margin-right: 5px; border-radius: 12px; font-family: 'Inter', sans-serif; text-decoration: none; display: flex; align-items: center;">
                             <svg aria-labelledby="icon-title" style="width: 1em; height: 1em; margin-right: 5px;">
                                 <title id="icon-title">Email</title>
@@ -123,11 +123,10 @@
                             <span class="label" style="padding: 0;"><bold>What I Build</bold></span>
                         </a>
                     </div>
-
                     <p id="text15" class="style5" style="opacity: 1; transform: none;"><span class="p">
                             <span class="p">I specialize in AI/ML engineering for applications such as fraud detection, chatbot, personalized recommendations, graph modeling, and geospatial intelligence. I also develop landing pages and user-facing tools that integrate seamlessly with AI systems.<br><br>
                             Outside of work, I enjoy hands-on projects involving IoT (Arduino, Raspberry Pi), 3D printing, and CAD design. In my free time, I unwind through wall climbing and archery.
-                                <br><br>
+                    <div
                     <div class="icons-container">
                         <ul class="icons">
                             <li class="icon-github">
@@ -157,8 +156,13 @@
                         </ul>
                     </div>
 
-                    <h1 id="text05" class="services-heading style16"><text-node style="opacity: 1; transform: none;">#</text-node>
-                        <text-node style="opacity: 1; transform: none;">ABOUT ME</text-node>
+                    <br>
+                    <div class="arrow-container">
+                        <div class="arrow"></div>
+                    </div>
+
+                    <h1 id="text05" class="services-heading style16"><text-node class="text-bounce text-bounce-delay-1">#</text-node>
+                        <text-node class="text-bounce text-bounce-delay-2">ABOUT ME</text-node>
                     </h1>
 
                     <div id="container01" class="container columns"
@@ -226,8 +230,8 @@
                     </div>
 
                     <h1 id="portfolio" class="services-heading style16">
-                        <text-node style="opacity: 1; transform: none;">#</text-node>
-                        <text-node style="opacity: 1; transform: none;">SHOWCASE</text-node>
+                        <text-node class="text-bounce text-bounce-delay-1">#</text-node>
+                        <text-node class="text-bounce text-bounce-delay-2">SHOWCASE</text-node>
                     </h1>
                     <div class="container services-intro" style="opacity: 1; transform: none; margin-bottom: 30px;">
                         <div class="services-wrapper wrapper">
@@ -238,126 +242,99 @@
                                             <div class="carousel-item" style="min-width: 100%; padding: 0 20px; display: flex; flex-direction: column; justify-content: center;">
                                                 <div style="text-align: center;">
                                                     <link rel="preload" as="image" href="assets/images/carousel01.jpg">
-                                                    <img src="assets/images/carousel01.jpg" style="width: 100%; height: auto; border-radius: 8px; display: block; margin: 0 auto; pointer-events: none;" alt=""><br>
+                                                    <img src="assets/images/carousel01.jpg" style="width: 100%; height: auto; border-radius: 8px; display: block; margin: 0 auto;" alt=""><br>
                                                     <div style="font-family: 'Inter', sans-serif;">
                                                         <br>
-                                                        <a href="https://github.com/natgluons/HiringHelp-Chatbot" style="text-decoration: none;">
-                                                            <span style="font-weight: bold;">HiringHelp Chatbot (RAG LangChain)</span>
-                                                            <br><br>
-                                                            <span style="text-decoration: underline;">(click here to view project)</span>
-                                                        </a>
+                                                        <h3 style="font-weight: bold; margin: 10px 0; color: var(--color-black-text);">HiringHelp Chatbot (RAG LangChain)</h3>
+                                                        <a href="https://github.com/natgluons/HiringHelp-Chatbot" target="_blank" class="project-btn" style="display: inline-block; padding: 12px 16px; background-color: var(--color-black-text-title); color: var(--color-card-pink-neon); text-decoration: none; border-radius: 6px; font-weight: 500; transition: background-color 0.3s ease; margin-top: 10px;">View Project</a>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="carousel-item" style="min-width: 100%; padding: 0 20px; display: flex; flex-direction: column; justify-content: center;">
                                                 <div style="text-align: center;">
                                                     <link rel="preload" as="image" href="assets/images/carousel02.jpg">
-                                                    <img src="assets/images/carousel02.jpg" style="width: 100%; height: auto; border-radius: 8px; display: block; margin: 0 auto; pointer-events: none;" alt=""><br>
+                                                    <img src="assets/images/carousel02.jpg" style="width: 100%; height: auto; border-radius: 8px; display: block; margin: 0 auto;" alt=""><br>
                                                     <div style="font-family: 'Inter', sans-serif;">
                                                         <br>
-                                                        <a href="https://github.com/natgluons/GNN-FraudDetectionSystem-Visualization" style="text-decoration: none;">
-                                                            <span style="font-weight: bold;">Fraud Analytics with Graph Neural Network (GNN) - Syndicate Merchant Detection</span>
-                                                            <br><br>
-                                                            <span style="text-decoration: underline;">(click here to view project)</span>
-                                                        </a>
+                                                        <h3 style="font-weight: bold; margin: 10px 0; color: var(--color-black-text);">Fraud Analytics with Graph Neural Network (GNN) - Syndicate Merchant Detection</h3>
+                                                        <a href="https://github.com/natgluons/GNN-FraudDetectionSystem-Visualization" target="_blank" class="project-btn" style="display: inline-block; padding: 12px 16px; background-color: var(--color-black-text-title); color: var(--color-card-pink-neon); text-decoration: none; border-radius: 6px; font-weight: 500; transition: background-color 0.3s ease; margin-top: 10px;">View Project</a>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="carousel-item" style="min-width: 100%; padding: 0 20px; display: flex; flex-direction: column; justify-content: center;">
                                                 <div style="text-align: center;">
                                                     <link rel="preload" as="image" href="assets/images/carousel03.jpg">
-                                                    <img src="assets/images/carousel03.jpg" style="width: 100%; height: auto; border-radius: 8px; display: block; margin: 0 auto; pointer-events: none;" alt=""><br>
+                                                    <img src="assets/images/carousel03.jpg" style="width: 100%; height: auto; border-radius: 8px; display: block; margin: 0 auto;" alt=""><br>
                                                     <div style="font-family: 'Inter', sans-serif;">
                                                         <br>
-                                                        <a href="https://github.com/natgluons/ComputerVision-Webcam" style="text-decoration: none;">
-                                                            <span style="font-weight: bold;">Face Recognition with Arduino (OpenCV)</span>
-                                                            <br><br>
-                                                            <span style="text-decoration: underline;">(click here to view project)</span>
-                                                        </a>
+                                                        <h3 style="font-weight: bold; margin: 10px 0; color: var(--color-black-text);">Face Recognition with Arduino (OpenCV)</h3>
+                                                        <a href="https://github.com/natgluons/ComputerVision-Webcam" target="_blank" class="project-btn" style="display: inline-block; padding: 12px 16px; background-color: var(--color-black-text-title); color: var(--color-card-pink-neon); text-decoration: none; border-radius: 6px; font-weight: 500; transition: background-color 0.3s ease; margin-top: 10px;">View Project</a>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="carousel-item" style="min-width: 100%; padding: 0 20px; display: flex; flex-direction: column; justify-content: center;">
                                                 <div style="text-align: center;">
                                                     <link rel="preload" as="image" href="assets/images/carousel04.jpg">
-                                                    <img src="assets/images/carousel04.jpg" style="width: 100%; height: auto; border-radius: 8px; display: block; margin: 0 auto 10px; pointer-events: none;" alt="Capybara Pet Game screenshot">
+                                                    <img src="assets/images/carousel04.jpg" style="width: 100%; height: auto; border-radius: 8px; display: block; margin: 0 auto 10px;" alt="Capybara Pet Game screenshot">
                                                     <div style="font-family: 'Inter', sans-serif;">
                                                         <br>
-                                                        <a href="https://github.com/natgluons/capybara-game" style="text-decoration: none;">
-                                                            <span style="font-weight: bold;">Capybara Pet Game (for funsies)</span>
-                                                            <br><br>
-                                                            <span style="text-decoration: underline;">(click here to view project)</span>
-                                                        </a>
+                                                        <h3 style="font-weight: bold; margin: 10px 0; color: var(--color-black-text);">Capybara Pet Game (for funsies)</h3>
+                                                        <a href="https://github.com/natgluons/capybara-game" target="_blank" class="project-btn" style="display: inline-block; padding: 12px 16px; background-color: var(--color-black-text-title); color: var(--color-card-pink-neon); text-decoration: none; border-radius: 6px; font-weight: 500; transition: background-color 0.3s ease; margin-top: 10px;">View Project</a>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="carousel-item" style="min-width: 100%; padding: 0 20px; display: flex; flex-direction: column; justify-content: center;">
                                                 <div style="text-align: center;">
                                                     <link rel="preload" as="image" href="assets/images/carousel05.jpg">
-                                                    <img src="assets/images/carousel05.jpg" style="width: 100%; height: auto; border-radius: 8px; display: block; margin: 0 auto; pointer-events: none;" alt=""><br>
+                                                    <img src="assets/images/carousel05.jpg" style="width: 100%; height: auto; border-radius: 8px; display: block; margin: 0 auto;" alt=""><br>
                                                     <div style="font-family: 'Inter', sans-serif;">
                                                         <br>
-                                                        <a href="https://github.com/natgluons/YouTube-Transcript-NLTK" style="text-decoration: none;">
-                                                            <span style="font-weight: bold;">NLP Youtube Recommendation System (GCP OAuth 2.0 API)</span>
-                                                            <br><br>
-                                                            <span style="text-decoration: underline;">(click here to view project)</span>
-                                                        </a>
+                                                        <h3 style="font-weight: bold; margin: 10px 0; color: var(--color-black-text);">NLP Youtube Recommendation System (GCP OAuth 2.0 API)</h3>
+                                                        <a href="https://github.com/natgluons/YouTube-Transcript-NLTK" target="_blank" class="project-btn" style="display: inline-block; padding: 12px 16px; background-color: var(--color-black-text-title); color: var(--color-card-pink-neon); text-decoration: none; border-radius: 6px; font-weight: 500; transition: background-color 0.3s ease; margin-top: 10px;">View Project</a>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="carousel-item" style="min-width: 100%; padding: 0 20px; display: flex; flex-direction: column; justify-content: center;">
                                                 <div style="text-align: center;">
                                                     <link rel="preload" as="image" href="assets/images/carousel06.jpg">
-                                                    <img src="assets/images/carousel06.jpg" style="width: 100%; height: auto; border-radius: 8px; display: block; margin: 0 auto; pointer-events: none;" alt=""><br>
+                                                    <img src="assets/images/carousel06.jpg" style="width: 100%; height: auto; border-radius: 8px; display: block; margin: 0 auto;" alt=""><br>
                                                     <div style="font-family: 'Inter', sans-serif;">
                                                         <br>
-                                                        <a href="https://github.com/natgluons/FMCG-Data-Modeling" style="text-decoration: none;">
-                                                            <span style="font-weight: bold;">Predictive Analytics (Machine Learning for Sales Forecasting)</span>
-                                                            <br><br>
-                                                            <span style="text-decoration: underline;">(click here to view project)</span>
-                                                        </a>
+                                                        <h3 style="font-weight: bold; margin: 10px 0; color: var(--color-black-text);">Predictive Analytics (Machine Learning for Sales Forecasting)</h3>
+                                                        <a href="https://github.com/natgluons/FMCG-Data-Modeling" target="_blank" class="project-btn" style="display: inline-block; padding: 12px 16px; background-color: var(--color-black-text-title); color: var(--color-card-pink-neon); text-decoration: none; border-radius: 6px; font-weight: 500; transition: background-color 0.3s ease; margin-top: 10px;">View Project</a>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="carousel-item" style="min-width: 100%; padding: 0 20px; display: flex; flex-direction: column; justify-content: center;">
                                                 <div style="text-align: center;">
                                                     <link rel="preload" as="image" href="assets/images/carousel07.jpg">
-                                                    <img src="assets/images/carousel07.jpg" style="width: 100%; height: auto; border-radius: 8px; display: block; margin: 0 auto; pointer-events: none;" alt=""><br>
+                                                    <img src="assets/images/carousel07.jpg" style="width: 100%; height: auto; border-radius: 8px; display: block; margin: 0 auto;" alt=""><br>
                                                     <div style="font-family: 'Inter', sans-serif;">
                                                         <br>
-                                                        <a href="https://github.com/natgluons/AI-PickupLine-Generator" style="text-decoration: none;">
-                                                            <span style="font-weight: bold;">AI Pickup Line Generator (smolLM)</span>
-                                                            <br><br>
-                                                            <span style="text-decoration: underline;">(click here to view project)</span>
-                                                        </a>
+                                                        <h3 style="font-weight: bold; margin: 10px 0; color: var(--color-black-text);">AI Pickup Line Generator (smolLM)</h3>
+                                                        <a href="https://github.com/natgluons/AI-PickupLine-Generator" target="_blank" class="project-btn" style="display: inline-block; padding: 12px 16px; background-color: var(--color-black-text-title); color: var(--color-card-pink-neon); text-decoration: none; border-radius: 6px; font-weight: 500; transition: background-color 0.3s ease; margin-top: 10px;">View Project</a>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="carousel-item" style="min-width: 100%; padding: 0 20px; display: flex; flex-direction: column; justify-content: center;">
                                                 <div style="text-align: center;">
                                                     <link rel="preload" as="image" href="assets/images/carousel08.jpg">
-                                                    <img src="assets/images/carousel08.jpg" style="width: 100%; height: auto; border-radius: 8px; display: block; margin: 0 auto 10px; pointer-events: none;" alt="Spaced Repetition Learning App screenshot">
+                                                    <img src="assets/images/carousel08.jpg" style="width: 100%; height: auto; border-radius: 8px; display: block; margin: 0 auto 10px;" alt="Spaced Repetition Learning App screenshot">
                                                     <div style="font-family: 'Inter', sans-serif;">
                                                         <br>
-                                                        <a href="https://github.com/natgluons/spaced-repetition-learning-app" style="text-decoration: none;">
-                                                            <span style="font-weight: bold;">Spaced Repetition Learning App (Python)</span>
-                                                            <br><br>
-                                                            <span style="text-decoration: underline;">(click here to view project)</span>
-                                                        </a>
+                                                        <h3 style="font-weight: bold; margin: 10px 0; color: var(--color-black-text);">Spaced Repetition Learning App (Python)</h3>
+                                                        <a href="https://github.com/natgluons/spaced-repetition-learning-app" target="_blank" class="project-btn" style="display: inline-block; padding: 12px 16px; background-color: var(--color-black-text-title); color: var(--color-card-pink-neon); text-decoration: none; border-radius: 6px; font-weight: 500; transition: background-color 0.3s ease; margin-top: 10px;">View Project</a>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="carousel-item" style="min-width: 100%; padding: 0 20px; display: flex; flex-direction: column; justify-content: center;">
                                                 <div style="text-align: center;">
                                                     <link rel="preload" as="image" href="assets/images/carousel09.jpg">
-                                                    <img src="assets/images/carousel09.jpg" style="width: 100%; height: auto; border-radius: 8px; display: block; margin: 0 auto; pointer-events: none;" alt=""><br>
+                                                    <img src="assets/images/carousel09.jpg" style="width: 100%; height: auto; border-radius: 8px; display: block; margin: 0 auto;" alt=""><br>
                                                     <div style="font-family: 'Inter', sans-serif;">
                                                         <br>
-                                                        <a href="https://github.com/natgluons/NGK-marketplace" style="text-decoration: none;">
-                                                            <span style="font-weight: bold;">Marketplace Web Page (Vue.js & Go)</span>
-                                                            <br><br>
-                                                            <span style="text-decoration: underline;">(click here to view project)</span>
-                                                        </a>
+                                                        <h3 style="font-weight: bold; margin: 10px 0; color: var(--color-black-text);">Marketplace Web Page (Vue.js & Go)</h3>
+                                                        <a href="https://github.com/natgluons/NGK-marketplace" target="_blank" class="project-btn" style="display: inline-block; padding: 12px 16px; background-color: var(--color-black-text-title); color: var(--color-card-pink-neon); text-decoration: none; border-radius: 6px; font-weight: 500; transition: background-color 0.3s ease; margin-top: 10px;">View Project</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -390,8 +367,8 @@
                     <hr class="services-divider" style="width: 50%; margin: 30px auto; border: none; height: 1px; background: linear-gradient(to right, transparent, var(--accent-primary), transparent);">
 
                     <h1 id="services" class="services-heading style16">
-                        <text-node>#</text-node>
-                        <text-node>WHAT I BUILD</text-node>
+                        <text-node class="text-bounce text-bounce-delay-1">#</text-node>
+                        <text-node class="text-bounce text-bounce-delay-2">WHAT I BUILD</text-node>
                     </h1>
 
                     <div class="container services-intro service-intro">
@@ -493,7 +470,7 @@
                                         <ul class="services-card-list">
                                             <li>• For companies & personal CV/portfolios, deployed to GitHub Pages/Cloudflare</li>
                                             <li>• Complex layouts with animations & multi-page sections  + custom domains</li>
-                                            <li>• More details available at: <a href="https://github.com/natgluons/web-portfolio-templates" target="_blank">github.com/natgluons/web-portfolio-templates</a></li>
+                                            <!-- <li>• More details available at: <a href="https://github.com/natgluons/web-portfolio-templates" target="_blank">github.com/natgluons/web-portfolio-templates</a></li> -->
                                         </ul>
                                     </div>
                                 </div>
@@ -594,7 +571,7 @@
                 <div id="services-container-difcolor" class="container services-container" style="text-align: center; margin-bottom: 25px; font-family: 'Inter', sans-serif;">
                     <div class="services-wrapper wrapper">
                         <div class="services-inner inner" data-onvisible-trigger="1">
-                            <h2 class="services-subtitle" style="font-size: 1.5em; margin-bottom: 15px; font-family: 'Inter', sans-serif; text-align: center; font-weight: bold;">Why Work With Me?</h2>
+                            <h2 class="services-subtitle why-work-text" style="font-size: 1.5em; margin-bottom: 15px; font-family: 'Inter', sans-serif; text-align: center; font-weight: bold;">Why Work With Me?</h2>
                             
                             <div class="services-benefits benefits" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; margin-bottom: 20px;">
                                 <div class="services-card-list" style="background-color: transparent; padding: 4px 15px; border-radius: 30px; flex: 0 1 auto; font-family: 'Inter', sans-serif;">
@@ -765,12 +742,25 @@
         <button class="lightbox-close">&times;</button>
         <img id="lightbox-img" src="" alt="Zoomed image">
     </div>
+    
+    <!-- Scroll to top button -->
+    <div id="scroll-to-top" class="scroll-to-top">
+        <button class="scroll-top-btn" id="scrollTopBtn">
+            <svg class="scroll-top-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 19V5M5 12L12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        <span class="scroll-top-text">scroll back to top</span>
+    </div>
+    
     <!-- JavaScript section -->
     <script src="js/source.js"></script>
     <script src="js/button-handler.js"></script>
     <script src="js/image-zoom.js"></script>
     <script src="js/carousel.js"></script>
     <script src="js/theme-toggle.js"></script>
+    <script src="js/text-animations.js"></script>
+    <script src="js/scroll-to-top.js"></script>
     </script>
 </body>
 </html>

@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize zoomable images
     images.forEach(img => {
         img.classList.add('zoomable');
+        img.style.cursor = 'pointer'; // Add pointer cursor to indicate clickability
         img.addEventListener('click', function() {
             lightboxImg.src = this.src;
             lightbox.style.display = 'flex';
