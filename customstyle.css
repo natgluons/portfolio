@@ -224,6 +224,31 @@ html[data-theme='dark'] .theme-thumb {
     }
 }
 
+/* Limit font size to 1.3em on mobile for .why-work-text, including during animation */
+@media (max-width: 600px) {
+    .why-work-text {
+        font-size: 1.3em !important;
+    }
+    .why-work-text.animate-enlarge {
+        /* Override animation font-size with max 1.3em at all keyframes */
+        animation: enlargeTextMobile 1.2s ease-out forwards;
+    }
+    @keyframes enlargeTextMobile {
+        0% {
+            transform: scale(1);
+            font-size: 1.3em;
+        }
+        50% {
+            transform: scale(1.15);
+            font-size: 1.3em;
+        }
+        100% {
+            transform: scale(1.1);
+            font-size: 1.3em;
+        }
+    }
+}
+
 /* About Me section and Certifications container hover effects */
 #container01, #container02, #container03, #container04 {
     transition: transform 0.3s ease;
