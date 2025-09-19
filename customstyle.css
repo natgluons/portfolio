@@ -1,6 +1,6 @@
 :root {
   /* background color */
-  --color-bg: #ece6ff;
+  --color-bg: #e7e7ef;
 
   /* card color */
   --color-card-pink-neon: #ff71b6; 
@@ -2755,7 +2755,12 @@ th {
 }
 
 .expand-btn {
-    cursor: default !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+.expand-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .p strong {
@@ -3223,7 +3228,7 @@ th {
     #text24 {
         letter-spacing: 0rem;
         width: 100%;
-        font-size: 0.75em;
+        font-size: 1em;
         line-height: 1.25;
     }
 
@@ -3814,7 +3819,7 @@ th {
     }
 
     #text24 {
-        font-size: 0.75em;
+        font-size: 1em;
     }
 
     h1.style2,
