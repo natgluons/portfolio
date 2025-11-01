@@ -51,8 +51,8 @@ html[data-theme='dark'] {
 
 .top-right-container {
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 18px;
+    right: 18px;
     z-index: 1000;
 }
 
@@ -60,11 +60,11 @@ html[data-theme='dark'] {
 .theme-switch-wrapper {
     display: flex;
     align-items: center;
-    gap: 0.5em;
+    gap: 0.4em; /* slightly smaller gap */
 }
 
 .theme-label {
-    font-size: 1em;
+    font-size: 0.93em; /* slightly smaller */
     font-weight: bold;
     color: var(--color-black-text);
     font-family: 'Inter', sans-serif;
@@ -72,9 +72,9 @@ html[data-theme='dark'] {
 
 /* Flexible toggle switch */
 .theme-toggle-switch {
-    --switch-width: 5em;   /* bigger width */
-    --switch-height: 2.5em; /* bigger height */
-    --thumb-size: 2.5em;    /* bigger thumb */
+    --switch-width: 4.35em;   /* slightly smaller width */
+    --switch-height: 2.1em;   /* slightly smaller height */
+    --thumb-size: 2.1em;      /* slightly smaller thumb */
     width: var(--switch-width);
     height: var(--switch-height);
     background-color: #ffeab5; /* pale yellow for light mode */
@@ -88,7 +88,8 @@ html[data-theme='dark'] {
     width: var(--thumb-size);
     height: var(--thumb-size);
     /* Make SVG icon bigger than thumb (250%) and allow overflow */
-    background: #ffd74a url("assets/images/capybara_icon.svg") no-repeat center center / 120%;
+    /* background: #ffd74a url("assets/images/capybara_icon.svg") no-repeat center center / 116%; slightly smaller icon */
+    background: #ffd74a;
     border-radius: 50%;
     position: absolute;
     top: calc((var(--switch-height) - var(--thumb-size)) / 2);
@@ -106,7 +107,8 @@ html[data-theme='dark'] .theme-toggle-switch {
 
 /* Dark theme thumb */
 html[data-theme='dark'] .theme-thumb {
-    background: #6ec5ff url("assets/images/capysleep_icon.svg") no-repeat center center / 140%;
+    background: #3e7397;
+    /* background: #3e7397 url("assets/images/capysleep_icon.svg") no-repeat center center / 130%; slightly smaller icon */
     border-radius: 50%;
     transform: translateX(calc(var(--switch-width) - var(--switch-height))) rotate(360deg);
 }
@@ -114,10 +116,25 @@ html[data-theme='dark'] .theme-thumb {
 /* Responsive adjustments for very small screens */
 @media (max-width: 480px) {
     .theme-label {
-        font-size: 0.85em;
+        font-size: 0.78em; /* slightly smaller for mobile */
     }
     .theme-switch-wrapper {
-        gap: 0.25em;
+        gap: 0.18em;
+    }
+    .theme-toggle-switch {
+        --switch-width: 3.7em;
+        --switch-height: 1.78em;
+        --thumb-size: 1.78em;
+        width: var(--switch-width);
+        height: var(--switch-height);
+    }
+    .theme-thumb {
+        width: var(--thumb-size);
+        height: var(--thumb-size);
+        background-size: 115%;
+    }
+    html[data-theme='dark'] .theme-thumb {
+        background-size: 125%;
     }
 }
 
