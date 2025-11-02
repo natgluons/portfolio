@@ -20,9 +20,9 @@
   --color-card-pink-neon: #ff71b6; 
 
   --track-color-light: #fbe4a9; /* Yellowish for light mode track */
-  --thumb-color-light: #fddb60; /* Sun-like yellow for light mode thumb */
-  --track-color-dark: #203f56; /* Dark blue for dark mode track */
-  --thumb-color-dark: #81d4fa; /* Light blue for dark mode thumb */
+  --thumb-color-light: #ffd231; /* Sun-like yellow for light mode thumb */
+  --track-color-dark: #1e1f1f; /* Dark blue for dark mode track */
+  --thumb-color-dark: #8a9bca; /* Light blue for dark mode thumb */
 }
 
 html[data-theme='dark'] {
@@ -49,35 +49,231 @@ html[data-theme='dark'] {
 /* ------------------------------ */
 /* theme toggle switch css starts */
 
-.top-right-container {
+/* ------------------------------ */
+/* Main Header Navigation */
+.main-header {
     position: fixed;
-    top: 18px;
-    right: 18px;
-    z-index: 1000;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--color-card-pink-neon);
+    padding: 1em 2em;
+    z-index: 999;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    align-items: center;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+}
+
+.nav-link {
+    color: var(--color-offwhite);
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1em;
+    padding: 0.5em 1em;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.nav-link:active {
+    transform: translateY(0);
+}
+
+/* Responsive header styles - keep everything on one line */
+@media (max-width: 900px) {
+    .main-header {
+        padding: 0.75em 1.5em;
+    }
+    
+    .main-nav {
+        gap: 1.5em;
+    }
+    
+    .nav-link {
+        font-size: 0.95em;
+        padding: 0.45em 0.9em;
+    }
+    
+    .theme-switch-wrapper {
+        margin-left: 0.75em;
+        gap: 0.35em;
+    }
+    
+    .theme-label {
+        font-size: 0.8em;
+    }
+    
+    .theme-toggle-switch {
+        --switch-width: 3.5em;
+        --switch-height: 1.75em;
+        --thumb-size: 1.75em;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        padding: 0.7em 1.2em;
+    }
+    
+    .main-nav {
+        gap: 1.2em;
+    }
+    
+    .nav-link {
+        font-size: 0.85em;
+        padding: 0.4em 0.75em;
+    }
+    
+    .theme-switch-wrapper {
+        margin-left: 0.6em;
+        gap: 0.3em;
+    }
+    
+    .theme-label {
+        font-size: 0.7em;
+    }
+    
+    .theme-toggle-switch {
+        --switch-width: 3.2em;
+        --switch-height: 1.6em;
+        --thumb-size: 1.6em;
+    }
+    
+    body {
+        padding-top: 60px;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-header {
+        padding: 0.6em 1em;
+    }
+    
+    .main-nav {
+        gap: 0.8em;
+    }
+    
+    .nav-link {
+        font-size: 0.75em;
+        padding: 0.35em 0.6em;
+    }
+    
+    .theme-switch-wrapper {
+        margin-left: 0.5em;
+        gap: 0.25em;
+    }
+    
+    .theme-label {
+        font-size: 0.65em;
+    }
+    
+    .theme-toggle-switch {
+        --switch-width: 3.2em;
+        --switch-height: 1.6em;
+        --thumb-size: 1.6em;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header {
+        padding: 0.5em 0.8em;
+    }
+    
+    .main-nav {
+        gap: 0.5em;
+    }
+    
+    .nav-link {
+        font-size: 0.7em;
+        padding: 0.3em 0.5em;
+    }
+    
+    .theme-switch-wrapper {
+        margin-left: 0.4em;
+        gap: 0.2em;
+    }
+    
+    .theme-label {
+        font-size: 0.6em;
+    }
+    
+    .theme-toggle-switch {
+        --switch-width: 2.5em;
+        --switch-height: 1.25em;
+        --thumb-size: 1.25em;
+    }
+    
+    body {
+        padding-top: 55px;
+    }
+}
+
+@media (max-width: 360px) {
+    .main-header {
+        padding: 0.45em 0.6em;
+    }
+    
+    .main-nav {
+        gap: 0.4em;
+    }
+    
+    .nav-link {
+        font-size: 0.65em;
+        padding: 0.25em 0.4em;
+    }
+    
+    .theme-switch-wrapper {
+        margin-left: 0.3em;
+        gap: 0.15em;
+    }
+    
+    .theme-label {
+        font-size: 0.55em;
+    }
+    
+    .theme-toggle-switch {
+        --switch-width: 2.5em;
+        --switch-height: 1.2em;
+        --thumb-size: 1.2em;
+    }
 }
 
 /* Base styles for the toggle wrapper and labels */
 .theme-switch-wrapper {
     display: flex;
     align-items: center;
-    gap: 0.4em; /* slightly smaller gap */
+    gap: 0.4em;
+    margin-left: 1em;
 }
 
 .theme-label {
-    font-size: 0.93em; /* slightly smaller */
+    font-size: 0.85em;
     font-weight: bold;
-    color: var(--color-black-text);
+    color: var(--color-offwhite);
     font-family: 'Inter', sans-serif;
+    opacity: 0.9;
 }
 
 /* Flexible toggle switch */
 .theme-toggle-switch {
-    --switch-width: 4.35em;   /* slightly smaller width */
-    --switch-height: 2.1em;   /* slightly smaller height */
-    --thumb-size: 2.1em;      /* slightly smaller thumb */
+    --switch-width: 3.8em;   /* slightly smaller width */
+    --switch-height: 1.85em;   /* slightly smaller height */
+    --thumb-size: 1.85em;      /* slightly smaller thumb */
     width: var(--switch-width);
     height: var(--switch-height);
-    background-color: #ffeab5; /* pale yellow for light mode */
+    background-color: var(--track-color-light); /* pale yellow for light mode */
     border-radius: var(--switch-height);
     position: relative;
     cursor: pointer;
@@ -89,7 +285,7 @@ html[data-theme='dark'] {
     height: var(--thumb-size);
     /* Make SVG icon bigger than thumb (250%) and allow overflow */
     /* background: #ffd74a url("assets/images/capybara_icon.svg") no-repeat center center / 116%; slightly smaller icon */
-    background: #ffd74a;
+    background: var(--thumb-color-light);
     border-radius: 50%;
     position: absolute;
     top: calc((var(--switch-height) - var(--thumb-size)) / 2);
@@ -102,12 +298,12 @@ html[data-theme='dark'] {
 
 /* Dark theme track */
 html[data-theme='dark'] .theme-toggle-switch {
-    background-color: #183247; /* navy */
+    background-color: var(--track-color-dark); /* navy */
 }
 
 /* Dark theme thumb */
 html[data-theme='dark'] .theme-thumb {
-    background: #3e7397;
+    background: var(--thumb-color-dark);
     /* background: #3e7397 url("assets/images/capysleep_icon.svg") no-repeat center center / 130%; slightly smaller icon */
     border-radius: 50%;
     transform: translateX(calc(var(--switch-width) - var(--switch-height))) rotate(360deg);
@@ -442,6 +638,11 @@ body {
     min-width: 320px;
     overflow-x: hidden;
     word-wrap: break-word;
+    padding-top: 70px;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body:before {

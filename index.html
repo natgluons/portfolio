@@ -18,15 +18,20 @@
     <link rel="stylesheet" href="customstyle.css">
 </head>
 
-<div class="top-right-container">
-    <div class="theme-switch-wrapper">
-        <div class="theme-label left-label"></div>
-        <div id="theme-toggle" class="theme-toggle-switch">
-            <span id="theme-thumb" class="theme-thumb"></span>
+<header class="main-header">
+    <nav class="main-nav">
+        <a href="#about-me" class="nav-link">About Me</a>
+        <a href="#achievements" class="nav-link">Achievements</a>
+        <a href="#workexperience" class="nav-link">Work Experience</a>
+        <div class="theme-switch-wrapper">
+            <div class="theme-label left-label"></div>
+            <div id="theme-toggle" class="theme-toggle-switch">
+                <span id="theme-thumb" class="theme-thumb"></span>
+            </div>
+            <div class="theme-label right-label"></div>
         </div>
-        <div class="theme-label right-label"></div>
-    </div>
-</div>
+    </nav>
+</header>
 
 <body class="vsc-initialized is-ready"><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
         xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 40" display="none" width="0" height="0">
@@ -102,7 +107,7 @@
     <div id="wrapper">
         <div id="main">
             <div class="inner">
-                <section id="home-section" class="active" style="">
+                <section id="home-section" class="active">
                     <div id="image01" class="style2 image"><span class="frame"><img
                                 src="assets/images/image01.jpg?v=59470ebd" alt=""></span></div>
                             <h1 id="text16" class="style6">
@@ -166,7 +171,7 @@
                         <div class="arrow"></div>
                     </div>
 
-                    <h1 id="text05" class="services-heading style16"><text-node class="text-bounce text-bounce-delay-1">#</text-node>
+                    <h1 id="about-me" class="services-heading style16"><text-node class="text-bounce text-bounce-delay-1">#</text-node>
                         <text-node class="text-bounce text-bounce-delay-2">ABOUT ME</text-node>
                     </h1>
 
@@ -184,8 +189,7 @@
                                     </ul>
                                 </div>
                                 <div>
-                                    <p id="text24">I'm an <strong>MSc student</strong> in Applied Computational Science & Engineering at <strong>Imperial College London</strong>,
-                                        starting late September 2025. 
+                                    <p id="text24">I'm an <strong>MSc student</strong> in Applied Computational Science & Engineering at <strong>Imperial College London</strong>.
                                 </div>
                             </div>
                         </div>
@@ -205,8 +209,7 @@
                                 </div>
                                 <div>
                                     <p id="text24">
-                                        I am currently exploring <strong>part-time AI roles in London or remote worldwide</strong> that align with my research interests
-                                        to contribute to my thesis and fulfill the required research project in my curriculum.
+                                        I am currently exploring <strong>summer-start AI roles in London or remote worldwide</strong> for my thesis and fulfill the required research project in my curriculum.
                                     </p>
                                 </div>
                             </div>
@@ -483,7 +486,7 @@
                         </div>
                     </div>
 
-                    <div class="container services-intro service-intro">
+                    <div id="achievements" class="container services-intro service-intro">
                         <div class="services-wrapper wrapper">
                             <div class="services-inner inner" data-onvisible-trigger="1">
                                 <p><br>

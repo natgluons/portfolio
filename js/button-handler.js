@@ -95,6 +95,53 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    // Handle About Me and Achievements navigation from header
+    const aboutMeLinks = document.querySelectorAll('a[href="#about-me"]');
+    aboutMeLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const urlParams = new URLSearchParams(window.location.search);
+            const isWorkExpVisible = urlParams.get('section') === 'workexperience';
+            
+            // If work experience is visible, switch back to home section first
+            if (isWorkExpVisible) {
+                toggleSectionVisibility(false);
+                updateURL();
+            }
+            
+            // Wait a bit for section to show, then scroll to anchor
+            setTimeout(function() {
+                const aboutMeSection = document.getElementById('about-me');
+                if (aboutMeSection) {
+                    aboutMeSection.scrollIntoView({behavior: 'smooth', block: 'start'});
+                }
+            }, isWorkExpVisible ? 100 : 0);
+        });
+    });
+
+    const achievementsLinks = document.querySelectorAll('a[href="#achievements"]');
+    achievementsLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const urlParams = new URLSearchParams(window.location.search);
+            const isWorkExpVisible = urlParams.get('section') === 'workexperience';
+            
+            // If work experience is visible, switch back to home section first
+            if (isWorkExpVisible) {
+                toggleSectionVisibility(false);
+                updateURL();
+            }
+            
+            // Wait a bit for section to show, then scroll to anchor
+            setTimeout(function() {
+                const achievementsSection = document.getElementById('achievements');
+                if (achievementsSection) {
+                    achievementsSection.scrollIntoView({behavior: 'smooth', block: 'start'});
+                }
+            }, isWorkExpVisible ? 100 : 0);
+        });
+    });
+
     // Handle browser back/forward buttons
     window.addEventListener('popstate', function() {
         const params = new URLSearchParams(window.location.search);
