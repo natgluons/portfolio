@@ -104,20 +104,17 @@ html[data-theme='dark'] {
         font-size: 0.95em;
         padding: 0.45em 0.9em;
     }
-    
-    .theme-switch-wrapper {
+    .theme-select-wrapper {
         margin-left: 0.75em;
         gap: 0.35em;
     }
     
-    .theme-label {
+    .theme-select-label {
         font-size: 0.8em;
     }
     
-    .theme-toggle-switch {
-        --switch-width: 3.5em;
-        --switch-height: 1.75em;
-        --thumb-size: 1.75em;
+    .theme-select {
+        min-width: 6.5rem;
     }
 }
 
@@ -135,19 +132,17 @@ html[data-theme='dark'] {
         padding: 0.4em 0.75em;
     }
     
-    .theme-switch-wrapper {
+    .theme-select-wrapper {
         margin-left: 0.6em;
         gap: 0.3em;
     }
     
-    .theme-label {
+    .theme-select-label {
         font-size: 0.7em;
     }
     
-    .theme-toggle-switch {
-        --switch-width: 3.2em;
-        --switch-height: 1.6em;
-        --thumb-size: 1.6em;
+    .theme-select {
+        min-width: 6rem;
     }
     
     body {
@@ -169,19 +164,17 @@ html[data-theme='dark'] {
         padding: 0.35em 0.6em;
     }
     
-    .theme-switch-wrapper {
+    .theme-select-wrapper {
         margin-left: 0.5em;
         gap: 0.25em;
     }
     
-    .theme-label {
+    .theme-select-label {
         font-size: 0.65em;
     }
     
-    .theme-toggle-switch {
-        --switch-width: 3.2em;
-        --switch-height: 1.6em;
-        --thumb-size: 1.6em;
+    .theme-select {
+        min-width: 5.5rem;
     }
 }
 
@@ -199,19 +192,17 @@ html[data-theme='dark'] {
         padding: 0.3em 0.5em;
     }
     
-    .theme-switch-wrapper {
+    .theme-select-wrapper {
         margin-left: 0.4em;
         gap: 0.2em;
     }
     
-    .theme-label {
+    .theme-select-label {
         font-size: 0.6em;
     }
     
-    .theme-toggle-switch {
-        --switch-width: 2.5em;
-        --switch-height: 1.25em;
-        --thumb-size: 1.25em;
+    .theme-select {
+        min-width: 5rem;
     }
     
     body {
@@ -233,107 +224,58 @@ html[data-theme='dark'] {
         padding: 0.25em 0.4em;
     }
     
-    .theme-switch-wrapper {
+    .theme-select-wrapper {
         margin-left: 0.3em;
         gap: 0.15em;
     }
     
-    .theme-label {
+    .theme-select-label {
         font-size: 0.55em;
     }
     
-    .theme-toggle-switch {
-        --switch-width: 2.5em;
-        --switch-height: 1.2em;
-        --thumb-size: 1.2em;
+    .theme-select {
+        min-width: 4.7rem;
+        font-size: 0.7rem;
     }
 }
 
-/* Base styles for the toggle wrapper and labels */
-.theme-switch-wrapper {
+/* Theme selector dropdown styles */
+.theme-select-wrapper {
     display: flex;
     align-items: center;
     gap: 0.4em;
     margin-left: 1em;
 }
 
-.theme-label {
+.theme-select-label {
     font-size: 0.85em;
-    font-weight: bold;
+    font-weight: 600;
     color: var(--color-offwhite);
     font-family: 'Inter', sans-serif;
-    opacity: 0.9;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
 }
 
-/* Flexible toggle switch */
-.theme-toggle-switch {
-    --switch-width: 3.8em;   /* slightly smaller width */
-    --switch-height: 1.85em;   /* slightly smaller height */
-    --thumb-size: 1.85em;      /* slightly smaller thumb */
-    width: var(--switch-width);
-    height: var(--switch-height);
-    background-color: var(--track-color-light); /* pale yellow for light mode */
-    border-radius: var(--switch-height);
-    position: relative;
-    cursor: pointer;
-    transition: background-color 0.4s ease;
+.theme-select {
+    padding: 0.45em 1.2em 0.45em 1.1em;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.18);
+    color: var(--color-offwhite);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.92em;
+    font-weight: 600;
+    min-width: 7.5rem;
+    transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    appearance: none;
 }
 
-.theme-thumb {
-    width: var(--thumb-size);
-    height: var(--thumb-size);
-    /* Make SVG icon bigger than thumb (250%) and allow overflow */
-    /* background: #ffd74a url("assets/images/capybara_icon.svg") no-repeat center center / 116%; slightly smaller icon */
-    background: var(--thumb-color-light);
-    border-radius: 50%;
-    position: absolute;
-    top: calc((var(--switch-height) - var(--thumb-size)) / 2);
-    left: calc((var(--switch-height) - var(--thumb-size)) / 2);
-    /* Allow the icon to slightly exceed the thumb by not hiding overflow */
-    overflow: visible;
-    transform: translateX(0) rotate(0deg);
-    transition: transform 0.6s ease, background-color 0.4s ease;
+.theme-select:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.2);
 }
 
-/* Dark theme track */
-html[data-theme='dark'] .theme-toggle-switch {
-    background-color: var(--track-color-dark); /* navy */
-}
-
-/* Dark theme thumb */
-html[data-theme='dark'] .theme-thumb {
-    background: var(--thumb-color-dark);
-    /* background: #3e7397 url("assets/images/capysleep_icon.svg") no-repeat center center / 130%; slightly smaller icon */
-    border-radius: 50%;
-    transform: translateX(calc(var(--switch-width) - var(--switch-height))) rotate(360deg);
-}
-
-/* Responsive adjustments for very small screens */
-@media (max-width: 480px) {
-    .theme-label {
-        font-size: 0.78em; /* slightly smaller for mobile */
-    }
-    .theme-switch-wrapper {
-        gap: 0.18em;
-    }
-    .theme-toggle-switch {
-        --switch-width: 3.7em;
-        --switch-height: 1.78em;
-        --thumb-size: 1.78em;
-        width: var(--switch-width);
-        height: var(--switch-height);
-    }
-    .theme-thumb {
-        width: var(--thumb-size);
-        height: var(--thumb-size);
-        background-size: 115%;
-    }
-    html[data-theme='dark'] .theme-thumb {
-        background-size: 125%;
-    }
-}
-
-/* theme toggle switch css ends */
 /* ---------------------------- */
 
 /* Container for the animated arrow */
