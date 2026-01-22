@@ -27,19 +27,18 @@
 
 html[data-theme='dark'] {
     /* Background color for dark mode */
-    --color-bg: #1e1f1f; 
+    --color-bg: #181818; 
 
     /* Card colors for dark mode (e.g., a darker or different palette) */
-    --color-card-pink-neon: #343442; 
-    --color-card-orange-neon: #343442;
-    --color-card-blue-neon: #343442;
-    --color-card-yellow-neon: #343442;
-    --color-card-green-neon: #343442;
-
+    --color-card-pink-neon: #262630; 
+    --color-card-orange-neon: #262630;
+    --color-card-blue-neon: #262630;
+    --color-card-yellow-neon: #262630;
+    --color-card-green-neon: #262630;
     /* Text and UI colors for dark mode */
-    --color-offwhite: #8a9bca;
+    --color-offwhite: #92a0c7;
     --color-black-text: #d2d2d2;
-    --color-black-text-title: #8a9bca;
+    --color-black-text-title: #92a0c7;
     --color-blacker-black: #f2f2f2;
 
     /* Link color for dark mode */

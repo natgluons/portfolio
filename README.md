@@ -36,8 +36,18 @@ This portfolio isn’t just a personal showcase—it’s also a testing ground f
 
 ## Development  
 
-If you’d like to run it locally:  
+Clone the repo and keep two options in mind:
+
 ```bash
 git clone https://github.com/natgluons/portfolio.git
 cd portfolio
-python -m http.server 8000
+```
+
+- **Preferred:** use the Node/Vite dev server
+  ```bash
+  npm install
+  npm run dev
+  ```
+  Then visit http://localhost:5173.
+
+- **Alternative:** use the Python simple HTTP server described in `instructions.txt`.

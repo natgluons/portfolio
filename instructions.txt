@@ -11,7 +11,13 @@ cd portfolio
 ```
 
 ### Local Development
-2. Run the project locally using Python's HTTP server:
+2. Install the Node dependencies and run the Vite dev server:
+   ```bash
+   npm install
+   npm run dev
+   ```
+   Open http://localhost:5173 to view the site.
+3. As an alternative, the Python HTTP servers listed below still work on a different port if you prefer not to install Node.
    - Using Python 3:
    ```bash
    python -m http.server 8000
