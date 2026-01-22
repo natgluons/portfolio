@@ -64,7 +64,7 @@ html[data-theme='dark'] {
 .main-nav {
     display: flex;
     justify-content: center;
-    gap: 2em;
+    gap: 1.2em;
     align-items: center;
     flex-wrap: nowrap;
     white-space: nowrap;
@@ -115,6 +115,8 @@ html[data-theme='dark'] {
     
     .theme-select {
         min-width: 6.5rem;
+        max-width: 12rem;
+        width: auto;
     }
 }
 
@@ -143,6 +145,8 @@ html[data-theme='dark'] {
     
     .theme-select {
         min-width: 6rem;
+        max-width: 10rem;
+        width: auto;
     }
     
     body {
@@ -175,6 +179,8 @@ html[data-theme='dark'] {
     
     .theme-select {
         min-width: 5.5rem;
+        max-width: 8.5rem;
+        width: auto;
     }
 }
 
@@ -202,7 +208,11 @@ html[data-theme='dark'] {
     }
     
     .theme-select {
-        min-width: 5rem;
+        min-width: 3.2rem;
+        max-width: 5rem;
+        font-size: 0.6em;
+        padding: 0.25em 0.7em 0.25em 0.7em;
+        width: auto;
     }
     
     body {
@@ -234,8 +244,11 @@ html[data-theme='dark'] {
     }
     
     .theme-select {
-        min-width: 4.7rem;
-        font-size: 0.7rem;
+        min-width: 3rem;
+        max-width: 4.2rem;
+        font-size: 0.55em;
+        padding: 0.2em 0.6em 0.2em 0.6em;
+        width: auto;
     }
 }
 
@@ -248,7 +261,7 @@ html[data-theme='dark'] {
 }
 
 .theme-select-label {
-    font-size: 0.85em;
+    font-size: 0.75em;
     font-weight: 600;
     color: var(--color-offwhite);
     font-family: 'Inter', sans-serif;
@@ -257,17 +270,22 @@ html[data-theme='dark'] {
 }
 
 .theme-select {
-    padding: 0.45em 1.2em 0.45em 1.1em;
+    padding: 0.15em 0.5em;
     border-radius: 999px;
     border: 1px solid rgba(255, 255, 255, 0.35);
     background: rgba(255, 255, 255, 0.18);
     color: var(--color-offwhite);
     font-family: 'Inter', sans-serif;
-    font-size: 0.92em;
+    font-size: 0.7em;
     font-weight: 600;
-    min-width: 7.5rem;
+    min-width: 3.5rem;
+    max-width: 7rem;
+    width: auto;
     transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
     appearance: none;
+    box-sizing: border-box;
+    line-height: 1.1;
+    text-align: center;
 }
 
 .theme-select:focus {
