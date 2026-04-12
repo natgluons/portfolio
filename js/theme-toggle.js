@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const toggleBtn = document.getElementById('theme-toggle');
     const html = document.documentElement;
 
-    // Get the theme from local storage or default to light
-    let theme = localStorage.getItem('theme') || 'light';
+    // Get the theme from local storage or default to dark
+    let theme = localStorage.getItem('theme') || 'dark';
 
     function setTheme(newTheme) {
         // Set the data-theme attribute on the html element
