@@ -1480,7 +1480,7 @@ p.style13>* {
     text-align: justify;
     color: var(--color-black-text);
     font-family: 'Inter', sans-serif;
-    font-size: 1.2em;
+    font-size: 1em;
     line-height: 1.25;
     font-weight: 300;
 }
