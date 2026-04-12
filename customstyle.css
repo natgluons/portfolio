@@ -676,7 +676,7 @@ body:before {
 }
 
 html {
-    font-size: 18pt;
+    font-size: 14pt;
 }
 
 u {
@@ -1524,7 +1524,7 @@ p.style2 {
     font-family: 'Plus Jakarta Sans', sans-serif;
     letter-spacing: 0.025rem;
     width: calc(100% + 0.025rem);
-    font-size: 1.3em;
+    font-size: 1.1em;
 }
 
 h1.style2 mark,
@@ -2912,7 +2912,7 @@ th {
     text-align: center;
     color: var(--color-black-text);
     font-family: 'Inter', sans-serif;
-    font-size: 1em;
+    font-size: 0.85em;
     line-height: 1.375;
     font-weight: 300;
 }
@@ -3055,7 +3055,7 @@ th {
 .list.style1 {
     color: var(--color-black-text);
     font-family: 'Inter', sans-serif;
-    font-size: 1em;
+    font-size: 0.85em;
     line-height: 1.375;
     font-weight: 300;
 }
@@ -4144,7 +4144,7 @@ th {
     color: var(--color-black-text);
     padding: 1.5rem 2rem;
     font-family: 'Inter', sans-serif;
-    font-size: 1.2em;
+    font-size: 0.9em;
     margin-bottom: 1rem;
     width: 100%;
     text-align: left;
@@ -4162,6 +4162,7 @@ th {
     background-color: var(--color-bg);
     border-radius: 8px;
     margin-bottom: 1.5rem;
+    font-size: 0.85em;
 }
 
 .work-item {
@@ -4404,7 +4405,7 @@ th {
 
 .services-intro p {
     font-family: 'Inter', sans-serif;
-    font-size: 1.3em;
+    font-size: 1em;
     color: var(--color-black-text);
     line-height: 1.2;
     text-align: center;
@@ -4435,8 +4436,8 @@ th {
     color: var(--color-black-text);
     background-color: var(--color-card-orange-neon);
     border-radius: 15px;
-    padding: 35px;
-    margin-bottom: 40px;
+    padding: 25px;
+    margin-bottom: 30px;
     margin-left: 0px;
     margin-right: auto;
     /* box-shadow: 0 3px 10px; */
@@ -4464,9 +4465,9 @@ th {
 }
 
 .services-subtitle {
-    font-size: 1.5em;
+    font-size: 1.2em;
     line-height: 1em;
-    margin: 0 0 30px 0;
+    margin: 0 0 20px 0;
     font-family: 'Inter', sans-serif;
     color: var(--color-black-text-title);
 }
@@ -4474,15 +4475,15 @@ th {
 .service-cards {
     display: flex;
     flex-wrap: wrap;
-    gap: 25px;
+    gap: 15px;
     justify-content: space-between;
 }
 
 .services-card {
     flex: 1 1 45%;
-    min-width: 250px;
+    min-width: 220px;
     background-color: transparent;
-    padding: 25px;
+    padding: 18px;
     border-radius: 10px;
     box-shadow: 0 2px 5px;
     border: 2px solid var(--color-blacker-black);
@@ -4490,18 +4491,19 @@ th {
 
 .services-card-title {
     margin-top: 0;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     font-family: 'Inter', sans-serif;
     color: var(--color-black-text);
     font-weight: bold;
+    font-size: 0.95em;
     line-height: 1.4;
 }
 
 .services-card-list {
     font-family: 'Inter', sans-serif;
     color: var(--color-black-text);
-    font-size: 1em;
-    line-height: 1.6;
+    font-size: 0.85em;
+    line-height: 1.5;
 }
 
 @media (max-width: 1080px) {
