@@ -4414,11 +4414,102 @@ th {
     padding: 0px;
 }
 
+.work-build-card .work-build-lead {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--color-black-text);
+    max-width: 640px;
+    margin: 0 auto 1.25rem auto;
+    text-align: center;
+}
+
+.work-build-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.55rem;
+    margin-bottom: 1.25rem;
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.work-build-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 128px;
+    padding: 0.45rem 0.85rem;
+    border-radius: 4px;
+    border: 1px solid var(--color-blacker-black);
+    background-color: var(--color-card-yellow-neon);
+    color: var(--color-black-text);
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+    font-size: 0.78rem;
+    line-height: 1.3;
+    white-space: nowrap;
+    position: relative;
+}
+
+.work-build-tag::before {
+    content: "> ";
+    opacity: 0.45;
+}
+
+.work-build-link {
+    text-align: left;
+    margin-top: 0.75rem;
+}
+
+.work-build-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--color-link);
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.92rem;
+    border-bottom: 1px solid var(--color-black-text);
+    padding-bottom: 2px;
+}
+
+.work-build-action:hover {
+    color: #ffffff;
+    border-bottom-color: var(--color-link);
+}
+
+.work-build-link a:hover {
+    color: #ffffff;
+}
+
+.work-build-link a:hover {
+    color: #ffffff;
+}
+
 /* Media query for small screens*/
 @media screen and (max-width: 600px) {
 .services-intro p {
     font-size: 1em; 
   }
+.work-build-card .work-build-lead {
+    font-size: 1rem;
+}
+.work-build-tags {
+    gap: 0.5rem;
+}
+.work-build-tag {
+    padding: 0.65rem 0.9rem;
+    font-size: 0.9rem;
+}
+}
+
+body {
+    padding-bottom: 5rem;
 }
 
 .dot-divider {
