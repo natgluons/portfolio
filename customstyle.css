@@ -1,13 +1,12 @@
 :root {
   /* background color */
-  --color-bg: #e7e7ef;
+  --color-bg: #ede9e5;
 
   /* card color */
-  --color-card-pink-neon: #ff71b6; 
-  --color-card-orange-neon: #fbae55;
-  --color-card-blue-neon: #7bb9db ;
-  --color-card-yellow-neon: #ebde3f;
-  --color-card-green-neon: #4ed687;
+  --color-card-orange-neon: #ceb5a7;
+  --color-card-pink-neon: #ac8877; 
+  --color-card-blue-neon: #8fa5a4;
+  --color-card-green-neon: #43a194;
 
   /* black and white */
   --color-offwhite: #ffffff; 
@@ -16,8 +15,7 @@
   --color-blacker-black: #171717;
   
   /* link color */
-  --color-link: #3842ad; 
-  --color-card-pink-neon: #ff71b6; 
+  --color-link: #192288; 
 
   --track-color-light: #fbe4a9; /* Yellowish for light mode track */
   --thumb-color-light: #ffd231; /* Sun-like yellow for light mode thumb */
@@ -30,10 +28,9 @@ html[data-theme='dark'] {
     --color-bg: #1e1f1f; 
 
     /* Card colors for dark mode (e.g., a darker or different palette) */
-    --color-card-pink-neon: #343442; 
     --color-card-orange-neon: #343442;
+    --color-card-pink-neon: #343442; 
     --color-card-blue-neon: #343442;
-    --color-card-yellow-neon: #343442;
     --color-card-green-neon: #343442;
 
     /* Text and UI colors for dark mode */
@@ -44,6 +41,13 @@ html[data-theme='dark'] {
 
     /* Link color for dark mode */
     --color-link: #bbc3ff; 
+}
+
+:root {
+  --style1-bg: var(--color-card-orange-neon);
+  --style2-bg: var(--color-card-pink-neon);
+  --style3-bg: var(--color-card-blue-neon);
+  --style4-bg: var(--color-card-green-neon);
 }
 
 /* ------------------------------ */
@@ -1798,7 +1802,7 @@ p.style14 span.p:nth-child(n + 2) {
     display: block;
     margin: 0 auto 0 0;
     width: 60rem;
-    background-color: var(--color-card-pink-neon);
+    background-color: var(--style1-bg);
     border-radius: 3rem;
 }
 
@@ -1948,7 +1952,7 @@ p.style14 span.p:nth-child(n + 2) {
     display: block;
     margin: 0 auto 0 0;
     width: 60rem;
-    background-color: var(--color-card-orange-neon);
+    background-color: var(--style2-bg);
     border-radius: 3rem;
 }
 
@@ -2093,7 +2097,7 @@ p.style14 span.p:nth-child(n + 2) {
     display: block;
     margin: 0 auto 0 0;
     width: 100rem;
-    background-color: var(--color-card-blue-neon);
+    background-color: var(--style3-bg);
     border-radius: 3rem;
 }
 #container03>.wrapper>.inner {
@@ -2237,7 +2241,7 @@ p.style14 span.p:nth-child(n + 2) {
     display: block;
     margin: 0 auto 0 0;
     width: 60rem;
-    background-color: var(--color-card-green-neon);
+    background-color: var(--style4-bg);
     border-radius: 3rem;
 }
 
@@ -2381,7 +2385,7 @@ p.style14 span.p:nth-child(n + 2) {
     display: block;
     margin: 0 auto 0 0;
     width: 66rem;
-    background-color: var(--color-card-pink-neon);
+    background-color: var(--style1-bg);
     border-radius: 3rem;
 }
 
@@ -4525,7 +4529,7 @@ body {
 .services-container {
     font-family: 'Inter', sans-serif;
     color: var(--color-black-text);
-    background-color: var(--color-card-orange-neon);
+    background-color: var(--style1-bg);
     border-radius: 15px;
     padding: 25px;
     margin-bottom: 30px;
@@ -4537,7 +4541,7 @@ body {
 }
 
 #services-container-difcolor {
-    background-color: var(--color-card-pink-neon);
+    background-color: var(--style2-bg);
 }
 
 .services-container .services-wrapper {
@@ -4615,7 +4619,7 @@ body {
     font-family: 'Inter', sans-serif;
     text-decoration: none;
     cursor: pointer;
-    background-color: var(--color-card-pink-neon);
+    background-color: var(--color-card-green-neon);
     color: var(--color-black-text);
     font-weight: 500;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -4718,7 +4722,7 @@ body {
 /* Maintain your existing expand button styles but adjust for timeline */
 .timeline .expand-btn {
     width: 100%;
-    background-color: var(--color-card-pink-neon);
+    background-color: var(--color-card-green-neon);
     color: var(--color-black-text);
     border: none;
     padding: 10px 15px;
