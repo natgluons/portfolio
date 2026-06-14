@@ -254,6 +254,13 @@ html[data-theme='dark'] {
     }
 }
 
+/* Mobile: left-align About Me paragraphs instead of justified */
+@media (max-width: 768px) {
+    #text24 {
+        text-align: left;
+    }
+}
+
 /* Base styles for the toggle wrapper and labels */
 .theme-switch-wrapper {
     display: flex;
@@ -516,6 +523,14 @@ html[data-theme='dark'] .theme-thumb {
 .scroll-to-top.visible {
     opacity: 1;
     visibility: visible;
+}
+
+/* Strong mobile override for About Me text alignment.
+   Placed at end to override earlier 'justify' rules. */
+@media (max-width: 768px) {
+    #text24 {
+        text-align: left !important;
+    }
 }
 
 .scroll-top-btn {
@@ -4281,6 +4296,13 @@ th {
 
 .hire-btn svg{
   fill: var(--color-black-text);
+}
+
+/* Final placement: ensure About Me left-align on mobile overrides any later rules */
+@media (max-width: 768px) {
+        #text24 {
+                text-align: left !important;
+        }
 }
 
 /* Specific styles for each button */
