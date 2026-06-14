@@ -1,13 +1,12 @@
 :root {
   /* background color */
-  --color-bg: #e7e7ef;
+  --color-bg: #ede9e5;
 
   /* card color */
-  --color-card-pink-neon: #ff71b6; 
-  --color-card-orange-neon: #fbae55;
-  --color-card-blue-neon: #7bb9db ;
-  --color-card-yellow-neon: #ebde3f;
-  --color-card-green-neon: #4ed687;
+  --color-card-orange-neon: #ceb5a7;
+  --color-card-pink-neon: #ac8877; 
+  --color-card-blue-neon: #8fa5a4;
+  --color-card-green-neon: #43a194;
 
   /* black and white */
   --color-offwhite: #ffffff; 
@@ -17,7 +16,6 @@
   
   /* link color */
   --color-link: #3842ad; 
-  --color-card-pink-neon: #ff71b6; 
 
   --track-color-light: #fbe4a9; /* Yellowish for light mode track */
   --thumb-color-light: #ffd231; /* Sun-like yellow for light mode thumb */
@@ -30,10 +28,9 @@ html[data-theme='dark'] {
     --color-bg: #1e1f1f; 
 
     /* Card colors for dark mode (e.g., a darker or different palette) */
-    --color-card-pink-neon: #343442; 
     --color-card-orange-neon: #343442;
+    --color-card-pink-neon: #343442; 
     --color-card-blue-neon: #343442;
-    --color-card-yellow-neon: #343442;
     --color-card-green-neon: #343442;
 
     /* Text and UI colors for dark mode */
