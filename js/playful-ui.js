@@ -22,6 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const mascot = document.querySelector('.mascot-companion');
   if (mascot) {
     const speech = mascot.querySelector('.mascot-speech');
+    const speechText = mascot.querySelector('.mascot-speech__text') || speech;
+    const speechClose = mascot.querySelector('.mascot-speech__close');
     const messages = [
       'I love writing, gaming, and weightlifting.',
       'I’m equally happy debugging code or getting lost in a good game.',
@@ -35,11 +37,11 @@ document.addEventListener('DOMContentLoaded', () => {
       'I modeled data from more than 900 weather stations.',
       'I co-authored a paper on the Indonesian Monsoon Index using statistics and ML.',
       'I co-authored a paper on fraud syndicates using graph and transaction analysis.',
-      'I co-authored a paper on Madden–Julian Oscillation patterns in Indonesia.',
+      'I co-authored a paper on Madden-Julian Oscillation patterns in Indonesia.',
       'I won Best Paper: AI & Tech at the ACFE Call for Papers 2024.',
       'I was an AI Hackathon semifinalist at Bank Indonesia FEKDI 2024.',
-      'I placed in the top 10 for a scientific paper in physics.',
-      'I placed in the top 10 for a scientific paper in economic finance.',
+      'I won a Top 10 award in a physics scientific paper competition.',
+      'I won a Top 10 award in an economic finance scientific paper competition.',
       'I’ve applied machine learning to satellite climate and atmospheric data.',
       'I enjoy building playful side projects, including a capybara pet game.',
       'I’m based in Jakarta and open to relocating worldwide.',
@@ -66,12 +68,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const greet = () => {
       if (!messageQueue.length) refillQueue();
       const nextMessage = messageQueue.pop();
-      speech.textContent = nextMessage;
+      speechText.textContent = nextMessage;
       previousMessage = nextMessage;
+      // Reopen a dismissed bubble when the mascot is greeted again.
+      mascot.classList.remove('is-dismissed');
       mascot.classList.remove('is-talking');
       void mascot.offsetWidth;
       mascot.classList.add('is-talking');
     };
+
+    const dismissSpeech = () => {
+      mascot.classList.add('is-dismissed');
+      mascot.classList.remove('is-talking');
+    };
+
+    if (speechClose) {
+      speechClose.addEventListener('click', (event) => {
+        event.stopPropagation();
+        dismissSpeech();
+      });
+      speechClose.addEventListener('keydown', (event) => {
+        // Keep Enter/Space from re-triggering the mascot greeting.
+        event.stopPropagation();
+      });
+    }
 
     mascot.addEventListener('click', greet);
     mascot.addEventListener('keydown', (event) => {
