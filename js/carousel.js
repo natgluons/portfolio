@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let autoScrollInterval;
     let dots = [];
 
+    // This script is shared by the inner pages, which do not contain a carousel.
+    if (!carouselContainer || !carouselItems.length || !dotsContainer) return;
+
     // Initialize dots
     function generateDots() {
         if (!dotsContainer) {
@@ -37,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Highlight the current dot
     function highlightCurrentDot() {
         dots.forEach(dot => dot.classList.remove('active'));
-        dots[currentIndex].classList.add('active');
+        if (dots[currentIndex]) dots[currentIndex].classList.add('active');
     }
 
     // Navigation handlers

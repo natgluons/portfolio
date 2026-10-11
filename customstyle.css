@@ -38,6 +38,202 @@
   --thumb-color-dark: #2ff3ff; /* neon cyan for dark mode thumb */
 }
 
+/* ========================================================================== */
+/* Cozy game UI refresh — additive overrides                                  */
+/* ========================================================================== */
+:root {
+  --color-bg: #f6f1fa;
+  --color-card-orange-neon: #f0c49d;
+  --color-card-pink-neon: #d9a8c5;
+  --color-card-blue-neon: #9db8d1;
+  --color-card-green-neon: #a8c7bd;
+  --color-black-text: #352d43;
+  --color-black-text-title: #6c4b83;
+  --color-blacker-black: #292238;
+  --color-link: #74568e;
+  --accent-primary: #a86f9b;
+  --accent-secondary: #728eae;
+  --accent-tertiary: #8970ad;
+  --accent-primary-rgb: 168, 111, 155;
+  --accent-secondary-rgb: 114, 142, 174;
+  --panel-border: rgba(108, 75, 131, .3);
+  --neon-glow: 0 8px 24px rgba(108, 75, 131, .16);
+  --neon-glow-cyan: 0 8px 24px rgba(114, 142, 174, .16);
+}
+
+html[data-theme='dark'] {
+  --color-bg: #130e23;
+  --color-card-orange-neon: #302543;
+  --color-card-pink-neon: #352445;
+  --color-card-blue-neon: #202d48;
+  --color-card-green-neon: #243b3e;
+  --color-offwhite: #f3edf9;
+  --color-black-text: #e5dcef;
+  --color-black-text-title: #d9a8cf;
+  --color-blacker-black: #0e0a19;
+  --color-link: #a9c6df;
+  --accent-primary: #c084b5;
+  --accent-secondary: #86a9c9;
+  --accent-tertiary: #9479bd;
+  --accent-primary-rgb: 192, 132, 181;
+  --accent-secondary-rgb: 134, 169, 201;
+  --panel-border: rgba(180, 157, 207, .3);
+  --neon-glow: 0 10px 30px rgba(74, 43, 103, .35);
+  --neon-glow-cyan: 0 10px 30px rgba(55, 83, 118, .3);
+}
+
+body {
+  background-color: var(--color-bg) !important;
+  background-image: linear-gradient(rgba(116, 86, 142, .035) 1px, transparent 1px), linear-gradient(90deg, rgba(116, 86, 142, .035) 1px, transparent 1px) !important;
+  background-size: 24px 24px !important;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(circle at 15% 18%, rgba(216, 167, 202, .16), transparent 27%), radial-gradient(circle at 86% 70%, rgba(121, 148, 181, .14), transparent 28%);
+}
+
+.main-header {
+  background: rgba(30, 20, 49, .88) !important;
+  border-bottom: 1px solid rgba(215, 193, 232, .22) !important;
+  box-shadow: 0 10px 30px rgba(15, 10, 26, .18) !important;
+  backdrop-filter: blur(16px);
+}
+
+.main-nav { max-width: 1050px; margin: auto; }
+.pixel-brand {
+  margin-right: auto;
+  color: #f6eefa;
+  text-decoration: none;
+  font: 700 .82rem/1 var(--font-display);
+  letter-spacing: .08em;
+  padding: .62rem .72rem;
+  border: 1px solid rgba(255,255,255,.2);
+  box-shadow: 3px 3px 0 rgba(137,112,173,.45);
+}
+.pixel-brand span { color: #e1b7d8; }
+.nav-link { border-radius: 4px !important; text-shadow: none !important; }
+.nav-link:hover { box-shadow: 3px 3px 0 rgba(157,184,209,.5) !important; transform: translate(-2px,-2px) !important; }
+
+#home-section {
+  position: relative;
+  isolation: isolate;
+}
+#home-section::before {
+  content: '';
+  position: absolute;
+  z-index: -2;
+  top: -2rem;
+  left: 50%;
+  width: min(100vw, 1120px);
+  height: 680px;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, rgba(19,14,35,.14), var(--color-bg) 96%), url('assets/images/mascot_wallpaper.png') center 18% / min(700px, 75vw) auto no-repeat;
+  opacity: .18;
+  filter: saturate(.72);
+  mask-image: linear-gradient(#000 65%, transparent 100%);
+}
+html[data-theme='dark'] #home-section::before { opacity: .28; }
+
+.game-hud {
+  display: inline-flex;
+  align-items: center;
+  gap: .65rem;
+  margin: 1rem 0 1.2rem;
+  padding: .6rem .85rem;
+  color: var(--color-black-text);
+  background: color-mix(in srgb, var(--color-bg) 84%, transparent);
+  border: 1px solid var(--panel-border);
+  box-shadow: 4px 4px 0 rgba(var(--accent-secondary-rgb), .22);
+  font: 700 .68rem/1 var(--font-display);
+  letter-spacing: .1em;
+}
+.game-hud__dot { width: 7px; height: 7px; background: #8eb6a0; box-shadow: 0 0 0 3px rgba(142,182,160,.16); animation: hud-pulse 2.4s steps(2,end) infinite; }
+.game-hud__divider { width: 1px; height: 14px; background: var(--panel-border); }
+
+.mascot-companion {
+  --mascot-x: 0px;
+  --mascot-y: 0px;
+  position: absolute;
+  z-index: 3;
+  top: 7.5rem;
+  right: -3.5rem;
+  width: clamp(150px, 25vw, 270px);
+  cursor: pointer;
+  transform: translate(var(--mascot-x), var(--mascot-y));
+  transition: transform .25s ease, filter .25s ease;
+  filter: drop-shadow(0 20px 25px rgba(50,30,74,.24));
+}
+.mascot-companion:hover { filter: drop-shadow(0 22px 28px rgba(120,82,150,.35)); }
+.mascot-companion img { width: 100%; height: auto; display: block; animation: mascot-float 4.2s ease-in-out infinite; }
+.mascot-speech {
+  position: absolute;
+  top: 8%; right: 70%;
+  width: max-content;
+  padding: .55rem .7rem;
+  color: var(--color-black-text);
+  background: var(--color-bg);
+  border: 1px solid var(--panel-border);
+  box-shadow: 3px 3px 0 rgba(var(--accent-primary-rgb), .25);
+  font: 700 .68rem var(--font-display);
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+}
+.mascot-companion:hover .mascot-speech, .mascot-companion:focus .mascot-speech, .mascot-companion.is-talking .mascot-speech { opacity: 1; transform: translateY(0); }
+
+#image01 .frame { border-radius: 8px !important; box-shadow: 8px 8px 0 rgba(var(--accent-secondary-rgb), .25) !important; }
+#image01 img { filter: saturate(.86) contrast(.96); }
+#text16 { max-width: 72%; position: relative; }
+#text16::after { content: '✦ AVAILABLE FOR NEW QUESTS (JOB OPPORTUNITIES)'; display: block; width: max-content; margin-top: .8rem; padding: .45rem .65rem; border: 1px dashed var(--panel-border); color: var(--accent-secondary); font: 700 .62rem var(--font-display); letter-spacing: .1em; }
+
+.services-heading { position: relative; text-shadow: 2px 2px 0 rgba(var(--accent-primary-rgb), .13) !important; }
+.services-heading::after { content: '✦'; margin-left: .45rem; color: var(--accent-secondary); font-size: .65em; }
+.container > .wrapper, .services-card, .timeline-content, .portfolio-carousel, .work-build-card {
+  border: 1px solid var(--panel-border) !important;
+  box-shadow: 6px 6px 0 rgba(var(--accent-primary-rgb), .14) !important;
+  border-radius: 8px !important;
+}
+
+.portfolio-carousel { padding: 1rem !important; background: color-mix(in srgb, var(--color-bg) 78%, var(--accent-tertiary) 22%) !important; overflow: hidden; }
+.carousel-item > div { padding: .8rem; border: 1px solid var(--panel-border); background: color-mix(in srgb, var(--color-bg) 92%, var(--accent-secondary) 8%); }
+.carousel-item img { border-radius: 4px !important; border: 1px solid var(--panel-border); box-shadow: 4px 4px 0 rgba(var(--accent-secondary-rgb), .18); transition: transform .4s ease, filter .4s ease; }
+.carousel-item:hover img { transform: translateY(-4px) scale(1.012); filter: saturate(1.05); }
+.project-number { display: inline-block; margin-top: 1rem; padding: .35rem .55rem; background: var(--accent-tertiary); color: #fff; font: 700 .62rem var(--font-display); letter-spacing: .1em; box-shadow: 3px 3px 0 rgba(20,14,34,.25); }
+.project-btn, .cv-download-button, .work-build-action, .hire-btn, .services-btn { border-radius: 4px !important; box-shadow: 4px 4px 0 rgba(var(--accent-secondary-rgb), .3) !important; }
+.project-btn:hover, .cv-download-button:hover, .work-build-action:hover { transform: translate(-2px,-2px) !important; box-shadow: 6px 6px 0 rgba(var(--accent-secondary-rgb), .36) !important; }
+.carousel-button { border-radius: 4px !important; background: var(--color-bg) !important; border: 1px solid var(--panel-border) !important; color: var(--color-black-text) !important; box-shadow: 3px 3px 0 rgba(var(--accent-primary-rgb),.2); }
+.dot { border-radius: 2px !important; transform: rotate(45deg); opacity: .38; }
+.dot.active { opacity: 1; box-shadow: 0 0 0 3px rgba(var(--accent-primary-rgb),.12); }
+
+.reveal-ready { opacity: 0; transform: translateY(16px); transition: opacity .65s ease, transform .65s cubic-bezier(.2,.7,.2,1); }
+.reveal-ready.is-revealed { opacity: 1; transform: none; }
+
+@keyframes mascot-float { 50% { transform: translateY(-9px) rotate(1deg); } }
+@keyframes hud-pulse { 50% { opacity: .45; } }
+
+@media (max-width: 820px) {
+  .pixel-brand { display: none; }
+  .mascot-companion { top: 10rem; right: -1rem; width: 145px; opacity: .88; }
+  #text16 { max-width: 78%; }
+}
+@media (max-width: 560px) {
+  .game-hud { margin-top: .5rem; font-size: .55rem; }
+  .mascot-companion { position: relative; top: auto; right: auto; width: 150px; margin: -2.5rem 0 -1rem auto; }
+  .mascot-speech { right: 58%; }
+  #text16 { max-width: 100%; }
+  #home-section::before { height: 520px; background-size: 520px auto; }
+  .main-nav { overflow-x: auto; justify-content: flex-start; padding-bottom: 3px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+  .reveal-ready { opacity: 1; transform: none; }
+}
+
 html[data-theme='dark'] {
     /* ---- Dark mode : night neon cyberpunk ---- */
     /* Background color for dark mode */
@@ -3104,7 +3300,7 @@ th {
     text-align: center;
     color: var(--color-black-text);
     font-family: 'Inter', sans-serif;
-    font-size: 0.85em;
+    font-size: 0.78em;
     line-height: 1.375;
     font-weight: 300;
 }
@@ -4097,7 +4293,7 @@ th {
 
     #table01 {
         letter-spacing: 0rem;
-        font-size: 1em;
+        font-size: 0.9em;
         line-height: 1.375;
     }
 
@@ -4299,7 +4495,7 @@ th {
     }
 
     #table01 {
-        font-size: 1em;
+        font-size: 0.9em;
     }
 
     .list.style1 {
@@ -4528,6 +4724,60 @@ th {
         width: 100% !important;
     }
 }
+
+/* Final theme token pass: intentionally last so legacy component rules inherit
+   the calmer cozy-game palette without rewriting the original architecture. */
+:root {
+  --color-bg: #f6f1fa;
+  --color-card-orange-neon: #f0c49d;
+  --color-card-pink-neon: #d9a8c5;
+  --color-card-blue-neon: #9db8d1;
+  --color-card-green-neon: #a8c7bd;
+  --color-offwhite: #fffafd;
+  --color-black-text: #352d43;
+  --color-black-text-title: #6c4b83;
+  --color-blacker-black: #292238;
+  --color-link: #74568e;
+  --accent-primary: #a86f9b;
+  --accent-secondary: #728eae;
+  --accent-tertiary: #8970ad;
+  --accent-primary-rgb: 168, 111, 155;
+  --accent-secondary-rgb: 114, 142, 174;
+  --panel-border: rgba(108, 75, 131, .3);
+  --neon-glow: 0 8px 24px rgba(108, 75, 131, .16);
+  --neon-glow-cyan: 0 8px 24px rgba(114, 142, 174, .16);
+}
+
+html[data-theme='dark'] {
+  --color-bg: #130e23;
+  --color-card-orange-neon: #302543;
+  --color-card-pink-neon: #352445;
+  --color-card-blue-neon: #202d48;
+  --color-card-green-neon: #243b3e;
+  --color-offwhite: #f3edf9;
+  --color-black-text: #e5dcef;
+  --color-black-text-title: #d9a8cf;
+  --color-blacker-black: #0e0a19;
+  --color-link: #a9c6df;
+  --accent-primary: #c084b5;
+  --accent-secondary: #86a9c9;
+  --accent-tertiary: #9479bd;
+  --accent-primary-rgb: 192, 132, 181;
+  --accent-secondary-rgb: 134, 169, 201;
+  --panel-border: rgba(180, 157, 207, .3);
+  --neon-glow: 0 10px 30px rgba(74, 43, 103, .35);
+  --neon-glow-cyan: 0 10px 30px rgba(55, 83, 118, .3);
+}
+
+.timeline .expand-btn {
+  background: linear-gradient(135deg, var(--accent-secondary), var(--color-card-green-neon));
+  color: var(--color-blacker-black);
+  border-radius: 4px;
+  box-shadow: 3px 3px 0 rgba(var(--accent-secondary-rgb), .25);
+}
+
+.timeline::after { box-shadow: none; }
+.timeline-item::before { border-radius: 3px; box-shadow: 0 0 0 3px rgba(var(--accent-primary-rgb), .16); transform: rotate(45deg); }
 
 .more-btn {
     display: inline-flex;
@@ -5051,4 +5301,419 @@ body {
         border-right-color: var(--color-bg-panel);
         border-left-color: transparent;
     }
+}
+
+/* Cozy-game finishing details */
+.timeline .expand-btn {
+    background: linear-gradient(135deg, var(--accent-secondary), var(--color-card-green-neon));
+    color: var(--color-blacker-black);
+    border-radius: 4px;
+    box-shadow: 3px 3px 0 rgba(var(--accent-secondary-rgb), .25);
+}
+
+.timeline::after { box-shadow: none; }
+.timeline-item::before {
+    border-radius: 3px;
+    box-shadow: 0 0 0 3px rgba(var(--accent-primary-rgb), .16);
+    transform: rotate(45deg);
+}
+
+/* Softer section framing: outer layout wrappers stay invisible while the
+   interactive cards inside them retain their game-panel treatment. */
+.container > .wrapper {
+    border-color: transparent !important;
+    box-shadow: none !important;
+}
+
+:root {
+    --color-bg: #F8F5FC;
+    --color-card-orange-neon: #F5C65D;
+    --color-card-pink-neon: #F472B6;
+    --color-card-blue-neon: #43C9DE;
+    --color-card-green-neon: #AD7CF5;
+    --color-offwhite: #FFFFFF;
+    --color-black-text: #252039;
+    --color-black-text-title: #5F4C91;
+    --color-blacker-black: #252039;
+    --color-link: #6B58A0;
+    --accent-primary: #AD7CF5;
+    --accent-secondary: #43C9DE;
+    --accent-tertiary: #F472B6;
+    --accent-gold: #F5C65D;
+    --surface-card: #FFFFFF;
+    --surface-elevated: #EEE9F6;
+    --accent-primary-rgb: 173, 124, 245;
+    --accent-secondary-rgb: 67, 201, 222;
+    --panel-border: rgba(95, 76, 145, .28);
+    --neon-glow: 0 8px 24px rgba(173, 124, 245, .2);
+    --neon-glow-cyan: 0 8px 24px rgba(67, 201, 222, .2);
+}
+
+html[data-theme='dark'] {
+    --color-bg: #160F2B;
+    --color-card-orange-neon: #211B39;
+    --color-card-pink-neon: #211B39;
+    --color-card-blue-neon: #211B39;
+    --color-card-green-neon: #36304F;
+    --color-offwhite: #F2EDF8;
+    --color-black-text: #F2EDF8;
+    --color-black-text-title: #F472B6;
+    --color-blacker-black: #160F2B;
+    --color-link: #43C9DE;
+    --accent-primary: #AD7CF5;
+    --accent-secondary: #43C9DE;
+    --accent-tertiary: #F472B6;
+    --accent-gold: #F5C65D;
+    --surface-card: #211B39;
+    --surface-elevated: #36304F;
+    --accent-primary-rgb: 173, 124, 245;
+    --accent-secondary-rgb: 67, 201, 222;
+    --panel-border: rgba(173, 124, 245, .3);
+    --neon-glow: 0 10px 28px rgba(173, 124, 245, .22);
+    --neon-glow-cyan: 0 10px 28px rgba(67, 201, 222, .2);
+}
+
+.project-number {
+    background: var(--accent-gold);
+    color: #252039;
+}
+
+.game-hud__dot { background: var(--accent-gold); }
+.services-heading::after, .pixel-brand span { color: var(--accent-gold); }
+
+html[data-theme='dark'] .portfolio-carousel,
+html[data-theme='dark'] .carousel-item > div,
+html[data-theme='dark'] .services-card,
+html[data-theme='dark'] .timeline-content {
+    background-color: var(--surface-card) !important;
+}
+
+/* Contrast contract --------------------------------------------------------
+   Dark surfaces use light copy; light and colored surfaces use dark copy. */
+:root {
+    --color-black-text-title: #252039;
+    --color-link: #252039;
+}
+
+html[data-theme='light'] body,
+html[data-theme='light'] p,
+html[data-theme='light'] li,
+html[data-theme='light'] h1,
+html[data-theme='light'] h2,
+html[data-theme='light'] h3,
+html[data-theme='light'] .services-card-title,
+html[data-theme='light'] .services-card-list,
+html[data-theme='light'] .work-build-tag {
+    color: #252039;
+}
+
+html[data-theme='dark'] {
+    --color-black-text: #F2EDF8;
+    --color-black-text-title: #F2EDF8;
+    --color-link: #F2EDF8;
+}
+
+html[data-theme='dark'] body,
+html[data-theme='dark'] p,
+html[data-theme='dark'] li,
+html[data-theme='dark'] h1,
+html[data-theme='dark'] h2,
+html[data-theme='dark'] h3,
+html[data-theme='dark'] .services-card-title,
+html[data-theme='dark'] .services-card-list,
+html[data-theme='dark'] .work-build-tag,
+html[data-theme='dark'] .timeline-content,
+html[data-theme='dark'] .carousel-item > div {
+    color: #F2EDF8;
+}
+
+/* These controls sit on light, gold, cyan, or lavender fills in either mode. */
+.project-number,
+.cv-download-button,
+.timeline .expand-btn,
+.project-btn,
+html[data-theme='light'] .hire-btn,
+html[data-theme='light'] .services-btn {
+    color: #252039 !important;
+}
+
+/* The navigation stays on a midnight surface in both themes. */
+.main-header,
+.main-header .nav-link,
+.main-header .pixel-brand,
+.main-header .theme-label {
+    color: #F2EDF8 !important;
+}
+
+/* Showcase contrast ------------------------------------------------------- */
+html[data-theme='light'] .portfolio-carousel {
+    background: #DED5F0 !important;
+}
+
+html[data-theme='light'] .carousel-item > div {
+    background: #FFFFFF !important;
+    color: #252039 !important;
+}
+
+html[data-theme='light'] .carousel-item h3 {
+    color: #252039 !important;
+    text-shadow: none !important;
+}
+
+html[data-theme='dark'] .portfolio-carousel {
+    background: #36304F !important;
+}
+
+html[data-theme='dark'] .carousel-item > div {
+    background: #211B39 !important;
+}
+
+.project-btn,
+html[data-theme='light'] .project-btn,
+html[data-theme='dark'] .project-btn {
+    background: #5F4C91 !important;
+    color: #FFFFFF !important;
+    border-color: rgba(255, 255, 255, .5) !important;
+}
+
+.project-btn:hover,
+html[data-theme='light'] .project-btn:hover,
+html[data-theme='dark'] .project-btn:hover {
+    background: #7560A8 !important;
+    color: #FFFFFF !important;
+}
+
+/* Hero portrait and mascot prompt */
+#image01 .frame {
+    aspect-ratio: 1;
+    border-radius: 50% !important;
+    border: 3px solid var(--accent-primary) !important;
+    overflow: hidden;
+}
+
+#image01 .frame img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    border-radius: 50% !important;
+}
+
+.mascot-speech {
+    top: -.5rem;
+    right: auto;
+    left: 50%;
+    max-width: 230px;
+    width: max-content;
+    text-align: center;
+    line-height: 1.35;
+    opacity: 1;
+    transform: translate(-50%, calc(-100% + 6px));
+}
+
+.mascot-companion:hover .mascot-speech,
+.mascot-companion:focus .mascot-speech,
+.mascot-companion.is-talking .mascot-speech {
+    transform: translate(-50%, -100%);
+}
+
+@media (max-width: 560px) {
+    #text16::after { width: auto; line-height: 1.45; }
+    .mascot-speech { right: auto; left: 50%; max-width: 190px; }
+}
+
+html[data-theme='light'] .work-build-action {
+    color: #252039 !important;
+}
+
+/* ========================================================================== */
+/* Refinements — light-mode "What I Build" panel, mobile avatar, toggle track  */
+/* ========================================================================== */
+
+/* 1) "What I Build" card : pink background in both themes ------------------- */
+.work-build-card {
+    background-color: #ffd9ec !important;
+    background-image: linear-gradient(160deg, #ffd9ec 0%, #ffc2e0 100%) !important;
+    border-color: #ff8fc0 !important;
+    box-shadow: 6px 6px 0 rgba(var(--accent-primary-rgb), .18) !important;
+}
+
+/* Dark mode: a slightly deeper pink so it still reads as "night" */
+html[data-theme='dark'] .work-build-card {
+    background-color: #3a1d33 !important;
+    background-image: linear-gradient(160deg, #3a1d33 0%, #4a2140 100%) !important;
+    border-color: #d36aa8 !important;
+    box-shadow: 0 0 18px rgba(var(--accent-primary-rgb), .35), 6px 6px 0 rgba(0, 0, 0, .25) !important;
+}
+
+html[data-theme='dark'] .work-build-card .work-build-lead,
+html[data-theme='dark'] .work-build-card .work-build-tag {
+    color: #ffe3f1 !important;
+}
+
+/* The inner ".wrapper" inherits .container.style1's amber bg — make it pink */
+.work-build-card>.wrapper {
+    background-color: #ffd9ec !important;
+}
+
+html[data-theme='dark'] .work-build-card>.wrapper {
+    background-color: #3a1d33 !important;
+}
+
+/* Keep the tag chips readable on the pink panel */
+.work-build-card .work-build-tag {
+    background-color: #fff5fa !important;
+    border-color: #ff8fc0 !important;
+    color: #55203d !important;
+}
+
+html[data-theme='dark'] .work-build-card .work-build-tag {
+    background-color: rgba(255, 255, 255, .08) !important;
+    border-color: rgba(255, 143, 192, .6) !important;
+}
+
+.work-build-card .work-build-action {
+    color: #b5179e !important;
+    border-bottom-color: #b5179e !important;
+}
+
+html[data-theme='dark'] .work-build-card .work-build-action {
+    color: #ff9ecb !important;
+    border-bottom-color: #ff9ecb !important;
+}
+
+/* 2) Mobile : mascot pinned to the top-right, just under the toggle -------- */
+@media (max-width: 768px) {
+    .mascot-companion {
+        position: fixed !important;
+        top: 60px;               /* header height + gap, just under the toggle */
+        right: 0.85rem !important;
+        left: auto !important;
+        width: 84px !important;
+        margin: 0 !important;
+        opacity: 1 !important;
+        z-index: 900;            /* above page content, below the fixed header (999) */
+        filter: drop-shadow(0 8px 14px rgba(50, 30, 74, .28));
+    }
+    .mascot-companion img {
+        width: 84px !important;
+        height: auto;
+    }
+    /* Speech bubble opens leftward so it stays on screen at the top-right */
+    .mascot-speech {
+        top: auto;
+        bottom: 0;
+        left: auto;
+        right: 100%;
+        margin-right: .5rem;
+        max-width: 200px;
+        transform: translate(6px, 0);
+    }
+    .mascot-companion:hover .mascot-speech,
+    .mascot-companion:focus .mascot-speech,
+    .mascot-companion.is-talking .mascot-speech {
+        transform: translate(0, 0);
+    }
+}
+
+@media (max-width: 480px) {
+    .mascot-companion {
+        top: 54px;
+        right: 0.7rem !important;
+        width: 72px !important;
+    }
+    .mascot-companion img {
+        width: 72px !important;
+    }
+    .mascot-speech {
+        max-width: 170px;
+    }
+}
+
+/* 3) Dark-mode toggle : lighter track so the thumb position reads clearly --- */
+html[data-theme='dark'] .theme-toggle-switch {
+    background-color: #4a3a6b !important;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+
+html[data-theme='dark'] .theme-thumb {
+    background: var(--thumb-color-dark);
+    box-shadow: 0 0 12px rgba(var(--accent-secondary-rgb), 0.9), 0 0 0 1px rgba(255, 255, 255, 0.35);
+}
+
+/* 4) Mobile navbar : compact so all links + toggle fit on one line ---------- */
+@media (max-width: 600px) {
+    .main-header {
+        padding: 0.5em 0.7em !important;
+    }
+    .main-nav {
+        gap: 0.35em !important;
+        overflow-x: visible !important;
+        justify-content: center !important;
+        flex-wrap: nowrap;
+    }
+    .nav-link {
+        font-size: 0.64em !important;
+        padding: 0.28em 0.42em !important;
+        letter-spacing: 0.01em !important;
+    }
+    .theme-switch-wrapper {
+        margin-left: 0.35em !important;
+        gap: 0.15em !important;
+    }
+    .theme-toggle-switch {
+        --switch-width: 2.9em !important;
+        --switch-height: 1.45em !important;
+        --thumb-size: 1.45em !important;
+    }
+}
+
+@media (max-width: 400px) {
+    .main-header {
+        padding: 0.45em 0.5em !important;
+    }
+    .main-nav {
+        gap: 0.25em !important;
+    }
+    .nav-link {
+        font-size: 0.58em !important;
+        padding: 0.24em 0.34em !important;
+    }
+    .theme-switch-wrapper {
+        margin-left: 0.25em !important;
+    }
+    .theme-toggle-switch {
+        --switch-width: 2.6em !important;
+        --switch-height: 1.3em !important;
+        --thumb-size: 1.3em !important;
+    }
+}
+
+@media (max-width: 340px) {
+    .nav-link {
+        font-size: 0.52em !important;
+        padding: 0.2em 0.28em !important;
+    }
+    .theme-toggle-switch {
+        --switch-width: 2.4em !important;
+        --switch-height: 1.2em !important;
+        --thumb-size: 1.2em !important;
+    }
+}
+
+/* 5) Mascot : a little breathing room below the navbar on mobile ------------ */
+@media (max-width: 768px) {
+    .mascot-companion {
+        top: 72px !important;
+    }
+}
+@media (max-width: 480px) {
+    .mascot-companion {
+        top: 66px !important;
+    }
+}
+
+/* 6) "Available for new quests" label : purple in light mode --------------- */
+html[data-theme='light'] #text16::after {
+    color: #7b2ff7 !important;
+    border-color: rgba(123, 47, 247, .45) !important;
 }
