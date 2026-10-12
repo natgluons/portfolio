@@ -583,6 +583,94 @@ html[data-theme='dark'] .theme-thumb {
 /* theme toggle switch css ends */
 /* ---------------------------- */
 
+/* Background music toggle button */
+.music-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.6em;
+    width: 2.2em;
+    height: 2.2em;
+    padding: 0;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.14);
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.music-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.28);
+    border-color: rgba(255, 255, 255, 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 0 14px rgba(255, 255, 255, 0.55);
+}
+
+.music-toggle:active {
+    transform: translateY(0);
+}
+
+.music-toggle .music-icon {
+    width: 1.2em;
+    height: 1.2em;
+    display: block;
+}
+
+/* When music is playing show the "on" icon, hide the "off" icon */
+.music-toggle .music-icon-off {
+    display: none;
+}
+
+.music-toggle.is-playing .music-icon-on {
+    display: block;
+    animation: music-pulse 1.6s ease-in-out infinite;
+}
+
+.music-toggle.is-playing .music-icon-off {
+    display: none;
+}
+
+.music-toggle:not(.is-playing) .music-icon-on {
+    display: none;
+}
+
+.music-toggle:not(.is-playing) .music-icon-off {
+    display: block;
+}
+
+@keyframes music-pulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.15); opacity: 0.75; }
+}
+
+@media (max-width: 768px) {
+    .music-toggle {
+        width: 2em;
+        height: 2em;
+        margin-left: 0.5em;
+    }
+    .music-toggle .music-icon {
+        width: 1.1em;
+        height: 1.1em;
+    }
+}
+
+@media (max-width: 600px) {
+    .music-toggle {
+        width: 1.8em;
+        height: 1.8em;
+        margin-left: 0.4em;
+    }
+    .music-toggle .music-icon {
+        width: 1em;
+        height: 1em;
+    }
+}
+
+/* Background music toggle button ends */
+/* ---------------------------- */
+
 /* Container for the animated arrow */
 .arrow-container {
     display: flex;
