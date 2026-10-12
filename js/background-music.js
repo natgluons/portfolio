@@ -12,6 +12,18 @@ document.addEventListener("DOMContentLoaded", function () {
     // Restore the user's preference (default: on).
     let musicEnabled = localStorage.getItem(PREF_KEY) !== 'false';
 
+    // Ensure the track loops when it finishes.
+    audio.loop = true;
+
+    // Fallback loop: some browsers / resume flows don't reliably honour the
+    // `loop` attribute, so restart explicitly when the song ends.
+    audio.addEventListener('ended', function () {
+        if (musicEnabled) {
+            audio.currentTime = 0;
+            audio.play().catch(function () {});
+        }
+    });
+
     // Restore the playback position so the song continues where it left off
     // instead of restarting when navigating between pages.
     const savedTime = parseFloat(localStorage.getItem(TIME_KEY));
