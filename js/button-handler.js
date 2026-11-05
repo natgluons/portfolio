@@ -4,9 +4,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const buttons = document.querySelectorAll('.expand-btn');
     buttons.forEach(button => {
         const content = button.nextElementSibling;
-        content.style.display = 'none'; // Ensure content starts collapsed
+        content.style.display = 'block'; // Show all details by default
         const detailText = document.createElement('div');
-        detailText.textContent = '▶ Show Details';
+        detailText.textContent = '▼ Hide Details';
         detailText.style.fontFamily = 'Inter, sans-serif'; // Set font family
         detailText.style.cursor = 'pointer'; // Make detail text clickable
         detailText.style.color = 'grey'; // Set text color to soft grey

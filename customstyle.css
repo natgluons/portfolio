@@ -189,7 +189,7 @@ html[data-theme='dark'] #home-section::before { opacity: .28; }
 #image01 .frame { border-radius: 8px !important; box-shadow: 8px 8px 0 rgba(var(--accent-secondary-rgb), .25) !important; }
 #image01 img { filter: saturate(.86) contrast(.96); }
 #text16 { max-width: 72%; position: relative; }
-#text16::after { content: '✦ AVAILABLE FOR NEW QUESTS (REMOTE JOB OPPORTUNITIES)'; display: block; width: max-content; margin-top: .8rem; padding: .45rem .65rem; border: 1px dashed var(--panel-border); color: var(--accent-secondary); font: 700 .62rem var(--font-display); letter-spacing: .1em; }
+#text16::after { content: '✦ INTERESTED IN THE GAMING INDUSTRY'; display: block; width: max-content; margin-top: .8rem; padding: .45rem .65rem; border: 1px dashed var(--panel-border); color: var(--accent-secondary); font: 700 .62rem var(--font-display); letter-spacing: .1em; }
 
 .services-heading { position: relative; text-shadow: 2px 2px 0 rgba(var(--accent-primary-rgb), .13) !important; }
 .services-heading::after { content: '✦'; margin-left: .45rem; color: var(--accent-secondary); font-size: .65em; }
