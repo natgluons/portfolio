@@ -28,6 +28,16 @@
 </head>
 
 <body class="vsc-initialized is-ready">
+<div id="welcome-popup" class="welcome-popup" role="dialog" aria-labelledby="welcome-popup-title" aria-describedby="welcome-popup-text">
+    <button class="welcome-popup__close" id="welcome-popup-close" type="button" aria-label="Close welcome message">&times;</button>
+    <p class="welcome-popup__title" id="welcome-popup-title">Welcome!</p>
+    <p class="welcome-popup__text" id="welcome-popup-text">
+        Hi! This is my creative space for showcasing my projects. If you're looking for a formal portfolio, you can check out my
+        <a href="https://bit.ly/cv-kristynatasha">CV</a> or
+        <a href="https://github.com/natgluons" target="_blank" rel="noopener noreferrer">github.com/natgluons</a>.
+        instead. Thank you! Enjoy.
+    </p>
+</div>
 <header class="main-header">
     <nav class="main-nav">
         <a href="#about-me" class="nav-link">About Me</a>
@@ -455,7 +465,7 @@
     </div>
     
     <!-- Background music -->
-    <audio id="background-music" src="assets/09%20Magnificent%20Impulse.mp3" loop preload="auto"></audio>
+    <audio id="background-music" src="assets/30%20Wildfire.mp3" loop preload="auto"></audio>
 
     <!-- JavaScript section -->
     <script src="js/button-handler.js"></script>
@@ -465,6 +475,7 @@
     <script src="js/text-animations.js"></script>
     <script src="js/scroll-to-top.js"></script>
     <script src="js/playful-ui.js"></script>
+    <script src="js/welcome-popup.js"></script>
     <script src="js/background-music.js"></script>
 </body>
 </html>
