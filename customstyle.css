@@ -6194,3 +6194,96 @@ html[data-theme='light'] #text16::after {
     }
     .welcome-popup__text { font-size: .78rem; }
 }
+
+/* ==========================================================================
+   Track Records — skill areas
+   ========================================================================== */
+.service-section {
+    padding: clamp(1.5rem, 2.4vw, 2.1rem) clamp(1.25rem, 2.4vw, 2rem) !important;
+    margin-bottom: 2rem !important;
+    background: var(--surface-card) !important;
+    border: 1px solid var(--panel-border) !important;
+    border-radius: 20px !important;
+    box-shadow: 0 10px 28px rgba(95, 76, 145, .1) !important;
+}
+
+html[data-theme='dark'] .service-section {
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .26) !important;
+}
+
+.service-section .skill-area {
+    padding: 0;
+    background: transparent;
+    border: 0;
+}
+
+.service-section .services-subtitle {
+    margin: 0 0 .5rem !important;
+    font-size: clamp(1.4rem, 2.2vw, 1.75rem) !important;
+    line-height: 1.2 !important;
+    font-weight: 600 !important;
+}
+
+.skill-area__desc {
+    max-width: 60ch;
+    margin: 0 0 1.5rem !important;
+    font-family: var(--font-body);
+    font-size: clamp(.98rem, 1.4vw, 1.1rem) !important;
+    line-height: 1.5 !important;
+    color: var(--color-black-text) !important;
+    opacity: .7;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .85rem 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.skill-tag {
+    --tag-color: var(--accent-primary);
+    display: inline-flex;
+    align-items: center;
+    gap: .7rem;
+    padding: .75rem 1.25rem;
+    font-family: var(--font-body);
+    font-size: clamp(.9rem, 1.2vw, 1.05rem);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-black-text);
+    background: color-mix(in srgb, var(--tag-color) 15%, var(--surface-card));
+    border: 1px solid color-mix(in srgb, var(--tag-color) 24%, transparent);
+    border-radius: 999px;
+}
+
+.skill-tag::before {
+    content: '';
+    width: .5rem;
+    height: .5rem;
+    flex: 0 0 auto;
+    background: var(--tag-color);
+    border-radius: 2px;
+}
+
+.skill-tag--pink { --tag-color: var(--accent-tertiary); }
+.skill-tag--purple { --tag-color: var(--accent-primary); }
+.skill-tag--cyan { --tag-color: var(--accent-secondary); }
+.skill-tag--gold { --tag-color: var(--accent-gold); }
+
+@media (max-width: 600px) {
+    .service-section {
+        padding: 1.25rem 1.1rem !important;
+        border-radius: 16px !important;
+    }
+
+    .skill-tags {
+        gap: .6rem .7rem;
+    }
+
+    .skill-tag {
+        padding: .6rem 1rem;
+    }
+}
