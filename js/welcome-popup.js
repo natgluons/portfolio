@@ -6,10 +6,19 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
     }
 
-    // Clear the old persisted dismissal flag so the popup is shown again
-    // until the visitor closes it manually.
+    // Show the welcome popup only once per visitor.
+    let alreadySeen = false;
     try {
-        localStorage.removeItem('welcomePopupDismissed');
+        alreadySeen = localStorage.getItem('welcomePopupSeen') === 'true';
+    } catch (e) { /* ignore unavailable storage */ }
+
+    if (alreadySeen) {
+        popup.remove();
+        return;
+    }
+
+    try {
+        localStorage.setItem('welcomePopupSeen', 'true');
     } catch (e) { /* ignore unavailable storage */ }
 
     const dismiss = function () {
