@@ -27,7 +27,11 @@
     </script>
 </head>
 
-<body class="vsc-initialized is-ready">
+<body class="vsc-initialized is-ready page-home">
+<div class="home-atmosphere" aria-hidden="true">
+    <div class="home-atmosphere__clouds"></div>
+    <div class="home-atmosphere__ground"></div>
+</div>
 <div id="welcome-popup" class="welcome-popup" role="dialog" aria-labelledby="welcome-popup-title" aria-describedby="welcome-popup-text">
     <button class="welcome-popup__close" id="welcome-popup-close" type="button" aria-label="Close welcome message">&times;</button>
     <p class="welcome-popup__title" id="welcome-popup-title">Welcome!</p>
@@ -138,156 +142,126 @@
         <div id="main">
             <div class="inner">
                 <section id="home-section" class="active">
-                    <div class="game-hud" aria-label="Portfolio status">
-                        <span class="game-hud__dot" aria-hidden="true"></span>
-                        <span>PLAYER 01</span>
-                        <span class="game-hud__divider" aria-hidden="true"></span>
-                        <span>AI / ML ENGINEER</span>
-                    </div>
-                    <div id="image01" class="style2 image"><span class="frame"><img
-                                src="assets/images/image01.jpg?v=59470ebd" alt=""></span></div>
-                    <div class="mascot-companion" data-parallax aria-label="Natasha's crystal wizard mascot" role="img" tabindex="0">
-                        <img src="assets/images/mascot_nobg.png" alt="A playful purple crystal wizard mascot">
-                        <span class="mascot-sparkle mascot-sparkle--one" aria-hidden="true">✦</span>
-                        <span class="mascot-sparkle mascot-sparkle--two" aria-hidden="true">✦</span>
-                        <span class="mascot-sparkle mascot-sparkle--three" aria-hidden="true">✦</span>
-                        <span class="mascot-speech" role="status">
-                            <button type="button" class="mascot-speech__close" aria-label="Close mascot message">&times;</button>
-                            <span class="mascot-speech__text">Click my mascot to know fun facts about me </span>
-                        </span>
-                    </div>
-                            <h1 id="text16" class="style6">
-                            <em style="font-size: 0.8em;">Hi,</em><br>
-                        <strong>I'm <span style="font-weight: bold;">Natasha</span></strong><br>
-                        <!-- <em class="text-bounce text-bounce-delay-3" style="font-size: 0.8em;">an <strong>ML Engineer</strong></em><br> -->
-                        <span style="font-size: 0.4em; opacity: 0.85;">Jakarta, Indonesia<p><a href="https://wa.me/6287886583513" target="_blank" rel="noopener">(+62) 8788-658-3513</a></p> </span>
-
-                    </h1>
-                    <div id="buttons04" class="style1 buttons mobile-center" style="display: flex; justify-content: flex-start; width: 60%;">
-                        <a href="mailto:kristynatasha011@gmail.com" class="hire-btn n01" style="padding: 0.5em 1em; margin-right: 5px; border-radius: 12px; font-family: 'Inter', sans-serif; text-decoration: none; display: flex; align-items: center; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;"
-                           onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.15)'; this.style.cursor='arrow';"
-                           onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
-                            <svg aria-labelledby="icon-title" style="width: 1em; height: 1em; margin-right: 5px;">
-                                <title id="icon-title">Email</title>
-                                <use xlink:href="#icon-c0646d28bbeb18e39eb973f96b44bd0f"></use>
+                    <div class="hero-stage">
+                        <div class="game-hud" aria-label="Portfolio status">
+                            <svg class="game-hud__icon" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M6 9h4M8 7v4M15 8h.01M18 10h.01M6.5 6h11A4.5 4.5 0 0 1 22 10.5v3a3.5 3.5 0 0 1-6.3 2.1L14.5 14h-5l-1.2 1.6A3.5 3.5 0 0 1 2 13.5v-3A4.5 4.5 0 0 1 6.5 6Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            <span class="label" style="padding: 2px;"><bold>Say Hello</bold></span>
-                        </a>
-                        <a href="#services" class="services-btn n01" style="padding: 0.5em 1em; border-radius: 12px; font-family: 'Inter', sans-serif; text-decoration: none; display: flex; align-items: center; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;"
-                           onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 12px rgba(0, 0, 0, 0.15)'; this.style.cursor='arrow';"
-                           onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='none';">
-                            <span class="label" style="padding: 0;"><bold>What I Build</bold></span>
-                        </a>
-                    </div>
-                    <p id="text15" class="style5" style="opacity: 1; transform: none;"><span class="p">
-                            <span class="p">I specialize in architecting Data Science and Machine Learning solutions, with experience in predictive systems for Fraud Detection, customer behavioral analytics, geospatial intelligence, LLM-based recommendation engines, and computational modeling with HPC.
-                            <br><br>
-                            Outside of work, I usually spend my time writing, gaming, or weightlifting. I'd love to bring my ML and engineering background to building creative solutions, creating fun and meaningful experiences, and exploring new ways of storytelling.
-                    
-                    <div class="icons-container">
-                        <ul class="icons">
-                            <li class="icon-github">
-                                <a class="n01" href="https://github.com/natgluons">
-                                    <svg aria-labelledby="icon-title"><title id="icon-title">GitHub</title><use xlink:href="#icon-8c4b37645de3c276d895d87df51ba614"></use></svg>
-                                    <span class="label">GitHub</span>
-                                </a>
-                            </li>
-                            <li class="icon-huggingface">
-                                <a class="n02" href="https://huggingface.co/natgluons">
-                                    <svg aria-labelledby="icon-title"><title id="icon-title">HuggingFace</title><use xlink:href="#icon-huggingface"></use></svg>
-                                    <span class="label">HuggingFace</span>
-                                </a>
-                            </li>
-                            <li class="icon-linkedin">
-                                <a class="n03" href="https://www.linkedin.com/in/kristynatasha/">
-                                    <svg aria-labelledby="icon-title"><title id="icon-title">LinkedIn</title><use xlink:href="#icon-bf393d6ea48a4e69e1ed58a3563b94a5"></use></svg>
-                                    <span class="label">LinkedIn</span>
-                                </a>
-                            </li>
-                            <li class="icon-whatsapp">
-                                <a class="n04" href="https://wa.me/447470632088">
-                                    <svg aria-labelledby="icon-title"><title id="icon-title">WhatsApp</title><use xlink:href="#icon-e9633646f45121eab610a3d30c929019"></use></svg>
-                                    <span class="label">WhatsApp</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <br>
-                    <div class="arrow-container">
-                        <div class="arrow"></div>
-                    </div>
-
-                    <h1 id="about-me" class="services-heading style16"><text-node class="text-bounce text-bounce-delay-1">#</text-node>
-                        <text-node class="text-bounce text-bounce-delay-2">ABOUT ME</text-node>
-                    </h1>
-
-                    <div id="container01" class="container columns"
-                        style="opacity: 1; transform-origin: 50% 50%; transform: none;">
-                        <div class="wrapper">
-                            <div class="inner" data-onvisible-trigger="1">
-                                <div>
-                                    <ul id="icons05" class="icons">
-                                        <li><span class="n01"><svg
-                                                    aria-labelledby="icon-title" style="width: 1.5em; height: 1.5em;">
-                                                    <title id="icon-title"></title>
-                                                    <use xlink:href="#icon-7a0fb2568fa850cbc2e1937e79944cc1"></use>
-                                                </svg><span class="label"></span></span></li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <p id="text24">I'm looking for <strong>fully remote opportunities in AI/ML engineering or Data Science</strong>. I can follow across different time zones as long as I can do it remotely from Indonesia.
-                                    </p>
-                                </div>
-                            </div>
+                            <span>PLAYER 01</span>
+                            <span class="game-hud__divider" aria-hidden="true"></span>
+                            <span>AI / ML ENGINEER</span>
                         </div>
-                    </div>
-                    <div id="container02" class="container columns"
-                        style="opacity: 1; transform-origin: 50% 50%; transform: none;">
-                        <div class="wrapper">
-                            <div class="inner" data-onvisible-trigger="1">
-                                <div>
-                                    <ul id="icons05" class="icons">
-                                        <li><span class="n01"><svg
-                                                    aria-labelledby="icon-title" style="width: 1.5em; height: 1.5em;">
-                                                    <title id="icon-title"></title>
-                                                    <use xlink:href="#icon-9765c5f16048e2504be091e398e0e8ec"></use>
-                                                </svg><span class="label"></span></span></li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <p id="text24">
-                                        I have a <strong>MSc in CompSci from Imperial College London.</strong> So I'm used to collaborating with international teams!
-                                    </p>
-                                </div>
-                            </div>
+
+                        <div id="image01" class="hero-portrait">
+                            <span class="frame"><img src="assets/images/image01.jpg?v=59470ebd" alt="Portrait of Natasha"></span>
+                            <span class="hero-portrait__sparkle hero-portrait__sparkle--one" aria-hidden="true">✦</span>
+                            <span class="hero-portrait__sparkle hero-portrait__sparkle--two" aria-hidden="true">✦</span>
+                            <span class="hero-portrait__sparkle hero-portrait__sparkle--three" aria-hidden="true">✦</span>
                         </div>
-                    </div>
-                    <div id="container03" class="container columns"
-                        style="opacity: 1; transform-origin: 50% 50%; transform: none;">
-                        <div class="wrapper">
-                            <div class="inner" data-onvisible-trigger="1">
-                                <div>
-                                    <ul id="icons05" class="icons">
-                                        <li><span class="n01"><svg
-                                                    aria-labelledby="icon-title" style="width: 1.5em; height: 1.5em;">
-                                                    <title id="icon-title"></title>
-                                                    <use xlink:href="#icon-e4009e971530d408f0e96eaa01207ee4"></use>
-                                                </svg><span class="label"></span></span></li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <p id="text24">I bring experience in fintech, telecommunications, and master's research in astrophysics with NASA Ames affiliates. I'm also open to opportunities in gaming, healthcare, and beyond!
-                                    </p>
-                                </div>
+
+                        <div class="mascot-companion" data-parallax aria-label="Natasha's crystal wizard mascot" role="img" tabindex="0">
+                            <img src="assets/images/mascot_nobg.png" alt="A playful purple crystal wizard mascot">
+                            <span class="mascot-sparkle mascot-sparkle--one" aria-hidden="true">✦</span>
+                            <span class="mascot-sparkle mascot-sparkle--two" aria-hidden="true">✦</span>
+                            <span class="mascot-sparkle mascot-sparkle--three" aria-hidden="true">✦</span>
+                            <span class="mascot-speech" role="status">
+                                <button type="button" class="mascot-speech__close" aria-label="Close mascot message">&times;</button>
+                                <span class="mascot-speech__text">Click my mascot to know fun facts about me! <span aria-hidden="true">💗</span></span>
+                            </span>
+                        </div>
+
+                        <div class="hero-copy">
+                            <h1 id="text16" class="hero-title">Hi, I'm <span>Natasha</span></h1>
+
+                            <ul class="hero-meta">
+                                <li>
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s6-5.1 6-10a6 6 0 1 0-12 0c0 4.9 6 10 6 10Z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="11" r="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+                                    Jakarta, Indonesia
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 4h2.2l1.2 4-2 1.4a14.5 14.5 0 0 0 4.7 4.7l1.4-2 4 1.2v2.2A2.5 2.5 0 0 1 17.5 18C10.6 18 5 12.4 5 5.5A2.5 2.5 0 0 1 7.5 3h1Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                                    <a href="https://wa.me/6287886583513" target="_blank" rel="noopener">(+62) 8788-658-3513</a>
+                                </li>
+                            </ul>
+
+                            <p class="hero-quest">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 21V4m0 0 10 2-2.5 4L18 12 6 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                Looking for a new quest (remote job opportunities)
+                            </p>
+
+                            <div id="buttons04" class="hero-actions">
+                                <a href="#services" class="hire-btn n01">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    <span class="label"><bold>What I Build</bold></span>
+                                </a>
+                                <a href="mailto:kristynatasha011@gmail.com" class="services-btn n01">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                                    <span class="label"><bold>Say Hello</bold></span>
+                                </a>
+                            </div>
+
+                            <p id="text15" class="hero-bio">I specialize in architecting Data Science and Machine Learning solutions, with experience in predictive systems for Fraud Detection, customer behavioral analytics, geospatial intelligence, LLM-based recommendation engines, and computational modeling with HPC.<br><br>Outside of work, I usually spend my time writing, gaming, or weightlifting. I'd love to bring my ML and engineering background to building creative solutions, creating fun and meaningful experiences, and exploring new ways of storytelling.</p>
+
+                            <div class="icons-container">
+                                <ul class="icons">
+                                    <li class="icon-github">
+                                        <a class="n01" href="https://github.com/natgluons">
+                                            <svg aria-labelledby="icon-title"><title id="icon-title">GitHub</title><use xlink:href="#icon-8c4b37645de3c276d895d87df51ba614"></use></svg>
+                                            <span class="label">GitHub</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon-huggingface">
+                                        <a class="n02" href="https://huggingface.co/natgluons">
+                                            <svg aria-labelledby="icon-title"><title id="icon-title">HuggingFace</title><use xlink:href="#icon-huggingface"></use></svg>
+                                            <span class="label">HuggingFace</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon-linkedin">
+                                        <a class="n03" href="https://www.linkedin.com/in/kristynatasha/">
+                                            <svg aria-labelledby="icon-title"><title id="icon-title">LinkedIn</title><use xlink:href="#icon-bf393d6ea48a4e69e1ed58a3563b94a5"></use></svg>
+                                            <span class="label">LinkedIn</span>
+                                        </a>
+                                    </li>
+                                    <li class="icon-whatsapp">
+                                        <a class="n04" href="https://wa.me/447470632088">
+                                            <svg aria-labelledby="icon-title"><title id="icon-title">WhatsApp</title><use xlink:href="#icon-e9633646f45121eab610a3d30c929019"></use></svg>
+                                            <span class="label">WhatsApp</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="arrow-container">
+                                <div class="arrow"></div>
                             </div>
                         </div>
                     </div>
 
-                    <h1 id="portfolio" class="services-heading style16">
-                        <text-node class="text-bounce text-bounce-delay-1">#</text-node>
-                        <text-node class="text-bounce text-bounce-delay-2">SHOWCASE</text-node>
-                    </h1>
+                    <h1 id="about-me" class="section-heading services-heading style16"><span class="section-heading__hash">#</span> ABOUT ME <span class="section-heading__spark" aria-hidden="true">✦</span></h1>
+
+                    <div id="container01" class="about-card">
+                        <div id="icons05" class="about-card__icon about-card__icon--gold" aria-hidden="true">
+                            <svg viewBox="0 0 40 40"><use xlink:href="#icon-7a0fb2568fa850cbc2e1937e79944cc1"></use></svg>
+                        </div>
+                        <p class="about-card__text">I'm looking for <strong>fully remote opportunities in AI/ML engineering or Data Science</strong>. I can work across different time zones as long as I can do it remotely from Indonesia.</p>
+                    </div>
+
+                    <div id="container02" class="about-card">
+                        <div class="about-card__icon about-card__icon--pink" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"/></svg>
+                        </div>
+                        <p class="about-card__text">I have a <strong>MSc in CompSci from Imperial College London.</strong> So I'm used to collaborating with international teams!</p>
+                    </div>
+
+                    <div id="container03" class="about-card">
+                        <div class="about-card__icon about-card__icon--cyan" aria-hidden="true">
+                            <svg viewBox="0 0 40 40"><use xlink:href="#icon-e4009e971530d408f0e96eaa01207ee4"></use></svg>
+                        </div>
+                        <p class="about-card__text">I bring experience in fintech, telecommunications, and master's research in astrophysics with NASA Ames affiliates. I'm also open to opportunities in gaming, healthcare, and beyond!</p>
+                    </div>
+
+                    <h1 id="portfolio" class="section-heading services-heading style16"><span class="section-heading__hash">#</span> SHOWCASE <span class="section-heading__spark" aria-hidden="true">✦</span></h1>
+
                     <div class="container services-intro" style="opacity: 1; transform: none; margin-bottom: 30px;">
                         <div class="services-wrapper wrapper">
                             <div class="services-inner inner" data-onvisible-trigger="1">
@@ -421,10 +395,7 @@
 
                     <hr class="services-divider" style="width: 50%; margin: 30px auto; border: none; height: 1px; background: linear-gradient(to right, transparent, var(--accent-primary), transparent);">
 
-                    <h1 id="services" class="services-heading style16">
-                        <text-node>#</text-node>
-                        <text-node>WHAT I BUILD</text-node>
-                    </h1>
+                    <h1 id="services" class="section-heading services-heading style16"><span class="section-heading__hash">#</span> WHAT I BUILD <span class="section-heading__spark" aria-hidden="true">✦</span></h1>
 
                     <div class="container style1 default work-build-card">
                         <div class="wrapper">

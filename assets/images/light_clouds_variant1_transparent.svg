@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1600 720" width="1600" height="720" role="img" aria-label="Soft lavender pixel-art clouds for a light-mode website background">
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#FAF8FF"/><stop offset="1" stop-color="#F4F0FC"/></linearGradient></defs>
+<g transform="translate(230 155) scale(1.55)" stroke-linecap="square" stroke-linejoin="miter">
+<path d="M 0 80 H 36 V 56 H 75 V 36 H 111 V 15 H 153 V 0 H 204 V 14 H 242 V 35 H 268 V 62 H 297 V 80 H 318 V 102 H 298 V 117 H 20 V 105 H 0 Z" fill="#FCFAFF" stroke="#D8C2FC" stroke-width="7"/>
+<path d="M 64 86 H 98 V 70 H 119 V 57 H 148 M 162 52 H 205 V 69 H 235 V 85 H 272" fill="none" stroke="#E9DDFC" stroke-width="8"/>
+<path d="M 77 34 H 112 V 16 H 152" fill="none" stroke="#FFFFFF" stroke-opacity=".95" stroke-width="8"/>
+</g>
+<g transform="translate(100 450) scale(0.56)" stroke-linecap="square" stroke-linejoin="miter">
+<path d="M 0 53 H 25 V 37 H 52 V 21 H 77 V 5 H 105 V 20 H 132 V 35 H 158 V 53 H 177 V 70 H 0 Z" fill="#FCFAFF" stroke="#D8C2FC" stroke-width="7"/>
+<path d="M 37 53 H 60 V 41 H 90 V 47 H 122" fill="none" stroke="#E9DDFC" stroke-width="8"/>
+<path d="M 51 25 H 79 V 14 H 101" fill="none" stroke="#FFFFFF" stroke-opacity=".95" stroke-width="8"/>
+</g>
+<g transform="translate(1020 355) scale(1.11)" stroke-linecap="square" stroke-linejoin="miter">
+<path d="M 0 73 H 32 V 51 H 62 V 32 H 93 V 14 H 127 V 0 H 166 V 13 H 201 V 33 H 224 V 51 H 255 V 73 H 279 V 96 H 260 V 110 H 17 V 96 H 0 Z" fill="#FCFAFF" stroke="#D8C2FC" stroke-width="7"/>
+<path d="M 61 76 H 89 V 61 H 111 V 46 H 147 M 169 45 H 188 V 65 H 214 V 75" fill="none" stroke="#E9DDFC" stroke-width="8"/>
+<path d="M 94 30 H 126 V 15 H 162" fill="none" stroke="#FFFFFF" stroke-opacity=".95" stroke-width="8"/>
+</g>
+<g transform="translate(1175 166) scale(0.57)" stroke-linecap="square" stroke-linejoin="miter">
+<path d="M 0 53 H 25 V 37 H 52 V 21 H 77 V 5 H 105 V 20 H 132 V 35 H 158 V 53 H 177 V 70 H 0 Z" fill="#FCFAFF" stroke="#D8C2FC" stroke-width="7"/>
+<path d="M 37 53 H 60 V 41 H 90 V 47 H 122" fill="none" stroke="#E9DDFC" stroke-width="8"/>
+<path d="M 51 25 H 79 V 14 H 101" fill="none" stroke="#FFFFFF" stroke-opacity=".95" stroke-width="8"/>
+</g>
+</svg>
