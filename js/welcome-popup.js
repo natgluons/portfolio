@@ -6,20 +6,14 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
     }
 
-    const DISMISS_KEY = 'welcomePopupDismissed';
-
+    // Clear the old persisted dismissal flag so the popup is shown again
+    // until the visitor closes it manually.
     try {
-        if (localStorage.getItem(DISMISS_KEY) === 'true') {
-            popup.remove();
-            return;
-        }
+        localStorage.removeItem('welcomePopupDismissed');
     } catch (e) { /* ignore unavailable storage */ }
 
     const dismiss = function () {
         popup.classList.add('is-dismissed');
-        try {
-            localStorage.setItem(DISMISS_KEY, 'true');
-        } catch (e) { /* ignore quota errors */ }
         window.setTimeout(function () {
             popup.remove();
         }, 220);
