@@ -7925,3 +7925,98 @@ html[data-theme='dark'] body.page-workexperience .work-ground {
         --padding-vertical: 4rem;
     }
 }
+
+/* Mobile home: circular music button, mascot under it, centred intro ------- */
+@media (max-width: 768px) {
+    .music-toggle {
+        flex: 0 0 auto;
+    }
+
+    body.page-home #wrapper {
+        overflow: visible;
+    }
+
+    body.page-home .mascot-companion {
+        position: absolute !important;
+        top: -3rem !important;
+        right: .85rem !important;
+        left: auto !important;
+        width: 48px !important;
+        margin: 0 !important;
+        opacity: .95;
+    }
+
+    body.page-home .mascot-companion img {
+        width: 100% !important;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    body.page-home .mascot-companion {
+        top: -3.5rem !important;
+        right: .7rem !important;
+        width: 44px !important;
+    }
+}
+
+@media (max-width: 736px) {
+    body.page-home #image01.hero-portrait {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    body.page-home .hero-meta {
+        align-items: center;
+        text-align: center;
+    }
+
+    body.page-home .hero-meta li {
+        justify-content: center;
+    }
+}
+
+/* Justified hero bio ------------------------------------------------------- */
+body.page-home #text15.hero-bio {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+/* Mobile track records: left-aligned records and stacked contact links ----- */
+@media (max-width: 736px) {
+    body.page-trackrecords #services-section .service-section,
+    body.page-trackrecords #services-section .record-card,
+    body.page-trackrecords #services-section .service-section .services-inner {
+        text-align: left !important;
+    }
+
+    body.page-trackrecords .skill-tags {
+        justify-content: flex-start !important;
+    }
+
+    body.page-trackrecords .why-me-grid,
+    body.page-trackrecords .why-me-main,
+    body.page-trackrecords .why-me-side,
+    body.page-trackrecords .why-me-item {
+        text-align: left !important;
+    }
+
+    body.page-trackrecords .why-me-grid .why-me-contact {
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
+        gap: .75rem !important;
+        text-align: left !important;
+    }
+
+    body.page-trackrecords .why-me-grid .why-me-contact-title {
+        flex-basis: auto !important;
+        margin: 0 0 .25rem !important;
+    }
+
+    body.page-trackrecords .why-me-grid .why-me-contact-link,
+    body.page-trackrecords .why-me-grid .why-me-cta {
+        margin-left: 0 !important;
+    }
+}
