@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
     brand.className = 'pixel-brand';
     brand.href = 'index.html';
     brand.setAttribute('aria-label', 'Natasha home');
-    brand.innerHTML = '<span aria-hidden="true">✦</span> NAT.EXE';
+    brand.innerHTML = '<span aria-hidden="true"></span> NAT.EXE';
     nav.prepend(brand);
   });
 });
