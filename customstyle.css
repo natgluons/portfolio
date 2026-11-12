@@ -5127,6 +5127,10 @@ body {
   height: 20px; /* Adjust height to center the dots */
 }
 
+html[data-theme='light'] .dot-divider {
+  background-image: radial-gradient(circle, color-mix(in srgb, var(--color-card-pink-neon) 35%, #ffffff) 3px, transparent 1px);
+}
+
 .services-container {
     font-family: var(--font-body);
     color: var(--color-black-text);
@@ -7938,9 +7942,9 @@ html[data-theme='dark'] body.page-workexperience .work-ground {
 
     body.page-home .mascot-companion {
         position: absolute !important;
-        top: -3rem !important;
-        right: .85rem !important;
-        left: auto !important;
+        top: -3.5rem !important;
+        right: auto !important;
+        left: calc(50% - 24px) !important;
         width: 48px !important;
         margin: 0 !important;
         opacity: .95;
@@ -7950,12 +7954,21 @@ html[data-theme='dark'] body.page-workexperience .work-ground {
         width: 100% !important;
         height: auto;
     }
+
+    body.page-home .game-hud {
+        display: flex !important;
+        width: max-content;
+        max-width: 100%;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
 }
 
 @media (max-width: 480px) {
     body.page-home .mascot-companion {
-        top: -3.5rem !important;
-        right: .7rem !important;
+        top: -3rem !important;
+        right: auto !important;
+        left: calc(50% - 22px) !important;
         width: 44px !important;
     }
 }
@@ -8018,5 +8031,56 @@ body.page-home #text15.hero-bio {
     body.page-trackrecords .why-me-grid .why-me-contact-link,
     body.page-trackrecords .why-me-grid .why-me-cta {
         margin-left: 0 !important;
+    }
+}
+
+/* Track Records heading: match the home "About Me" section heading ---------- */
+body.page-trackrecords .section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: min(68vw, 960px);
+    margin: 3rem auto 2rem !important;
+    color: var(--color-black-text-title) !important;
+    font-size: clamp(1.7rem, 3.5vw, 3rem) !important;
+    letter-spacing: .04em;
+    text-shadow: 2px 2px 0 rgba(var(--accent-primary-rgb), .12);
+}
+
+body.page-trackrecords .section-heading::before,
+body.page-trackrecords .section-heading::after {
+    content: '';
+    flex: 1 1 0;
+    max-width: none;
+    height: 1px;
+    margin: 0 !important;
+    background: linear-gradient(90deg, transparent, var(--accent-primary));
+}
+
+body.page-trackrecords .section-heading::after {
+    background: linear-gradient(90deg, var(--accent-primary), transparent);
+}
+
+body.page-trackrecords .section-heading__hash {
+    color: var(--accent-primary);
+}
+
+@media (max-width: 900px) {
+    body.page-trackrecords .section-heading {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    body.page-trackrecords .section-heading {
+        gap: .7rem;
+        margin: 2.3rem auto 1.5rem !important;
+        font-size: clamp(1.45rem, 6.5vw, 2rem) !important;
+    }
+
+    body.page-trackrecords .section-heading::before,
+    body.page-trackrecords .section-heading::after {
+        max-width: 70px;
     }
 }
