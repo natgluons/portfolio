@@ -6209,7 +6209,7 @@ html.welcome-seen .welcome-popup {
 }
 
 /* ==========================================================================
-   Track Records — skill areas
+   Track Record — skill areas
    ========================================================================== */
 .service-section {
     padding: clamp(1.5rem, 2.4vw, 2.1rem) clamp(1.25rem, 2.4vw, 2rem) !important;
@@ -6582,8 +6582,8 @@ html[data-theme='dark'] .record-card {
 }
 
 html[data-theme='light'] .why-me-section {
-    background: color-mix(in srgb, var(--accent-tertiary) 45%, var(--color-offwhite)) !important;
-    border-color: color-mix(in srgb, var(--accent-tertiary) 50%, var(--panel-border)) !important;
+    background: color-mix(in srgb, var(--color-card-pink-neon) 45%, var(--color-offwhite)) !important;
+    border-color: color-mix(in srgb, var(--color-card-pink-neon) 55%, var(--panel-border)) !important;
 }
 
 .why-me-grid {
@@ -6789,7 +6789,7 @@ html[data-theme='dark'] .why-me-cta {
 }
 
 @media (min-width: 981px) {
-    body.page-trackrecords #main > .inner {
+    body.page-trackrecord #main > .inner {
         --width: 70rem;
         --padding-horizontal: 3.5rem;
     }
@@ -7598,7 +7598,7 @@ body.page-home .hero-bio {
 }
 
 body.page-home .mascot-companion {
-    width: clamp(160px, 19vw, 280px);
+    width: clamp(140px, 16vw, 225px);
 }
 
 body.page-home .home-atmosphere__clouds {
@@ -7995,26 +7995,26 @@ body.page-home #text15.hero-bio {
     text-justify: inter-word;
 }
 
-/* Mobile track records: left-aligned records and stacked contact links ----- */
+/* Mobile track record: left-aligned records and stacked contact links ------ */
 @media (max-width: 736px) {
-    body.page-trackrecords #services-section .service-section,
-    body.page-trackrecords #services-section .record-card,
-    body.page-trackrecords #services-section .service-section .services-inner {
+    body.page-trackrecord #services-section .service-section,
+    body.page-trackrecord #services-section .record-card,
+    body.page-trackrecord #services-section .service-section .services-inner {
         text-align: left !important;
     }
 
-    body.page-trackrecords .skill-tags {
+    body.page-trackrecord .skill-tags {
         justify-content: flex-start !important;
     }
 
-    body.page-trackrecords .why-me-grid,
-    body.page-trackrecords .why-me-main,
-    body.page-trackrecords .why-me-side,
-    body.page-trackrecords .why-me-item {
+    body.page-trackrecord .why-me-grid,
+    body.page-trackrecord .why-me-main,
+    body.page-trackrecord .why-me-side,
+    body.page-trackrecord .why-me-item {
         text-align: left !important;
     }
 
-    body.page-trackrecords .why-me-grid .why-me-contact {
+    body.page-trackrecord .why-me-grid .why-me-contact {
         flex-direction: column !important;
         flex-wrap: nowrap !important;
         align-items: flex-start !important;
@@ -8023,19 +8023,19 @@ body.page-home #text15.hero-bio {
         text-align: left !important;
     }
 
-    body.page-trackrecords .why-me-grid .why-me-contact-title {
+    body.page-trackrecord .why-me-grid .why-me-contact-title {
         flex-basis: auto !important;
         margin: 0 0 .25rem !important;
     }
 
-    body.page-trackrecords .why-me-grid .why-me-contact-link,
-    body.page-trackrecords .why-me-grid .why-me-cta {
+    body.page-trackrecord .why-me-grid .why-me-contact-link,
+    body.page-trackrecord .why-me-grid .why-me-cta {
         margin-left: 0 !important;
     }
 }
 
-/* Track Records heading: match the home "About Me" section heading ---------- */
-body.page-trackrecords .section-heading {
+/* Track Record heading: match the home "About Me" section heading ----------- */
+body.page-trackrecord .section-heading {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -8048,8 +8048,8 @@ body.page-trackrecords .section-heading {
     text-shadow: 2px 2px 0 rgba(var(--accent-primary-rgb), .12);
 }
 
-body.page-trackrecords .section-heading::before,
-body.page-trackrecords .section-heading::after {
+body.page-trackrecord .section-heading::before,
+body.page-trackrecord .section-heading::after {
     content: '';
     flex: 1 1 0;
     max-width: none;
@@ -8058,29 +8058,29 @@ body.page-trackrecords .section-heading::after {
     background: linear-gradient(90deg, transparent, var(--accent-primary));
 }
 
-body.page-trackrecords .section-heading::after {
+body.page-trackrecord .section-heading::after {
     background: linear-gradient(90deg, var(--accent-primary), transparent);
 }
 
-body.page-trackrecords .section-heading__hash {
+body.page-trackrecord .section-heading__hash {
     color: var(--accent-primary);
 }
 
 @media (max-width: 900px) {
-    body.page-trackrecords .section-heading {
+    body.page-trackrecord .section-heading {
         width: 100%;
     }
 }
 
 @media (max-width: 768px) {
-    body.page-trackrecords .section-heading {
+    body.page-trackrecord .section-heading {
         gap: .7rem;
         margin: 2.3rem auto 1.5rem !important;
         font-size: clamp(1.45rem, 6.5vw, 2rem) !important;
     }
 
-    body.page-trackrecords .section-heading::before,
-    body.page-trackrecords .section-heading::after {
+    body.page-trackrecord .section-heading::before,
+    body.page-trackrecord .section-heading::after {
         max-width: 70px;
     }
 }

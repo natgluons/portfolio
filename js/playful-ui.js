@@ -101,6 +101,22 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
+    const scheduleMascotVariation = () => {
+      const delay = 5000 + Math.random() * 25000;
+      window.setTimeout(() => {
+        if (mascotImg && baseMascotSrc) {
+          mascotImg.src = variationMascotSrc;
+          window.setTimeout(() => {
+            mascotImg.src = baseMascotSrc;
+            scheduleMascotVariation();
+          }, 1000);
+        } else {
+          scheduleMascotVariation();
+        }
+      }, delay);
+    };
+    scheduleMascotVariation();
+
     mascot.addEventListener('click', greet);
     mascot.addEventListener('keydown', (event) => {
       if (event.key === 'Enter' || event.key === ' ') {
@@ -133,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.main-nav').forEach((nav) => {
     const brand = document.createElement('a');
     brand.className = 'pixel-brand';
-    brand.href = 'index.html';
+    brand.href = 'home';
     brand.setAttribute('aria-label', 'Natasha home');
     brand.innerHTML = '<span aria-hidden="true">✦</span> NAT.EXE';
     nav.prepend(brand);
