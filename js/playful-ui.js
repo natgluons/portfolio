@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const scheduleMascotVariation = () => {
-      const delay = 5000 + Math.random() * 25000;
+      const delay = 4000 + Math.random() * 16000;
       window.setTimeout(() => {
         if (mascotImg && baseMascotSrc) {
           mascotImg.src = variationMascotSrc;
