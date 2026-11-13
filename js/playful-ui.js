@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const speechClose = mascot.querySelector('.mascot-speech__close');
       const mascotImg = mascot.querySelector('img');
       const baseMascotSrc = mascotImg ? mascotImg.getAttribute('src') : '';
-      const variationMascotSrc = 'assets/images/mascot_nobg_variation.png';
+      const variationMascotSrc = 'assets/design/mascot_nobg_variation.png';
       const funFacts = [
         "I once worked with NASA-affiliated researchers to figure out how Mars got its moons.",
         "I spent part of my master's degree simulating how asteroids would break.",
