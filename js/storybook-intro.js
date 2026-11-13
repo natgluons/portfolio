@@ -2,6 +2,8 @@
     const SEEN_KEY = 'nat-storybook-seen';
     const SVG_BASE = 'assets/svg/intro/';
     const PNG_BASE = 'assets/images/intro/';
+    const MASCOT_DEFAULT_SRC = 'assets/design/mascot_nobg.png';
+    const MASCOT_VARIATION_SRC = 'assets/design/mascot_nobg_variation.png';
 
     function storageGet(key) {
         try {
@@ -41,6 +43,7 @@
         const artButton = root.querySelector('.nat-intro__art') || root.querySelector('.nat-intro__start');
         const preludeLines = Array.from(root.querySelectorAll('.nat-intro__prelude-line'));
         const preludeTexts = Array.from(root.querySelectorAll('.nat-intro__prelude-text'));
+        const introMascots = Array.from(root.querySelectorAll('.nat-intro__mascot, .nat-intro__prelude-mascot'));
         const footer = root.querySelector('.nat-intro__footer');
         const explicitTheme = config.theme === 'light' || config.theme === 'dark' ? config.theme : null;
         const onEnter = typeof config.onEnter === 'function' ? config.onEnter : null;
@@ -54,6 +57,8 @@
         let previousOverflow = '';
         let previousFocus = document.activeElement;
         let loadHandler = null;
+        let mascotVariationTimer = null;
+        let mascotResetTimer = null;
 
         function prefersReducedMotion() {
             return Boolean(motionQuery && motionQuery.matches);
@@ -73,6 +78,42 @@
                 window.clearTimeout(timer);
             });
             timers.clear();
+            mascotVariationTimer = null;
+            mascotResetTimer = null;
+        }
+
+        function setIntroMascotSource(source) {
+            introMascots.forEach(function (mascot) {
+                mascot.src = source;
+            });
+        }
+
+        function scheduleMascotVariation() {
+            mascotVariationTimer = later(function () {
+                mascotVariationTimer = null;
+                if (closed) {
+                    return;
+                }
+                setIntroMascotSource(MASCOT_VARIATION_SRC);
+                mascotResetTimer = later(function () {
+                    mascotResetTimer = null;
+                    setIntroMascotSource(MASCOT_DEFAULT_SRC);
+                    if (!closed) {
+                        scheduleMascotVariation();
+                    }
+                }, 1000);
+            }, 5000 + Math.random() * 5000);
+        }
+
+        function stopMascotVariation() {
+            [mascotVariationTimer, mascotResetTimer].forEach(function (timer) {
+                if (timer !== null) {
+                    window.clearTimeout(timer);
+                    timers.delete(timer);
+                }
+            });
+            mascotVariationTimer = null;
+            mascotResetTimer = null;
         }
 
         function currentTheme() {
@@ -201,6 +242,8 @@
             }
             opening = true;
             storageSet(SEEN_KEY, 'yes');
+            stopMascotVariation();
+            setIntroMascotSource(MASCOT_VARIATION_SRC);
             root.classList.add('is-opening');
             const reduced = prefersReducedMotion();
             later(function () {
@@ -243,6 +286,8 @@
 
         function startPrelude() {
             resetPrelude();
+            setIntroMascotSource(MASCOT_DEFAULT_SRC);
+            scheduleMascotVariation();
 
             if (prefersReducedMotion()) {
                 preludeTexts.forEach(function (target) {

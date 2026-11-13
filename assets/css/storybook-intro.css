@@ -467,13 +467,15 @@ html.nat-intro-active .welcome-popup {
     position: absolute;
     right: 0;
     bottom: 0;
-    left: 0;
+    left: 50%;
     z-index: 4;
+    width: 100vw;
     height: clamp(48px, 6.4vh, 68px);
     background-position: bottom center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     pointer-events: none;
+    transform: translateX(-50%);
 }
 
 .nat-intro__prelude {

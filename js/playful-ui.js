@@ -150,8 +150,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const brand = document.createElement('a');
     brand.className = 'pixel-brand';
     brand.href = 'home?intro';
-    brand.setAttribute('aria-label', 'Natasha home');
-    brand.innerHTML = '<span aria-hidden="true">✦</span> NAT.EXE';
+    brand.setAttribute('aria-label', 'Replay intro');
+    brand.innerHTML = '<span class="pixel-brand__icon" aria-hidden="true">✦</span><span class="pixel-brand__label">NAT.EXE</span>';
     nav.prepend(brand);
   });
 });
