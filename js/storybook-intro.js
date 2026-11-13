@@ -96,7 +96,9 @@
             root.querySelectorAll('[data-intro-cover]').forEach(function (image) {
                 const name = image.getAttribute('data-intro-cover');
                 if (name) {
-                    image.src = PNG_BASE + nextTheme + '-' + name + '.png';
+                    image.src = name === 'storybook-open'
+                        ? SVG_BASE + nextTheme + '/' + name + '.svg'
+                        : PNG_BASE + nextTheme + '-' + name + '.png';
                 }
             });
 
