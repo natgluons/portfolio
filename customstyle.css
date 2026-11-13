@@ -6088,8 +6088,11 @@ html[data-theme='dark'] .theme-thumb {
     .main-nav {
         gap: 0.35em !important;
         overflow-x: visible !important;
-        justify-content: center !important;
+        justify-content: flex-start !important;
         flex-wrap: nowrap;
+    }
+    .pixel-brand {
+        margin-right: auto !important;
     }
     .nav-link {
         font-size: 0.64em !important;
@@ -6097,7 +6100,7 @@ html[data-theme='dark'] .theme-thumb {
         letter-spacing: 0.01em !important;
     }
     .theme-switch-wrapper {
-        margin-left: 0.35em !important;
+        margin-left: auto !important;
         gap: 0.15em !important;
     }
     .theme-toggle-switch {
@@ -6119,7 +6122,7 @@ html[data-theme='dark'] .theme-thumb {
         padding: 0.24em 0.34em !important;
     }
     .theme-switch-wrapper {
-        margin-left: 0.25em !important;
+        margin-left: auto !important;
     }
     .theme-toggle-switch {
         --switch-width: 2.6em !important;
