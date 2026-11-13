@@ -1,0 +1,24 @@
+/* NAT.EXE decorative game-fantasy kit — reusable CSS variables */
+:root,[data-theme="light"]{
+ --page-bg:#faf7ff;--page-fg:#39294f;--surface:#ffffffde;--surface-2:#f2eafa;
+ --border:#d7c3f0;--accent:#a775ec;--accent-2:#f36eb9;
+ --accent-cyan:#53c6df;--shadow:0 7px 24px #5e36801a;
+ --hero-gradient:linear-gradient(105deg,#42c3d9,#9478ee,#e175c2);
+ --ornament-opacity:.28;
+}
+[data-theme="dark"]{
+ --page-bg:#180f2b;--page-fg:#f9ecff;--surface:#302040e6;--surface-2:#39244f;
+ --border:#74539b;--accent:#bd80fa;--accent-2:#ff6ab9;
+ --accent-cyan:#79d9fb;--shadow:0 8px 30px #05020e66;
+ --hero-gradient:linear-gradient(105deg,#5cdafa,#a58cff,#f59fdd);
+ --ornament-opacity:.5;
+}
+.nat-page {background:var(--page-bg);color:var(--page-fg);min-height:100vh;position:relative;overflow:hidden}
+.nat-panel{background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow)}
+.nat-section-title{font-weight:800;letter-spacing:.035em;text-align:center;text-transform:uppercase}
+.nat-gradient-title{background:var(--hero-gradient);color:transparent;background-clip:text;-webkit-background-clip:text}
+.nat-outline-button{border:1px solid var(--accent);color:var(--accent);background:transparent;border-radius:9px}
+.nat-primary-button{background:linear-gradient(135deg,var(--accent-2),var(--accent));color:white;border:none;border-radius:9px}
+.nat-decoration{position:absolute;pointer-events:none;user-select:none;z-index:0}
+.nat-decoration img{display:block;width:100%;height:auto}
+@media(prefers-reduced-motion:no-preference){.nat-float{animation:nat-float 5s ease-in-out infinite}@keyframes nat-float{50%{transform:translateY(-8px)}}}
