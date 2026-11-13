@@ -146,12 +146,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  document.querySelectorAll('.main-nav').forEach((nav) => {
-    const brand = document.createElement('a');
-    brand.className = 'pixel-brand';
-    brand.href = 'home?intro';
-    brand.setAttribute('aria-label', 'Replay intro');
-    brand.innerHTML = '<span class="pixel-brand__icon" aria-hidden="true">✦</span><span class="pixel-brand__label">NAT.EXE</span>';
-    nav.prepend(brand);
-  });
 });
