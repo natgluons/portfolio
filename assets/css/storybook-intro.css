@@ -927,15 +927,37 @@ html.nat-intro-active .welcome-popup {
         padding-left: 12px;
     }
 
-    .nat-intro__title {
-        font-size: clamp(25px, 8.1vw, 34px);
-    }
-
     .nat-intro__art {
         width: 96vw;
     }
 
+}
 
+@media (max-width: 600px) {
+    .nat-intro__heading-block {
+        width: fit-content;
+        max-width: 100%;
+        padding: 8px 14px 10px;
+        border: 1px solid rgba(117, 90, 141, 0.16);
+        border-radius: 12px;
+        background: rgba(233, 220, 255, 0.72);
+        box-shadow: 0 4px 16px rgba(59, 37, 84, 0.08);
+    }
+
+    .nat-intro[data-theme="dark"] .nat-intro__heading-block {
+        border-color: rgba(216, 191, 234, 0.18);
+        background: rgba(18, 13, 32, 0.62);
+    }
+
+    .nat-intro__title {
+        font-size: clamp(22px, 6vw, 28px);
+        line-height: 1.08;
+    }
+
+    .nat-intro__subtitle {
+        font-size: clamp(11px, 3vw, 13px);
+        line-height: 1.35;
+    }
 }
 
 @media (max-height: 880px) and (min-width: 901px) {
