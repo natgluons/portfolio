@@ -6695,6 +6695,10 @@ html[data-theme='light'] .why-me-section {
     border-color: color-mix(in srgb, var(--color-card-pink-neon) 55%, var(--panel-border)) !important;
 }
 
+html[data-theme='light'] body.page-trackrecord .why-me-feature {
+    background: color-mix(in srgb, var(--accent-tertiary) 22%, var(--surface-card));
+}
+
 .why-me-grid {
     position: relative;
     display: grid !important;
@@ -8409,6 +8413,7 @@ body.page-home .hero-quest__text {
 
 body.page-home .hero-quest__line {
     display: block;
+    transform: translateY(2px);
 }
 
 body.page-home .hero-quest__line--secondary {

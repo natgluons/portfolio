@@ -110,9 +110,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // Set initial state.
     updateButton();
     if (musicEnabled) {
-        // Wait for the saved position to be applied before starting playback
-        // so the track resumes from the same spot rather than restarting.
-        restorePosition().then(playMusic);
+        if (hasSavedTime) {
+            restorePosition().then(playMusic);
+        } else {
+            playMusic();
+        }
     }
 
     toggleBtn.addEventListener('click', function () {
