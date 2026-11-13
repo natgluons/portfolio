@@ -331,9 +331,7 @@ html.nat-intro-active .welcome-popup {
 }
 
 .nat-intro__art:focus-visible {
-    outline: 3px solid var(--ni-accent);
-    outline-offset: 8px;
-    border-radius: 28px;
+    outline: none;
 }
 
 .nat-intro__stage {
