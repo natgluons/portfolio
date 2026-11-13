@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 660" width="900" height="660"><defs><linearGradient id="cover" x2="1" y2="1"><stop stop-color="#4d2569"/><stop offset=".55" stop-color="#6d338e"/><stop offset="1" stop-color="#2d173d"/></linearGradient><linearGradient id="pages" x2="0" y2="1"><stop stop-color="#fff7e9"/><stop offset="1" stop-color="#fce6c7"/></linearGradient><filter id="shadow" x="-40%" y="-60%" width="180%" height="240%"><feGaussianBlur stdDeviation="12"/></filter></defs>
+  <ellipse cx="460" cy="545" rx="310" ry="45" fill="#2d173d" opacity=".23" filter="url(#shadow)"/>
+  <path d="M136 274 Q147 246 192 228 L723 164 Q758 160 774 188 L790 454 Q797 485 769 506 L223 563 Q168 569 155 535Z" fill="#2d173d" stroke="#ffcf8b" stroke-width="7"/>
+  <path d="M175 441 L758 380 L759 492 L214 555 Q172 557 173 526Z" fill="url(#pages)" stroke="#2d173d" stroke-width="8"/>
+  <path d="M178 460 L759 397 M178 476 L759 413 M179 494 L759 433 M180 511 L761 453 M184 527 L759 472" fill="none" stroke="#cda982" stroke-width="2" opacity=".54"/>
+  <path d="M127 267 Q136 241 181 225 L719 151 Q765 143 777 174 L780 412 Q771 443 745 447 L199 517 Q152 521 142 487Z" fill="url(#cover)" stroke="#ffcf8b" stroke-width="8"/>
+  <path d="M162 286 L727 189 L738 415 L202 476Z" fill="none" stroke="#ffcf8b" stroke-width="5"/>
+  <path d="M195 295 L702 211 L712 401 L215 453Z" fill="none" stroke="#ff9dd8" opacity=".65" stroke-width="2"/>
+  <g fill="none" stroke="#ffcf8b" stroke-width="3" opacity=".9"><path d="M162 324 q48 -20 57 -59 q27 20 53 9 M682 207 q20 31 47 36 M214 448 q34 -13 35 -41 M685 381 q17 -16 28 -12"/></g>
+  <path d="M302 274 Q457 242 621 237 L626 390 Q461 414 302 427Z" fill="#2d173d" opacity=".7" stroke="#ffcf8b" stroke-width="3"/>
+  <text x="463" y="322" text-anchor="middle" font-family="Georgia,serif" font-size="61" font-weight="bold" fill="#fce6c7" transform="rotate(-7 463 322)">NAT.EXE</text>
+  <text x="463" y="361" text-anchor="middle" font-family="Georgia,serif" font-size="18" letter-spacing="6" fill="#ffcf8b" transform="rotate(-7 463 361)">THE STORY BEGINS</text>
+  <path d="M218 510 l20 86 l34 -34 l23 12 l-21 -75" fill="#ff9dd8" stroke="#ffcf8b" stroke-width="4"/>
+  <path d="M643 404 L688 399 L683 464 L654 476Z" fill="#2d173d" stroke="#ffcf8b" stroke-width="5"/><path d="M660 429 l10 -14 l9 12 l-11 11Z" fill="#ffcf8b"/>
+  </svg>

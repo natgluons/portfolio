@@ -19,14 +19,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="assets/design/mascot_nobg.png">
     <link rel="stylesheet" href="customstyle.css">
+    <link rel="stylesheet" href="assets/css/storybook-intro.css">
     <script>
         // Set theme immediately to prevent flash of light mode
         (function() {
             const theme = localStorage.getItem('theme') || 'light';
             document.documentElement.setAttribute('data-theme', theme);
             try {
-                if (localStorage.getItem('welcomePopupSeen') === 'true') {
-                    document.documentElement.classList.add('welcome-seen');
+                const forceIntro = new URLSearchParams(window.location.search).has('intro');
+                if (forceIntro) {
+                    sessionStorage.removeItem('nat-storybook-seen');
+                }
+                if (!forceIntro && sessionStorage.getItem('nat-storybook-seen') === 'yes') {
+                    document.documentElement.classList.add('nat-intro-seen');
                 }
             } catch (e) { /* ignore unavailable storage */ }
         })();
@@ -34,6 +39,79 @@
 </head>
 
 <body class="vsc-initialized is-ready page-home">
+<div id="nat-storybook-intro" class="nat-intro is-booting is-prelude" data-theme="light" role="dialog" aria-labelledby="nat-intro-title" aria-describedby="nat-intro-subtitle">
+    <div class="nat-intro__bg" aria-hidden="true">
+        <span class="nat-intro__moon"></span>
+        <img class="nat-intro__decor nat-intro__decor--sparkles" data-intro-img="sparkles-wide" alt="" draggable="false">
+        <img class="nat-intro__decor nat-intro__decor--cloud-a" data-intro-img="pixel-cloud-1" alt="" draggable="false">
+        <img class="nat-intro__decor nat-intro__decor--cloud-b" data-intro-img="pixel-cloud-2" alt="" draggable="false">
+        <img class="nat-intro__decor nat-intro__decor--sakura-left" data-intro-img="sakura-branch-left" alt="" draggable="false">
+        <img class="nat-intro__decor nat-intro__decor--sakura-right" data-intro-img="sakura-branch-right" alt="" draggable="false">
+        <img class="nat-intro__decor nat-intro__decor--pagoda" data-intro-img="pagoda" alt="" draggable="false">
+        <img class="nat-intro__decor nat-intro__decor--pagoda-left" data-intro-img="pagoda" alt="" draggable="false">
+        <img class="nat-intro__decor nat-intro__decor--mountain-left" data-intro-img="mountains-left" alt="" draggable="false">
+        <img class="nat-intro__decor nat-intro__decor--mountain-right" data-intro-img="mountains-right" alt="" draggable="false">
+    </div>
+    <div class="nat-intro__petals" aria-hidden="true">
+        <span class="nat-intro__petal" style="--x: 5%; --delay: -3.2s; --duration: 11s; --scale: .8; --drift: 42px;"></span>
+        <span class="nat-intro__petal" style="--x: 13%; --delay: -8.4s; --duration: 13s; --scale: 1.1; --drift: 68px;"></span>
+        <span class="nat-intro__petal" style="--x: 24%; --delay: -1.5s; --duration: 9.5s; --scale: .7; --drift: 30px;"></span>
+        <span class="nat-intro__petal" style="--x: 36%; --delay: -6.8s; --duration: 12s; --scale: .95; --drift: 54px;"></span>
+        <span class="nat-intro__petal" style="--x: 46%; --delay: -10.2s; --duration: 14.5s; --scale: .8; --drift: 40px;"></span>
+        <span class="nat-intro__petal" style="--x: 57%; --delay: -4.4s; --duration: 10.5s; --scale: 1.15; --drift: 72px;"></span>
+        <span class="nat-intro__petal" style="--x: 67%; --delay: -7.6s; --duration: 12.5s; --scale: .72; --drift: 32px;"></span>
+        <span class="nat-intro__petal" style="--x: 76%; --delay: -2.3s; --duration: 9.8s; --scale: 1; --drift: 58px;"></span>
+        <span class="nat-intro__petal" style="--x: 84%; --delay: -9.1s; --duration: 13.5s; --scale: .86; --drift: 38px;"></span>
+        <span class="nat-intro__petal" style="--x: 91%; --delay: -5.5s; --duration: 11.5s; --scale: 1.05; --drift: 64px;"></span>
+        <span class="nat-intro__petal" style="--x: 18%; --delay: -11.3s; --duration: 15s; --scale: .65; --drift: 24px;"></span>
+        <span class="nat-intro__petal" style="--x: 71%; --delay: -12.4s; --duration: 14s; --scale: .78; --drift: 46px;"></span>
+    </div>
+    <div class="nat-intro__scene">
+        <div class="nat-intro__heading-block">
+            <h1 class="nat-intro__title" id="nat-intro-title">Welcome to <span>My Portfolio</span></h1>
+            <img class="nat-intro__ornament" data-intro-cover="storybook-ornament" alt="" draggable="false">
+            <p class="nat-intro__subtitle" id="nat-intro-subtitle">A cozy little world of Kristy Natasha</p>
+        </div>
+        <div class="nat-intro__center">
+            <button class="nat-intro__art" type="button" data-intro-open aria-label="Open my story">
+                <span class="nat-intro__stage">
+                    <span class="nat-intro__glow"></span>
+                    <img class="nat-intro__clouds" data-intro-cover="storybook-clouds" alt="" draggable="false">
+                    <img class="nat-intro__book nat-intro__book--closed" data-intro-cover="storybook-closed" alt="" draggable="false">
+                    <img class="nat-intro__book nat-intro__book--open" data-intro-cover="storybook-open" alt="" draggable="false">
+                    <img class="nat-intro__bookmark" data-intro-img="storybook-bookmark" alt="" draggable="false">
+                    <img class="nat-intro__sparkles" data-intro-img="storybook-sparkles" alt="" draggable="false">
+                    <img class="nat-intro__mascot" src="assets/design/mascot_nobg.png" alt="" draggable="false">
+                </span>
+            </button>
+            <div class="nat-intro__actions">
+                <p class="nat-intro__hint">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true">
+                        <rect x="6" y="2.5" width="12" height="19" rx="6"></rect>
+                        <path d="M12 6.5v4"></path>
+                    </svg>
+                    Click the book to begin
+                </p>
+            </div>
+        </div>
+        <div class="nat-intro__footer" aria-hidden="true"></div>
+    </div>
+    <div class="nat-intro__prelude" aria-hidden="true">
+        <div class="nat-intro__prelude-inner">
+            <img class="nat-intro__prelude-cloud" data-intro-cover="storybook-clouds" alt="" draggable="false">
+            <img class="nat-intro__prelude-sparkles" data-intro-img="storybook-sparkles" alt="" draggable="false">
+            <img class="nat-intro__prelude-mascot" src="assets/design/mascot_nobg.png" alt="" draggable="false">
+            <div class="nat-intro__prelude-copy">
+                <p class="nat-intro__prelude-line nat-intro__prelude-line--one">
+                    <span class="nat-intro__prelude-text" data-text="oh...!"></span><span class="nat-intro__caret"></span>
+                </p>
+                <p class="nat-intro__prelude-line nat-intro__prelude-line--two">
+                    <span class="nat-intro__prelude-text" data-text="a visitor!"></span><span class="nat-intro__caret"></span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="home-atmosphere" aria-hidden="true">
     <div class="home-atmosphere__clouds"></div>
     <span class="deco deco--sun"></span>
@@ -45,16 +123,6 @@
     <span class="deco deco--sakura-right"></span>
     <span class="deco deco--pagoda"></span>
     <span class="deco deco--sparkles"></span>
-</div>
-<div id="welcome-popup" class="welcome-popup" role="dialog" aria-labelledby="welcome-popup-title" aria-describedby="welcome-popup-text">
-    <button class="welcome-popup__close" id="welcome-popup-close" type="button" aria-label="Close welcome message">&times;</button>
-    <p class="welcome-popup__title" id="welcome-popup-title">Welcome!</p>
-    <p class="welcome-popup__text" id="welcome-popup-text">
-        Hi! This is my creative space for showcasing my projects. If you're looking for a formal portfolio, you can check out my
-        <a href="https://bit.ly/cv-kristynatasha">CV</a> or
-        <a href="https://github.com/natgluons" target="_blank" rel="noopener noreferrer">github.com/natgluons</a>
-        instead. Thank you! Enjoy.
-    </p>
 </div>
 <header class="main-header">
     <nav class="main-nav">
@@ -466,7 +534,7 @@
     <script src="js/text-animations.js"></script>
     <script src="js/scroll-to-top.js"></script>
     <script src="js/playful-ui.js"></script>
-    <script src="js/welcome-popup.js?v=3"></script>
     <script src="js/background-music.js"></script>
+    <script src="js/storybook-intro.js"></script>
 </body>
 </html>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650" width="900" height="650"><defs><linearGradient id="cover" x2="1" y2="1"><stop stop-color="#4d2569"/><stop offset=".55" stop-color="#6d338e"/><stop offset="1" stop-color="#2d173d"/></linearGradient><linearGradient id="pages" x2="0" y2="1"><stop stop-color="#fff7e9"/><stop offset="1" stop-color="#fce6c7"/></linearGradient><filter id="shadow" x="-40%" y="-60%" width="180%" height="240%"><feGaussianBlur stdDeviation="12"/></filter></defs>
+  <ellipse cx="450" cy="542" rx="350" ry="45" fill="#2d173d" opacity=".19" filter="url(#shadow)"/>
+  <path d="M58 190 Q250 100 443 200 Q622 108 839 190 L852 478 Q640 436 447 545 Q236 438 45 488Z" fill="#2d173d" stroke="#ffcf8b" stroke-width="10"/>
+  <path d="M82 170 Q248 116 439 208 L445 519 Q235 420 79 462Z" fill="url(#pages)" stroke="#ffcf8b" stroke-width="4"/>
+  <path d="M460 208 Q656 105 816 174 L825 461 Q635 414 453 519Z" fill="url(#pages)" stroke="#ffcf8b" stroke-width="4"/>
+  <path d="M449 218 Q443 394 450 517" fill="none" stroke="#2d173d" stroke-width="10" opacity=".65"/>
+  <g stroke="#d5a9b6" stroke-width="3" opacity=".55"><path d="M119 268 Q276 242 397 299 M119 298 Q271 279 392 331 M119 329 Q275 307 388 359 M119 359 Q278 337 390 389 M505 304 Q657 246 783 273 M507 335 Q662 286 783 302 M506 366 Q658 322 784 331 M506 397 Q660 355 784 363"/></g>
+  <text x="250" y="223" text-anchor="middle" font-family="Georgia,serif" font-size="28" fill="#4d2569">Chapter 01</text><text x="650" y="218" text-anchor="middle" font-family="Georgia,serif" font-size="30" fill="#4d2569">Welcome!</text>
+  <g fill="#ff9dd8" stroke="#ffcf8b" stroke-width="2"><path d="M226 407 l11 20 l24 4 l-17 17 l4 24 l-22 -11 l-21 11 l4 -24 l-18 -17 l24 -4Z"/><path d="M655 412 q28 -45 51 0 q-23 35 -51 0Z"/></g>
+  </svg>
