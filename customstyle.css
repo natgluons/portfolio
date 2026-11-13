@@ -8449,6 +8449,13 @@ html[data-theme='dark'] .deco--mountains {
     z-index: 5;
 }
 
+@media (min-width: 821px) {
+    .deco--grass,
+    .nat-intro__footer {
+        display: none;
+    }
+}
+
 /* Keep the home landscape layered around the existing ground artwork ----- */
 body.page-home .home-atmosphere .deco--mountains {
     bottom: clamp(74px, 9vw, 138px);
