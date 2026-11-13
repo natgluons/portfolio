@@ -136,18 +136,23 @@
             </div>
             <div class="theme-label right-label"></div>
         </div>
-        <button id="music-toggle" class="music-toggle" type="button" aria-label="Pause background music" aria-pressed="true">
-            <svg class="music-icon music-icon-on" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9 18V5l10-2v13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="2"/>
-                <circle cx="16" cy="16" r="3" stroke="currentColor" stroke-width="2"/>
-            </svg>
-            <svg class="music-icon music-icon-off" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9 18V5l10-2v13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="2"/>
-                <path d="M3 3l18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-        </button>
+        <div class="music-control">
+            <button id="music-toggle" class="music-toggle" type="button" aria-label="Pause background music" aria-pressed="true">
+                <svg class="music-icon music-icon-on" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 18V5l10-2v13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="16" cy="16" r="3" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <svg class="music-icon music-icon-off" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 18V5l10-2v13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="6" cy="18" r="3" stroke="currentColor" stroke-width="2"/>
+                    <path d="M3 3l18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <div class="music-volume" aria-hidden="false">
+                <input id="music-volume-slider" class="music-volume__slider" type="range" min="0" max="100" step="1" value="35" aria-label="Music volume">
+            </div>
+        </div>
     </nav>
 </header><svg xmlns="http://www.w3.org/2000/svg" version="1.1"
         xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 40" display="none" width="0" height="0">

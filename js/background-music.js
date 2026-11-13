@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const audio = document.getElementById('background-music');
     const toggleBtn = document.getElementById('music-toggle');
+    const volumeSlider = document.getElementById('music-volume-slider');
 
     if (!audio || !toggleBtn) {
         return;
@@ -8,9 +9,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const PREF_KEY = 'musicEnabled';   // user's on/off preference
     const TIME_KEY = 'musicTime';      // last playback position (seconds)
+    const VOLUME_KEY = 'musicVolume';  // last volume (0-1)
 
     // Restore the user's preference (default: on).
     let musicEnabled = localStorage.getItem(PREF_KEY) !== 'false';
+
+    // Restore the volume, falling back to a comfortable default.
+    let musicVolume = parseFloat(localStorage.getItem(VOLUME_KEY));
+    if (isNaN(musicVolume)) {
+        musicVolume = 0.35;
+    }
+    musicVolume = Math.min(1, Math.max(0, musicVolume));
+    audio.volume = musicVolume;
+
+    if (volumeSlider) {
+        volumeSlider.value = String(Math.round(musicVolume * 100));
+        volumeSlider.addEventListener('input', function () {
+            musicVolume = Math.min(1, Math.max(0, volumeSlider.value / 100));
+            audio.volume = musicVolume;
+            try {
+                localStorage.setItem(VOLUME_KEY, String(musicVolume));
+            } catch (e) { /* ignore quota errors */ }
+        });
+    }
 
     // Ensure the track loops when it finishes.
     audio.loop = true;
@@ -69,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function playMusic() {
-        audio.volume = 0.35;
+        audio.volume = musicVolume;
         const promise = audio.play();
         if (promise !== undefined) {
             promise.catch(function () {
