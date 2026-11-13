@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.main-nav').forEach((nav) => {
     const brand = document.createElement('a');
     brand.className = 'pixel-brand';
-    brand.href = 'home';
+    brand.href = 'home.html?intro';
     brand.setAttribute('aria-label', 'Natasha home');
     brand.innerHTML = '<span aria-hidden="true">✦</span> NAT.EXE';
     nav.prepend(brand);

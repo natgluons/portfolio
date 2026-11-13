@@ -238,7 +238,7 @@ html.nat-intro-active .welcome-popup {
     width: min(100%, 1200px);
     min-height: 100%;
     margin: 0 auto;
-    padding: clamp(14px, 2.6vh, 30px) clamp(16px, 3vw, 32px) clamp(64px, 8.2vh, 84px);
+    padding: clamp(28px, 4vh, 48px) clamp(16px, 3vw, 32px) clamp(64px, 8.2vh, 84px);
     text-align: center;
 }
 
@@ -338,24 +338,6 @@ html.nat-intro-active .welcome-popup {
     position: absolute;
     inset: 0;
     animation: nat-book-float 6.5s ease-in-out infinite;
-}
-
-.nat-intro__glow {
-    position: absolute;
-    top: 18%;
-    left: 9%;
-    z-index: 0;
-    width: 82%;
-    height: 66%;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(236, 204, 255, 0.55) 38%, rgba(217, 162, 255, 0) 70%);
-    filter: blur(14px);
-    opacity: 0.82;
-    transition: opacity 0.5s ease, transform 0.7s ease;
-}
-
-.nat-intro[data-theme="dark"] .nat-intro__glow {
-    background: radial-gradient(circle, rgba(255, 196, 246, 0.42) 0%, rgba(190, 99, 255, 0.3) 38%, rgba(123, 49, 188, 0) 72%);
 }
 
 .nat-intro__book,
@@ -489,8 +471,8 @@ html.nat-intro-active .welcome-popup {
     z-index: 4;
     height: clamp(48px, 6.4vh, 68px);
     background-position: bottom center;
-    background-repeat: repeat-x;
-    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     pointer-events: none;
 }
 
@@ -681,11 +663,6 @@ html.nat-intro-active .welcome-popup {
     transform: translate(-12px, 22px) rotate(-19deg);
 }
 
-.nat-intro.is-opening .nat-intro__glow {
-    opacity: 1;
-    transform: scale(1.16);
-}
-
 .nat-intro.is-opening .nat-intro__stage::after {
     animation: nat-page-flash 0.95s ease 0.32s forwards;
 }
@@ -836,7 +813,7 @@ html.nat-intro-active .welcome-popup {
 @media (max-width: 900px) {
     .nat-intro__scene {
         gap: 8px;
-        padding-top: 16px;
+        padding-top: clamp(22px, 3vh, 36px);
         padding-bottom: 66px;
     }
 
@@ -964,7 +941,7 @@ html.nat-intro-active .welcome-popup {
 @media (max-height: 880px) and (min-width: 901px) {
     .nat-intro__scene {
         gap: 5px;
-        padding-top: 8px;
+        padding-top: 18px;
         padding-bottom: 58px;
     }
 
@@ -990,7 +967,7 @@ html.nat-intro-active .welcome-popup {
 @media (max-height: 720px) and (max-width: 900px) {
     .nat-intro__scene {
         gap: 5px;
-        padding-top: 8px;
+        padding-top: 14px;
         padding-bottom: 56px;
     }
 

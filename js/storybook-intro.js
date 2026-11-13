@@ -39,6 +39,8 @@
 
         const header = document.querySelector('.main-header');
         const artButton = root.querySelector('.nat-intro__art') || root.querySelector('.nat-intro__start');
+        const title = root.querySelector('.nat-intro__title');
+        const welcomeTitle = title ? title.innerHTML : null;
         const preludeLines = Array.from(root.querySelectorAll('.nat-intro__prelude-line'));
         const preludeTexts = Array.from(root.querySelectorAll('.nat-intro__prelude-text'));
         const footer = root.querySelector('.nat-intro__footer');
@@ -199,6 +201,9 @@
             }
             opening = true;
             storageSet(SEEN_KEY, 'yes');
+            if (title) {
+                title.textContent = 'chapter 01';
+            }
             root.classList.add('is-opening');
             const reduced = prefersReducedMotion();
             later(function () {
@@ -276,6 +281,9 @@
             clearTimers();
             closed = false;
             opening = false;
+            if (title && welcomeTitle !== null) {
+                title.innerHTML = welcomeTitle;
+            }
             previousFocus = document.activeElement;
             if (!root.isConnected) {
                 document.body.appendChild(root);
