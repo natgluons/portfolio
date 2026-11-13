@@ -326,6 +326,18 @@ html[data-theme='dark'] {
     white-space: nowrap;
 }
 
+.nav-link-group {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
 .nav-link {
     color: #ffffff;
     text-decoration: none;
@@ -6083,16 +6095,35 @@ html[data-theme='dark'] .theme-thumb {
 /* 4) Mobile navbar : compact so all links + toggle fit on one line ---------- */
 @media (max-width: 600px) {
     .main-header {
-        padding: 0.5em 0.7em !important;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0.5em 0.25em !important;
     }
     .main-nav {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+        padding: 0 4px !important;
         gap: 0.35em !important;
         overflow-x: visible !important;
-        justify-content: flex-start !important;
-        flex-wrap: nowrap;
     }
     .pixel-brand {
-        margin-right: auto !important;
+        grid-column: 1;
+        justify-self: start;
+        margin: 0 !important;
+    }
+    .nav-link-group {
+        grid-column: 2;
+        justify-content: center;
+        gap: 0.35em;
+    }
+    .nav-controls {
+        grid-column: 3;
+        justify-self: end;
+        gap: 0.25em;
     }
     .nav-link {
         font-size: 0.64em !important;
@@ -6100,7 +6131,7 @@ html[data-theme='dark'] .theme-thumb {
         letter-spacing: 0.01em !important;
     }
     .theme-switch-wrapper {
-        margin-left: auto !important;
+        margin-left: 0 !important;
         gap: 0.15em !important;
     }
     .theme-toggle-switch {
@@ -6112,7 +6143,7 @@ html[data-theme='dark'] .theme-thumb {
 
 @media (max-width: 400px) {
     .main-header {
-        padding: 0.45em 0.5em !important;
+        padding: 0.45em 0.2em !important;
     }
     .main-nav {
         gap: 0.25em !important;
@@ -6120,9 +6151,6 @@ html[data-theme='dark'] .theme-thumb {
     .nav-link {
         font-size: 0.58em !important;
         padding: 0.24em 0.34em !important;
-    }
-    .theme-switch-wrapper {
-        margin-left: auto !important;
     }
     .theme-toggle-switch {
         --switch-width: 2.6em !important;
