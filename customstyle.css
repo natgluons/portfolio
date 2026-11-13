@@ -7990,6 +7990,10 @@ body.page-workexperience {
     position: relative;
 }
 
+body.page-workexperience #main > .inner {
+    padding-top: calc(var(--padding-vertical) - .75rem);
+}
+
 body.page-workexperience #wrapper {
     position: relative;
     z-index: 1;
