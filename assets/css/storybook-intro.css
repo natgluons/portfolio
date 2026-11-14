@@ -55,9 +55,8 @@
 }
 
 /* Boot / loading screen -----------------------------------------------------
-   The intro is visible from the very first paint. This loader covers the page
-   while the intro artwork and fonts finish loading, so the site never flashes
-   before the storybook appears. */
+   Shown for the intro's first paint, then immediately hands off to the
+   prelude. It never waits for page assets. */
 .nat-intro__loader {
     position: fixed;
     inset: 0;
@@ -69,7 +68,7 @@
         linear-gradient(180deg, #fcf9ff 0%, var(--ni-bg) 38%, var(--ni-bg-deep) 100%);
     opacity: 1;
     visibility: visible;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
+    transition: opacity 0.22s ease, visibility 0.22s ease;
 }
 
 html[data-theme="dark"] .nat-intro__loader {

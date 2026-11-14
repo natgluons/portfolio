@@ -60,8 +60,6 @@
         let loadHandler = null;
         let mascotVariationTimer = null;
         let mascotResetTimer = null;
-        const mountedAt = Date.now();
-        const MIN_LOADING_MS = 650;
         let booted = false;
 
         function prefersReducedMotion() {
@@ -120,8 +118,8 @@
                 finish();
                 return;
             }
-            // Don't let a slow image hold the loader forever.
-            later(finish, 2500);
+            // Only hold the loader briefly; the intro can fill in as it loads.
+            later(finish, 500);
         }
 
         function bootIntro() {
@@ -129,16 +127,13 @@
                 return;
             }
             booted = true;
+            // Start the prelude underneath the loader so the hand-off feels
+            // immediate, then drop the loader as soon as the intro art is ready.
+            startPrelude();
             waitForIntroArtwork(function () {
-                const remaining = Math.max(0, MIN_LOADING_MS - (Date.now() - mountedAt));
-                later(function () {
-                    if (closed) {
-                        return;
-                    }
-                    // Fade the loader away, then start the prelude underneath it.
+                if (!closed) {
                     root.classList.remove('is-booting');
-                    startPrelude();
-                }, remaining);
+                }
             });
         }
 
@@ -399,14 +394,10 @@
                 window.removeEventListener('load', loadHandler);
                 loadHandler = null;
             }
-            booted = true;
+            booted = false;
             window.requestAnimationFrame(function () {
                 window.requestAnimationFrame(function () {
-                    if (closed) {
-                        return;
-                    }
-                    root.classList.remove('is-booting');
-                    startPrelude();
+                    bootIntro();
                 });
             });
         }
@@ -462,17 +453,8 @@
         observeTheme();
         lockScroll();
 
-        if (document.readyState === 'complete') {
-            bootIntro();
-        } else {
-            loadHandler = function () {
-                loadHandler = null;
-                bootIntro();
-            };
-            window.addEventListener('load', loadHandler, { once: true });
-            // Safety net: never leave the loader up forever if an asset stalls.
-            later(bootIntro, 6000);
-        }
+        // Start the intro right away instead of waiting for every page asset.
+        bootIntro();
 
         if (document.fonts && document.fonts.ready) {
             document.fonts.ready.then(syncHeaderOffset).catch(function () {
