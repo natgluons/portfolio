@@ -1,7 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  const isExperiencePage = document.body.classList.contains('page-workexperience');
+
   document.querySelectorAll('.services-heading, .container, .timeline-item, .carousel-item').forEach((element) => {
+    // On the Experience page the outer container also holds the page titles.
+    // Revealing the whole container hides them until they are scrolled into
+    // view, so leave the container visible. Timeline cards also stay static;
+    // only their body text animates in.
+    if (isExperiencePage && (element.matches('#workexperience > .container') || element.matches('.timeline-item'))) {
+      return;
+    }
     element.classList.add('reveal-ready');
   });
 
@@ -13,10 +22,34 @@ document.addEventListener('DOMContentLoaded', () => {
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.08, rootMargin: '0px 0px -48px' });
+    }, { threshold: 0.01, rootMargin: '0px 0px -32px' });
     document.querySelectorAll('.reveal-ready').forEach((element) => observer.observe(element));
   } else {
     document.querySelectorAll('.reveal-ready').forEach((element) => element.classList.add('is-revealed'));
+  }
+
+  // Experience page: a quick, subtle reveal for the timeline body text.
+  const timelineTexts = isExperiencePage
+    ? Array.from(document.querySelectorAll('#workexperience .timeline .expand-content'))
+    : [];
+
+  if (timelineTexts.length) {
+    if (!reduceMotion && 'IntersectionObserver' in window) {
+      const textObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-text-revealed');
+            textObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.05, rootMargin: '0px 0px -24px' });
+      timelineTexts.forEach((element) => {
+        element.classList.add('text-reveal-ready');
+        textObserver.observe(element);
+      });
+    } else {
+      timelineTexts.forEach((element) => element.classList.add('is-text-revealed'));
+    }
   }
 
     const mascot = document.querySelector('.mascot-companion');

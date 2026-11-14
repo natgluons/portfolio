@@ -18,22 +18,37 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="assets/design/mascot_nobg.png">
-    <link rel="stylesheet" href="customstyle.css?v=desktop-grass-hidden-20261113">
-    <link rel="stylesheet" href="assets/css/storybook-intro.css">
+    <link rel="stylesheet" href="customstyle.css?v=intro-loader-20261114">
+    <link rel="stylesheet" href="assets/css/storybook-intro.css?v=intro-loader-20261114">
     <script>
         // Set theme immediately to prevent flash of light mode
         (function() {
             const theme = localStorage.getItem('theme') || 'light';
             document.documentElement.setAttribute('data-theme', theme);
             try {
-                const forceIntro = new URLSearchParams(window.location.search).has('intro');
-                const skipIntro = new URLSearchParams(window.location.search).has('skipIntro');
+                const INTRO_KEY = 'nat-storybook-seen';
+                const params = new URLSearchParams(window.location.search);
+                const forceIntro = params.has('intro');
+                const skipIntro = params.has('skipIntro');
+
                 if (forceIntro) {
-                    sessionStorage.removeItem('nat-storybook-seen');
-                } else if (skipIntro) {
-                    sessionStorage.setItem('nat-storybook-seen', 'yes');
+                    // Replay requested: allow the intro to run once more.
+                    localStorage.removeItem(INTRO_KEY);
+                    // Drop ?intro from the URL so a refresh doesn't replay it again.
+                    if (window.history && window.history.replaceState) {
+                        params.delete('intro');
+                        const query = params.toString();
+                        window.history.replaceState(
+                            null,
+                            '',
+                            window.location.pathname + (query ? '?' + query : '') + window.location.hash
+                        );
+                    }
                 }
-                if (!forceIntro && sessionStorage.getItem('nat-storybook-seen') === 'yes') {
+
+                // Persist in localStorage so the intro stays gone after the browser
+                // is closed and reopened. skipIntro only skips this navigation.
+                if (!forceIntro && (skipIntro || localStorage.getItem(INTRO_KEY) === 'yes')) {
                     document.documentElement.classList.add('nat-intro-seen');
                 }
             } catch (e) { /* ignore unavailable storage */ }
@@ -43,6 +58,9 @@
 
 <body class="vsc-initialized is-ready page-home">
 <div id="nat-storybook-intro" class="nat-intro is-booting is-prelude" data-theme="light" role="dialog" aria-labelledby="nat-intro-title" aria-describedby="nat-intro-subtitle">
+    <div class="nat-intro__loader" id="nat-intro-loader" role="status" aria-live="polite" aria-label="Loading">
+        <p class="nat-intro__loader-text">LOADING<span class="nat-intro__loader-dots" aria-hidden="true"><span>.</span><span>.</span><span>.</span></span></p>
+    </div>
     <div class="nat-intro__bg" aria-hidden="true">
         <span class="nat-intro__moon"></span>
         <img class="nat-intro__decor nat-intro__decor--sparkles" data-intro-img="sparkles-wide" alt="" draggable="false">
@@ -533,9 +551,9 @@
     <script src="js/theme-toggle.js"></script>
     <script src="js/text-animations.js"></script>
     <script src="js/scroll-to-top.js"></script>
-    <script src="js/playful-ui.js?v=mobile-nav-centered-20261113"></script>
+    <script src="js/playful-ui.js?v=intro-loader-20261114"></script>
     <script src="js/background-music.js"></script>
     <script src="js/email-links.js"></script>
-    <script src="js/storybook-intro.js"></script>
+    <script src="js/storybook-intro.js?v=intro-loader-20261114"></script>
 </body>
 </html>

@@ -7949,6 +7949,12 @@ html[data-theme='light'] #workexperience #container01 > .wrapper {
     background-color: color-mix(in srgb, var(--accent-primary) 14%, var(--surface-card));
 }
 
+/* The list is now the first child of the education card (the heading moved
+   above the card), so cancel the legacy 20% first-column width. */
+body.page-workexperience #container01 > .wrapper > .inner > #list07 {
+    width: 100% !important;
+}
+
 /* About Me icon + education bullets ---------------------------------------- */
 body.page-home #icons05 svg {
     fill: var(--accent-gold);
@@ -8098,7 +8104,106 @@ body.page-workexperience {
 }
 
 body.page-workexperience #main > .inner {
-    padding-top: calc(var(--padding-vertical) - .75rem);
+    /* Match the top gap used by the About page content. */
+    padding-top: 5.5rem;
+}
+
+@media (max-width: 900px) {
+    body.page-workexperience #main > .inner {
+        padding-top: 2.5rem;
+    }
+}
+
+/* The main experience container is not first in its section, so the generic
+   `.container.style3:not(:first-child)` rule adds a large top gap. Remove it so
+   the title loads right below the header. */
+body.page-workexperience #workexperience > .container.style3 {
+    margin-top: 0 !important;
+}
+
+/* Keep the Experience page reveals short and subtle. */
+body.page-workexperience .reveal-ready {
+    transform: translateY(8px);
+    transition-duration: 0.45s;
+}
+
+body.page-workexperience .reveal-ready.is-revealed {
+    transform: none;
+}
+
+/* Timeline body text: quick fade/slide as it scrolls into view. */
+body.page-workexperience .timeline .expand-content.text-reveal-ready {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity .3s ease, transform .35s cubic-bezier(.2, .7, .2, 1);
+}
+
+body.page-workexperience .timeline .expand-content.text-reveal-ready.is-text-revealed {
+    opacity: 1;
+    transform: none;
+}
+
+/* Experience page section headings: match the About page heading design. */
+body.page-workexperience .section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    /* The experience column is narrower than the home column. A 960px heading
+       would overflow it and drift off-center, so follow the column width. */
+    width: 100%;
+    max-width: 960px;
+    margin: 3rem auto 2rem !important;
+    color: var(--color-black-text-title) !important;
+    font-family: var(--font-display);
+    font-size: clamp(1.7rem, 3.5vw, 3rem) !important;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: .04em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+body.page-workexperience #text12 {
+    margin-top: 0 !important;
+}
+
+body.page-workexperience .section-heading::before,
+body.page-workexperience .section-heading::after {
+    content: '';
+    flex: 1 1 0;
+    max-width: none;
+    height: 1px;
+    margin: 0 !important;
+    background: linear-gradient(90deg, transparent, var(--accent-primary));
+}
+
+body.page-workexperience .section-heading::after {
+    background: linear-gradient(90deg, var(--accent-primary), transparent);
+}
+
+body.page-workexperience .section-heading__hash {
+    color: var(--accent-primary);
+}
+
+@media (max-width: 900px) {
+    body.page-workexperience .section-heading {
+        width: 100%;
+        gap: .65rem;
+    }
+}
+
+@media (max-width: 768px) {
+    body.page-workexperience .section-heading {
+        gap: .7rem;
+        margin: 2.3rem auto 1.5rem !important;
+        font-size: clamp(1.45rem, 6.5vw, 2rem) !important;
+    }
+
+    body.page-workexperience .section-heading::before,
+    body.page-workexperience .section-heading::after {
+        max-width: 70px;
+    }
 }
 
 body.page-workexperience #wrapper {
@@ -8542,19 +8647,6 @@ body.page-home .hero-quest__line--secondary {
     background-position: center !important;
     background-repeat: no-repeat !important;
     background-size: min(760px, 88%) 40px !important;
-}
-
-body.page-workexperience #text12 {
-    position: relative;
-}
-
-body.page-workexperience #text12::after {
-    content: '';
-    display: block;
-    height: 40px;
-    margin: .65rem auto 0;
-    background: var(--decor-divider) center / min(680px, 90%) 40px no-repeat;
-    opacity: .85;
 }
 
 /* Ornate corners ---------------------------------------------------------- */

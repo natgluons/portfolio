@@ -50,9 +50,98 @@
 }
 
 .nat-intro.is-booting {
-    visibility: hidden;
     opacity: 1;
     transition: none;
+}
+
+/* Boot / loading screen -----------------------------------------------------
+   The intro is visible from the very first paint. This loader covers the page
+   while the intro artwork and fonts finish loading, so the site never flashes
+   before the storybook appears. */
+.nat-intro__loader {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+    display: grid;
+    place-items: center;
+    background:
+        radial-gradient(ellipse 78% 58% at 50% 40%, #ffffff 0%, rgba(255, 255, 255, 0) 64%),
+        linear-gradient(180deg, #fcf9ff 0%, var(--ni-bg) 38%, var(--ni-bg-deep) 100%);
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+html[data-theme="dark"] .nat-intro__loader {
+    background:
+        radial-gradient(ellipse 70% 52% at 50% 42%, #46225f 0%, rgba(52, 27, 70, 0) 66%),
+        linear-gradient(180deg, #2b1739 0%, #241431 42%, #120d20 100%);
+}
+
+.nat-intro:not(.is-booting) .nat-intro__loader {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.nat-intro__loader-text {
+    margin: 0;
+    color: var(--ni-text);
+    font-family: "Chakra Petch", "Space Grotesk", system-ui, sans-serif;
+    font-size: clamp(15px, 1.8vw, 22px);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    text-shadow: 0 0 12px color-mix(in srgb, var(--ni-accent) 55%, transparent);
+    animation: nat-loader-pulse 1.6s steps(2, end) infinite;
+}
+
+html[data-theme="dark"] .nat-intro__loader-text {
+    color: #f7ecff;
+    text-shadow: 0 0 16px rgba(195, 132, 255, 0.7);
+}
+
+.nat-intro__loader-dots {
+    display: inline-flex;
+    margin-left: 2px;
+}
+
+.nat-intro__loader-dots span {
+    animation: nat-loader-dot 1.4s steps(2, end) infinite;
+}
+
+.nat-intro__loader-dots span:nth-child(2) {
+    animation-delay: 0.18s;
+}
+
+.nat-intro__loader-dots span:nth-child(3) {
+    animation-delay: 0.36s;
+}
+
+@keyframes nat-loader-pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.55;
+    }
+}
+
+@keyframes nat-loader-dot {
+    0%,
+    60%,
+    100% {
+        opacity: 0.25;
+        transform: translateY(0);
+    }
+
+    30% {
+        opacity: 1;
+        transform: translateY(-2px);
+    }
 }
 
 .nat-intro[hidden],
@@ -249,6 +338,7 @@ html.nat-intro-active .welcome-popup {
     gap: clamp(3px, 0.7vh, 8px);
     width: 100%;
     max-width: 980px;
+    margin-top: clamp(8px, 1.6vh, 20px);
 }
 
 .nat-intro__title {

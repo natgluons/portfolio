@@ -7,7 +7,7 @@
 
     function storageGet(key) {
         try {
-            return window.sessionStorage.getItem(key);
+            return window.localStorage.getItem(key);
         } catch (error) {
             return null;
         }
@@ -15,14 +15,14 @@
 
     function storageSet(key, value) {
         try {
-            window.sessionStorage.setItem(key, value);
+            window.localStorage.setItem(key, value);
         } catch (error) {
         }
     }
 
     function storageRemove(key) {
         try {
-            window.sessionStorage.removeItem(key);
+            window.localStorage.removeItem(key);
         } catch (error) {
         }
     }
@@ -34,7 +34,8 @@
             return null;
         }
 
-        if (!config.showEveryVisit && storageGet(SEEN_KEY) === 'yes') {
+        const skipRequested = document.documentElement.classList.contains('nat-intro-seen');
+        if (!config.showEveryVisit && (skipRequested || storageGet(SEEN_KEY) === 'yes')) {
             root.remove();
             return null;
         }
@@ -59,6 +60,9 @@
         let loadHandler = null;
         let mascotVariationTimer = null;
         let mascotResetTimer = null;
+        const mountedAt = Date.now();
+        const MIN_LOADING_MS = 650;
+        let booted = false;
 
         function prefersReducedMotion() {
             return Boolean(motionQuery && motionQuery.matches);
@@ -80,6 +84,62 @@
             timers.clear();
             mascotVariationTimer = null;
             mascotResetTimer = null;
+        }
+
+        function waitForIntroArtwork(done) {
+            const images = Array.from(root.querySelectorAll('img'));
+            let pending = 0;
+            let finished = false;
+
+            function finish() {
+                if (finished) {
+                    return;
+                }
+                finished = true;
+                done();
+            }
+
+            images.forEach(function (image) {
+                if (!image.getAttribute('src') || image.complete) {
+                    return;
+                }
+                pending += 1;
+                const step = function () {
+                    image.removeEventListener('load', step);
+                    image.removeEventListener('error', step);
+                    pending -= 1;
+                    if (pending <= 0) {
+                        finish();
+                    }
+                };
+                image.addEventListener('load', step);
+                image.addEventListener('error', step);
+            });
+
+            if (pending === 0) {
+                finish();
+                return;
+            }
+            // Don't let a slow image hold the loader forever.
+            later(finish, 2500);
+        }
+
+        function bootIntro() {
+            if (booted || closed) {
+                return;
+            }
+            booted = true;
+            waitForIntroArtwork(function () {
+                const remaining = Math.max(0, MIN_LOADING_MS - (Date.now() - mountedAt));
+                later(function () {
+                    if (closed) {
+                        return;
+                    }
+                    // Fade the loader away, then start the prelude underneath it.
+                    root.classList.remove('is-booting');
+                    startPrelude();
+                }, remaining);
+            });
         }
 
         function setIntroMascotSource(source) {
@@ -339,10 +399,14 @@
                 window.removeEventListener('load', loadHandler);
                 loadHandler = null;
             }
-            startPrelude();
+            booted = true;
             window.requestAnimationFrame(function () {
                 window.requestAnimationFrame(function () {
+                    if (closed) {
+                        return;
+                    }
                     root.classList.remove('is-booting');
+                    startPrelude();
                 });
             });
         }
@@ -399,27 +463,21 @@
         lockScroll();
 
         if (document.readyState === 'complete') {
-            startPrelude();
+            bootIntro();
         } else {
             loadHandler = function () {
                 loadHandler = null;
-                if (!closed) {
-                    startPrelude();
-                }
+                bootIntro();
             };
             window.addEventListener('load', loadHandler, { once: true });
+            // Safety net: never leave the loader up forever if an asset stalls.
+            later(bootIntro, 6000);
         }
 
         if (document.fonts && document.fonts.ready) {
             document.fonts.ready.then(syncHeaderOffset).catch(function () {
             });
         }
-
-        window.requestAnimationFrame(function () {
-            window.requestAnimationFrame(function () {
-                root.classList.remove('is-booting');
-            });
-        });
 
         const instance = {
             enter: enter,
