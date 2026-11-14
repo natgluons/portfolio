@@ -40,6 +40,15 @@
             return null;
         }
 
+        // Reveal each intro image only once it has loaded, so the fast loader
+        // hand-off never exposes broken-image placeholders.
+        root.addEventListener('load', function (event) {
+            const image = event.target;
+            if (image && image.tagName === 'IMG') {
+                image.classList.add('is-ready');
+            }
+        }, true);
+
         const header = document.querySelector('.main-header');
         const artButton = root.querySelector('.nat-intro__art') || root.querySelector('.nat-intro__start');
         const preludeLines = Array.from(root.querySelectorAll('.nat-intro__prelude-line'));
@@ -84,57 +93,15 @@
             mascotResetTimer = null;
         }
 
-        function waitForIntroArtwork(done) {
-            const images = Array.from(root.querySelectorAll('img'));
-            let pending = 0;
-            let finished = false;
-
-            function finish() {
-                if (finished) {
-                    return;
-                }
-                finished = true;
-                done();
-            }
-
-            images.forEach(function (image) {
-                if (!image.getAttribute('src') || image.complete) {
-                    return;
-                }
-                pending += 1;
-                const step = function () {
-                    image.removeEventListener('load', step);
-                    image.removeEventListener('error', step);
-                    pending -= 1;
-                    if (pending <= 0) {
-                        finish();
-                    }
-                };
-                image.addEventListener('load', step);
-                image.addEventListener('error', step);
-            });
-
-            if (pending === 0) {
-                finish();
-                return;
-            }
-            // Only hold the loader briefly; the intro can fill in as it loads.
-            later(finish, 500);
-        }
-
         function bootIntro() {
             if (booted || closed) {
                 return;
             }
             booted = true;
-            // Start the prelude underneath the loader so the hand-off feels
-            // immediate, then drop the loader as soon as the intro art is ready.
+            // Hand off to the intro immediately; its artwork fades in on load
+            // instead of holding the loader up.
+            root.classList.remove('is-booting');
             startPrelude();
-            waitForIntroArtwork(function () {
-                if (!closed) {
-                    root.classList.remove('is-booting');
-                }
-            });
         }
 
         function setIntroMascotSource(source) {
@@ -201,6 +168,12 @@
             if (footer) {
                 footer.style.backgroundImage = 'url("' + SVG_BASE + nextTheme + '/pixel-grass-footer.svg")';
             }
+
+            root.querySelectorAll('img').forEach(function (image) {
+                if (image.complete && image.naturalWidth > 0) {
+                    image.classList.add('is-ready');
+                }
+            });
         }
 
         function syncHeaderOffset() {

@@ -54,6 +54,12 @@
     transition: none;
 }
 
+/* Intro artwork stays hidden until its image has loaded, so the quick loader
+   hand-off never shows broken-image placeholders. */
+.nat-intro img:not(.is-ready) {
+    visibility: hidden;
+}
+
 /* Boot / loading screen -----------------------------------------------------
    Shown for the intro's first paint, then immediately hands off to the
    prelude. It never waits for page assets. */
