@@ -36,8 +36,17 @@
 
         const skipRequested = document.documentElement.classList.contains('nat-intro-seen');
         if (!config.showEveryVisit && (skipRequested || storageGet(SEEN_KEY) === 'yes')) {
+            // Remember skips too, so the intro stays gone on later visits.
+            storageSet(SEEN_KEY, 'yes');
             root.remove();
             return null;
+        }
+
+        // The intro is about to be shown. Mark it immediately (not only after
+        // clicking the book) so refreshing mid-intro does not replay it.
+        // The ?intro replay link clears this key before the page loads.
+        if (!config.showEveryVisit) {
+            storageSet(SEEN_KEY, 'yes');
         }
 
         // Reveal each intro image only once it has loaded, so the fast loader
@@ -70,6 +79,9 @@
         let mascotVariationTimer = null;
         let mascotResetTimer = null;
         let booted = false;
+        // Brief splash so the loader is visibly the default hand-off, without
+        // making anyone wait for page or artwork downloads.
+        const MIN_LOADING_MS = 300;
 
         function prefersReducedMotion() {
             return Boolean(motionQuery && motionQuery.matches);
@@ -98,10 +110,14 @@
                 return;
             }
             booted = true;
-            // Hand off to the intro immediately; its artwork fades in on load
-            // instead of holding the loader up.
-            root.classList.remove('is-booting');
+            // Start the intro immediately underneath the loader, then fade the
+            // loader after a short beat. No asset or window-load waiting.
             startPrelude();
+            later(function () {
+                if (!closed) {
+                    root.classList.remove('is-booting');
+                }
+            }, MIN_LOADING_MS);
         }
 
         function setIntroMascotSource(source) {
