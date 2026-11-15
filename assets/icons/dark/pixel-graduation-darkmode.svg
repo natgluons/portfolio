@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="Graduation cap" shape-rendering="geometricPrecision"><defs>
+<linearGradient id="violet" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9974D7"/><stop offset=".47" stop-color="#7150AC"/><stop offset="1" stop-color="#503079"/></linearGradient>
+<linearGradient id="violet2" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#845FBF"/><stop offset="1" stop-color="#52327D"/></linearGradient>
+<linearGradient id="pink" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#E7A4D4"/><stop offset="1" stop-color="#B35EAA"/></linearGradient>
+<linearGradient id="cyan" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#A2E4E8"/><stop offset="1" stop-color="#46B8CA"/></linearGradient>
+</defs>
+<path d="M4 17 24 8l20 9-20 9L4 17Z" fill="url(#violet)" stroke="#3C245D" stroke-width="2.5" stroke-linejoin="bevel"/>
+<path d="M9 17 24 10l15 7" fill="none" stroke="#CEB2EF" stroke-width="1.5" opacity=".7"/>
+<path d="M12 24v8c8 6 16 6 24 0v-8" fill="#5A378D" stroke="#A27CCE" stroke-width="2.5" stroke-linejoin="bevel"/>
+<path d="M16 31q8 4 16 0" fill="none" stroke="#C7A4EA" stroke-width="1.5" opacity=".8"/>
+<path d="M43 17v18" fill="none" stroke="#9574CC" stroke-width="2.5"/>
+<circle cx="43" cy="38" r="3" fill="#F0C274" stroke="#7B5096" stroke-width="1"/>
+</svg>

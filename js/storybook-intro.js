@@ -1,9 +1,9 @@
 (function () {
     const SEEN_KEY = 'nat-storybook-seen';
-    const SVG_BASE = 'assets/svg/intro/';
+    const SVG_BASE = 'assets/icons/';
     const PNG_BASE = 'assets/images/intro/';
-    const MASCOT_DEFAULT_SRC = 'assets/design/mascot_nobg.png';
-    const MASCOT_VARIATION_SRC = 'assets/design/mascot_nobg_variation.png';
+    const MASCOT_DEFAULT_SRC = 'assets/icons/shared/mascot_nobg.png';
+    const MASCOT_VARIATION_SRC = 'assets/icons/shared/mascot_nobg_variation.png';
 
     function storageGet(key) {
         try {
@@ -168,7 +168,7 @@
             root.querySelectorAll('[data-intro-img]').forEach(function (image) {
                 const name = image.getAttribute('data-intro-img');
                 if (name) {
-                    image.src = SVG_BASE + nextTheme + '/' + name + '.svg';
+                    image.src = SVG_BASE + nextTheme + '/intro-' + name + '.svg';
                 }
             });
 
@@ -176,13 +176,13 @@
                 const name = image.getAttribute('data-intro-cover');
                 if (name) {
                     image.src = name === 'storybook-open'
-                        ? SVG_BASE + nextTheme + '/' + name + '.svg'
+                        ? SVG_BASE + nextTheme + '/intro-' + name + '.svg'
                         : PNG_BASE + nextTheme + '-' + name + '.png';
                 }
             });
 
             if (footer) {
-                footer.style.backgroundImage = 'url("' + SVG_BASE + nextTheme + '/pixel-grass-footer.svg")';
+                footer.style.backgroundImage = 'url("' + SVG_BASE + nextTheme + '/intro-pixel-grass-footer.svg")';
             }
 
             root.querySelectorAll('img').forEach(function (image) {

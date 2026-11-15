@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="Code brackets" shape-rendering="geometricPrecision"><defs>
+<linearGradient id="violet" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9974D7"/><stop offset=".47" stop-color="#7150AC"/><stop offset="1" stop-color="#503079"/></linearGradient>
+<linearGradient id="violet2" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#845FBF"/><stop offset="1" stop-color="#52327D"/></linearGradient>
+<linearGradient id="pink" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#E7A4D4"/><stop offset="1" stop-color="#B35EAA"/></linearGradient>
+<linearGradient id="cyan" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#A2E4E8"/><stop offset="1" stop-color="#46B8CA"/></linearGradient>
+</defs>
+<path d="M17 11 5 24l12 13" fill="none" stroke="#3B2360" stroke-width="6" stroke-linejoin="bevel"/>
+<path d="M31 11 43 24 31 37" fill="none" stroke="#3B2360" stroke-width="6" stroke-linejoin="bevel"/>
+<path d="M17 11 5 24l12 13" fill="none" stroke="#B881DF" stroke-width="3.5" stroke-linejoin="bevel"/>
+<path d="M31 11 43 24 31 37" fill="none" stroke="#A77BDD" stroke-width="3.5" stroke-linejoin="bevel"/>
+<path d="m27.5 6-8 36" stroke="#3C245B" stroke-width="6" stroke-linecap="square"/>
+<path d="m27.5 6-8 36" stroke="url(#cyan)" stroke-width="3.2" stroke-linecap="square"/>
+<path d="M15 14 8 22M33 14l7 8" stroke="#D9B1ED" stroke-width="1.2"/>
+</svg>

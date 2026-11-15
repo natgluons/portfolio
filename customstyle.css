@@ -137,7 +137,7 @@ body::after {
   width: min(100vw, 1120px);
   height: 680px;
   transform: translateX(-50%);
-  background: linear-gradient(180deg, rgba(19,14,35,.14), var(--color-bg) 96%), url('assets/svg/light/sparkles-wide.svg') center 18% / min(1000px, 95vw) auto no-repeat;
+  background: linear-gradient(180deg, rgba(19,14,35,.14), var(--color-bg) 96%), url('assets/icons/light/sparkles-wide.svg') center 18% / min(1000px, 95vw) auto no-repeat;
   opacity: .18;
   filter: saturate(.72);
   mask-image: linear-gradient(#000 65%, transparent 100%);
@@ -7129,7 +7129,7 @@ body.page-home .home-atmosphere__clouds {
     left: 0;
     right: 0;
     height: clamp(360px, 45vw, 720px);
-    background: url('assets/design/light_clouds_variant1_transparent.svg') top center / 100% 100% no-repeat;
+    background: url('assets/icons/light/clouds_variant1_transparent.svg') top center / 100% 100% no-repeat;
     opacity: .9;
 }
 
@@ -7139,16 +7139,16 @@ body.page-home .home-atmosphere__ground {
     right: 0;
     bottom: 0;
     height: clamp(150px, 26.25vw, 420px);
-    background: url('assets/design/light_ground_variant1_transparent.svg') bottom center / 100% 100% no-repeat;
+    background: url('assets/icons/light/ground_variant1_transparent.svg') bottom center / 100% 100% no-repeat;
 }
 
 html[data-theme='dark'] body.page-home .home-atmosphere__clouds {
-    background-image: url('assets/design/dark_clouds_variant1_transparent.svg');
+    background-image: url('assets/icons/dark/clouds_variant1_transparent.svg');
     opacity: .7;
 }
 
 html[data-theme='dark'] body.page-home .home-atmosphere__ground {
-    background-image: url('assets/design/dark_ground_variant1_transparent.svg');
+    background-image: url('assets/icons/dark/ground_variant1_transparent.svg');
 }
 
 body.page-home #main > .inner {
@@ -8005,13 +8005,13 @@ html[data-theme='light'] #workexperience #list07 ul li:before {
 
 #workexperience .work-cloud {
     position: absolute;
-    background-image: url('assets/design/light_clouds_variant1_transparent.svg');
+    background-image: url('assets/icons/light/clouds_variant1_transparent.svg');
     background-repeat: no-repeat;
     opacity: .7;
 }
 
 html[data-theme='dark'] #workexperience .work-cloud {
-    background-image: url('assets/design/dark_clouds_variant1_transparent.svg');
+    background-image: url('assets/icons/dark/clouds_variant1_transparent.svg');
     opacity: .5;
 }
 
@@ -8220,13 +8220,13 @@ body.page-workexperience .work-ground {
     right: 0;
     bottom: 0;
     height: clamp(150px, 26.25vw, 420px);
-    background: url('assets/design/light_ground_variant1_transparent.svg') bottom center / 100% 100% no-repeat;
+    background: url('assets/icons/light/ground_variant1_transparent.svg') bottom center / 100% 100% no-repeat;
     pointer-events: none;
     z-index: 0;
 }
 
 html[data-theme='dark'] body.page-workexperience .work-ground {
-    background-image: url('assets/design/dark_ground_variant1_transparent.svg');
+    background-image: url('assets/icons/dark/ground_variant1_transparent.svg');
 }
 
 /* Keep the home mascot bubble clear of the header on tablet widths. */
@@ -8393,42 +8393,42 @@ body.page-trackrecord .section-heading__hash {
 
 /* ==========================================================================
    NAT.EXE decorative SVG kit — theme-aware scene layers & ornaments
-   Uses assets/svg/{light,dark}/ so every decoration follows the active theme.
+   Uses assets/icons/{light,dark}/ so every decoration follows the active theme.
    ========================================================================== */
 :root {
-    --decor-sakura-left: url('assets/svg/light/sakura-branch-left.svg');
-    --decor-sakura-right: url('assets/svg/light/sakura-branch-right.svg');
-    --decor-mountains: url('assets/svg/light/mountains-wide.svg');
-    --decor-cloud-a: url('assets/svg/light/pixel-cloud-1.svg');
-    --decor-cloud-b: url('assets/svg/light/pixel-cloud-2.svg');
-    --decor-pagoda: url('assets/svg/light/pagoda.svg');
-    --decor-sparkles: url('assets/svg/light/sparkles-wide.svg');
-    --decor-grass: url('assets/svg/light/pixel-grass-footer.svg');
-    --decor-sun: url('assets/svg/light/moon-or-sun.svg');
-    --decor-quest-badge: url('assets/svg/light/quest-badge.svg');
-    --decor-divider: url('assets/svg/light/section-divider.svg');
-    --decor-corner: url('assets/svg/light/ornate-corner.svg');
-    --decor-diamond: url('assets/svg/light/timeline-diamond.svg');
-    --decor-arrow-left: url('assets/svg/light/carousel-arrow-left.svg');
-    --decor-arrow-right: url('assets/svg/light/carousel-arrow-right.svg');
+    --decor-sakura-left: url('assets/icons/light/sakura-branch-left.svg');
+    --decor-sakura-right: url('assets/icons/light/sakura-branch-right.svg');
+    --decor-mountains: url('assets/icons/light/mountains-wide.svg');
+    --decor-cloud-a: url('assets/icons/light/pixel-cloud-1.svg');
+    --decor-cloud-b: url('assets/icons/light/pixel-cloud-2.svg');
+    --decor-pagoda: url('assets/icons/light/pagoda.svg');
+    --decor-sparkles: url('assets/icons/light/sparkles-wide.svg');
+    --decor-grass: url('assets/icons/light/pixel-grass-footer.svg');
+    --decor-sun: url('assets/icons/light/moon-or-sun.svg');
+    --decor-quest-badge: url('assets/icons/light/quest-badge.svg');
+    --decor-divider: url('assets/icons/light/section-divider.svg');
+    --decor-corner: url('assets/icons/light/ornate-corner.svg');
+    --decor-diamond: url('assets/icons/light/timeline-diamond.svg');
+    --decor-arrow-left: url('assets/icons/light/carousel-arrow-left.svg');
+    --decor-arrow-right: url('assets/icons/light/carousel-arrow-right.svg');
 }
 
 html[data-theme='dark'] {
-    --decor-sakura-left: url('assets/svg/dark/sakura-branch-left.svg');
-    --decor-sakura-right: url('assets/svg/dark/sakura-branch-right.svg');
-    --decor-mountains: url('assets/svg/dark/mountains-wide.svg');
-    --decor-cloud-a: url('assets/svg/dark/pixel-cloud-1.svg');
-    --decor-cloud-b: url('assets/svg/dark/pixel-cloud-2.svg');
-    --decor-pagoda: url('assets/svg/dark/pagoda.svg');
-    --decor-sparkles: url('assets/svg/dark/sparkles-wide.svg');
-    --decor-grass: url('assets/svg/dark/pixel-grass-footer.svg');
-    --decor-sun: url('assets/svg/dark/moon-or-sun.svg');
-    --decor-quest-badge: url('assets/svg/dark/quest-badge.svg');
-    --decor-divider: url('assets/svg/dark/section-divider.svg');
-    --decor-corner: url('assets/svg/dark/ornate-corner.svg');
-    --decor-diamond: url('assets/svg/dark/timeline-diamond.svg');
-    --decor-arrow-left: url('assets/svg/dark/carousel-arrow-left.svg');
-    --decor-arrow-right: url('assets/svg/dark/carousel-arrow-right.svg');
+    --decor-sakura-left: url('assets/icons/dark/sakura-branch-left.svg');
+    --decor-sakura-right: url('assets/icons/dark/sakura-branch-right.svg');
+    --decor-mountains: url('assets/icons/dark/mountains-wide.svg');
+    --decor-cloud-a: url('assets/icons/dark/pixel-cloud-1.svg');
+    --decor-cloud-b: url('assets/icons/dark/pixel-cloud-2.svg');
+    --decor-pagoda: url('assets/icons/dark/pagoda.svg');
+    --decor-sparkles: url('assets/icons/dark/sparkles-wide.svg');
+    --decor-grass: url('assets/icons/dark/pixel-grass-footer.svg');
+    --decor-sun: url('assets/icons/dark/moon-or-sun.svg');
+    --decor-quest-badge: url('assets/icons/dark/quest-badge.svg');
+    --decor-divider: url('assets/icons/dark/section-divider.svg');
+    --decor-corner: url('assets/icons/dark/ornate-corner.svg');
+    --decor-diamond: url('assets/icons/dark/timeline-diamond.svg');
+    --decor-arrow-left: url('assets/icons/dark/carousel-arrow-left.svg');
+    --decor-arrow-right: url('assets/icons/dark/carousel-arrow-right.svg');
 }
 
 body.page-trackrecord {

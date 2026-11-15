@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="Fraud protection shield" shape-rendering="geometricPrecision"><defs>
+<linearGradient id="violet" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9974D7"/><stop offset=".47" stop-color="#7150AC"/><stop offset="1" stop-color="#503079"/></linearGradient>
+<linearGradient id="violet2" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#845FBF"/><stop offset="1" stop-color="#52327D"/></linearGradient>
+<linearGradient id="pink" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#E7A4D4"/><stop offset="1" stop-color="#B35EAA"/></linearGradient>
+<linearGradient id="cyan" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#A2E4E8"/><stop offset="1" stop-color="#46B8CA"/></linearGradient>
+</defs>
+<path d="M24 4 41 11v12c0 11-8 17-17 21C15 40 7 34 7 23V11L24 4Z" fill="#332052" stroke="#A581D7" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="M24 8 37 13v10c0 8-5 13-13 17-8-4-13-9-13-17V13Z" fill="url(#violet2)"/>
+<path d="M24 10 14 14v10" fill="none" stroke="#C6A7EB" stroke-width="1.5" opacity=".7"/>
+<path d="m15.5 24 6.5 6.5 11.5-13" stroke="#332052" stroke-width="6" fill="none" stroke-linejoin="round" stroke-linecap="square"/>
+<path d="m15.5 24 6.5 6.5 11.5-13" stroke="url(#cyan)" stroke-width="3.5" fill="none" stroke-linejoin="round" stroke-linecap="square"/>
+</svg>

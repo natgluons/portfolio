@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="Processor chip" shape-rendering="geometricPrecision"><defs>
+<linearGradient id="violet" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9974D7"/><stop offset=".47" stop-color="#7150AC"/><stop offset="1" stop-color="#503079"/></linearGradient>
+<linearGradient id="violet2" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#845FBF"/><stop offset="1" stop-color="#52327D"/></linearGradient>
+<linearGradient id="pink" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#E7A4D4"/><stop offset="1" stop-color="#B35EAA"/></linearGradient>
+<linearGradient id="cyan" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#A2E4E8"/><stop offset="1" stop-color="#46B8CA"/></linearGradient>
+</defs>
+<!-- pins are material-colored, unlike inverted outlines -->
+<path d="M15 4v6m9-6v6m9-6v6M15 38v6m9-6v6m9-6v6M4 15h6m-6 9h6m-6 9h6m28-18h6m-6 9h6m-6 9h6" stroke="#8261BE" stroke-width="3.5" stroke-linecap="square"/>
+<rect x="10" y="10" width="28" height="28" rx="4" fill="#311D51" stroke="#A27BD7" stroke-width="2.5"/>
+<rect x="13" y="13" width="22" height="22" rx="2" fill="url(#violet)" stroke="#47306E" stroke-width="1.4"/>
+<path d="M15 15h17M15 17h10" stroke="#D1B4F3" stroke-opacity=".64" stroke-width="1.5"/>
+<rect x="18" y="18" width="12" height="12" rx="1" fill="#3E265F" stroke="#C09AE9" stroke-width="2"/>
+<path d="M20.5 24h7M24 20.5v7" stroke="#75D5DC" stroke-width="2"/>
+<path d="M32 24h2M14 24h2" stroke="#79D7DB" stroke-width="2"/>
+</svg>

@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Pixel graduation cap" shape-rendering="geometricPrecision">
-  <path d="M4 16 24 7l20 9-20 9L4 16Z" fill="#AE72F6" stroke="#EBD8FF" stroke-width="3" stroke-linejoin="round"/>
-  <path d="M12 22v9c8 6 16 6 24 0v-9" fill="#7144C4" stroke="#D9B2FF" stroke-width="3" stroke-linejoin="round"/>
-  <path d="M43 17v17" fill="none" stroke="#E9D5FF" stroke-width="3"/>
-  <circle cx="43" cy="37" r="3" fill="#FFDB8E"/>
-</svg>

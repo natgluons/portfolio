@@ -1,11 +1,13 @@
-# NAT.EXE Light + Dark Decorative Asset Pack
+# NAT.EXE Light + Dark Icon and Artwork Assets
 
 A reusable, transparent SVG kit based on the *fantasy-game / lavender / sakura / pixel-art* visual direction of the portfolio mockups. This is an asset package, not a recreation of the complete HTML page.
 
 ## Files
-- `svg/light/` — light lavender version
-- `svg/dark/` — night-mode version
-- `svg/shared/` — assets that work in both modes
+- `icons/light/` — light lavender icons, decorations, and Experience section icons
+- `icons/dark/` — night-mode icons and decorations
+- `icons/shared/` — theme-independent logos, images, and icons
+- `images/` — carousel and portrait images
+- `images/intro/` — light and dark storybook PNG artwork
 - `css/theme-tokens.css` — two palettes and starter styling
 - `previews/` — previews of both themes
 - `reference/` — screenshots supplied as visual references (not individual extractable artworks)
@@ -17,12 +19,12 @@ All SVGs have transparent backgrounds and editable vector elements. Most are sui
 ## Sample HTML
 ```html
 <section class="nat-page" data-theme="dark">
-  <img class="nat-decoration" src="svg/dark/sakura-branch-left.svg" alt="" style="width:360px;left:-50px;top:0">
-  <img class="nat-decoration" src="svg/dark/mountains-wide.svg" alt="" style="width:100%;left:0;bottom:0">
+  <img class="nat-decoration" src="icons/dark/sakura-branch-left.svg" alt="" style="width:360px;left:-50px;top:0">
+  <img class="nat-decoration" src="icons/dark/mountains-wide.svg" alt="" style="width:100%;left:0;bottom:0">
   <div class="nat-panel" style="position:relative;margin:100px auto;padding:24px;max-width:700px">Your content here</div>
 </section>
 ```
 
-Choose assets by theme: `svg/${theme}/filename.svg`. Use a persistent outer document theme and have decorative CSS switch paths when the theme changes. The footer grass is the same pixel-art style in both themes intentionally.
+Choose assets by theme: `icons/${theme}/filename.svg`. Use a persistent outer document theme and have decorative CSS switch paths when the theme changes. The footer grass is the same pixel-art style in both themes intentionally.
 
 Tip: crop-proof decorative assets are best applied with `<img>` positioned outside central content columns rather than under body text. Use 0.1–0.4 opacity for landscape layers if needed.

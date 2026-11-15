@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" role="img" aria-label="Database stack" shape-rendering="geometricPrecision"><defs>
+<linearGradient id="violet" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9974D7"/><stop offset=".47" stop-color="#7150AC"/><stop offset="1" stop-color="#503079"/></linearGradient>
+<linearGradient id="violet2" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#845FBF"/><stop offset="1" stop-color="#52327D"/></linearGradient>
+<linearGradient id="pink" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#E7A4D4"/><stop offset="1" stop-color="#B35EAA"/></linearGradient>
+<linearGradient id="cyan" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#A2E4E8"/><stop offset="1" stop-color="#46B8CA"/></linearGradient>
+</defs>
+<path d="M7 11v26c0 9 34 9 34 0V11" fill="url(#violet2)" stroke="#3C235C" stroke-width="2.3"/>
+<ellipse cx="24" cy="11" rx="17" ry="7" fill="url(#violet)" stroke="#AF8AE2" stroke-width="2.3"/>
+<path d="M7 19c0 9 34 9 34 0M7 28c0 9 34 9 34 0M7 37c0 9 34 9 34 0" fill="none" stroke="#A17DCE" stroke-width="2.3"/>
+<path d="M10 12v25" stroke="#C6A3E4" stroke-width="2" opacity=".5"/>
+<path d="M14 21h4m-4 9h4m-4 9h4" stroke="#79D7DD" stroke-width="2" stroke-linecap="square"/>
+<path d="M32 7q4 1 5 3" fill="none" stroke="#D3BBED" stroke-width="1.2" stroke-linecap="round" opacity=".9"/>
+</svg>

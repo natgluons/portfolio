@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Pixel terminal" shape-rendering="geometricPrecision">
-  <rect x="5" y="7" width="38" height="29" rx="3" fill="#9261DA" stroke="#E7CDFF" stroke-width="3"/>
-  <rect x="10" y="12" width="28" height="18" fill="#301B57" stroke="#B783FC" stroke-width="1"/>
-  <path d="m14 17 5 4-5 4 M23 25h9" fill="none" stroke="#72F4F2" stroke-width="2.5" stroke-linecap="square"/>
-  <path d="M24 36v6 M14 43h21" fill="none" stroke="#D9B6FF" stroke-width="3" stroke-linecap="square"/>
-</svg>
