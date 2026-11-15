@@ -21,12 +21,10 @@
 
 The repo already uses these, so **they are not copied into this kit**. Prefer the existing CSS decorative system in the deployed page.
 
-## New / optional assets in ZIP
+## Experience assets
 
-- `assets/cards/imperial-asteroid.png`
-- `assets/cards/dans-telecom.png`
-- `assets/cards/linkaja-wallet.png`
-- `assets/cards/lapan-satellite.png`
-- `assets/ui/pixel-terminal.svg`, `pixel-graduation.svg`, `pixel-chip.svg`, `pixel-sparkles.svg`, `pixel-shield.svg`, `pixel-chart.svg`, `pixel-database.svg`, `pixel-code.svg`
+Experience artwork, education logos, and section icons are grouped in `assets/experience/`:
 
-No real repository files were deleted or changed in producing this ZIP. The Codex prompt covers analysis, testing, and safe cleanup.
+- Artwork: `reylolabs.png`, `ilmuonedata.png`, `imperial.png`, `dans.png`, `linkaja.png`, `lapan.png`
+- Education logos: `imperial-logo.png`, `ui-logo.png`, `itb-logo.png`
+- Section icons: `pixel-terminal.svg`, `pixel-graduation.svg`, `pixel-chip.svg`, `pixel-sparkles.svg`, `pixel-shield.svg`, `pixel-chart.svg`, `pixel-database.svg`, `pixel-code.svg`
