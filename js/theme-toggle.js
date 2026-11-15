@@ -10,6 +10,13 @@ document.addEventListener("DOMContentLoaded", function() {
         html.setAttribute('data-theme', newTheme);
         // Store the new theme in local storage
         localStorage.setItem('theme', newTheme);
+
+        document.querySelectorAll('.experience-theme-icon').forEach((icon) => {
+            const source = newTheme === 'dark' ? icon.dataset.darkSrc : icon.dataset.lightSrc;
+            if (source) {
+                icon.setAttribute('src', source);
+            }
+        });
     }
 
     // Set the initial theme on page load
