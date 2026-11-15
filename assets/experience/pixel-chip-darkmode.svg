@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Pixel processor chip" shape-rendering="geometricPrecision">
+  <rect x="10" y="10" width="28" height="28" rx="3" fill="#8750D5" stroke="#E1C5FF" stroke-width="3"/>
+  <rect x="16" y="16" width="16" height="16" fill="#F4E7FF" stroke="#51DFEA" stroke-width="2"/>
+  <path d="M16 4v6m8-6v6m8-6v6M16 38v6m8-6v6m8-6v6M4 16h6m-6 8h6m-6 8h6m28-16h6m-6 8h6m-6 8h6" fill="none" stroke="#DBB5FF" stroke-width="3" stroke-linecap="square"/>
+</svg>

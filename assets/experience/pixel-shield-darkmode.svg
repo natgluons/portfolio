@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Pixel protection shield" shape-rendering="geometricPrecision">
+  <path d="M24 4 41 11v12c0 11-8 17-17 21C15 40 7 34 7 23V11L24 4Z" fill="#8754CE" stroke="#EBD0FF" stroke-width="3" stroke-linejoin="round"/>
+  <path d="m15 24 7 7 12-14" fill="none" stroke="#69F1F4" stroke-width="4" stroke-linecap="square" stroke-linejoin="miter"/>
+</svg>
