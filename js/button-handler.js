@@ -1,20 +1,13 @@
 // Main initialization
 document.addEventListener("DOMContentLoaded", function() {
-    // Initialize expand buttons
-    const buttons = document.querySelectorAll('.expand-btn');
-    buttons.forEach(button => {
-        const content = button.nextElementSibling;
-        content.style.display = 'block'; // Show all details by default
-        const detailText = document.createElement('div');
-        detailText.textContent = '▼ Hide Details';
-        detailText.style.fontFamily = 'Inter, sans-serif'; // Set font family
-        detailText.style.cursor = 'pointer'; // Make detail text clickable
-        detailText.style.color = 'grey'; // Set text color to soft grey
-        content.parentNode.insertBefore(detailText, content); // Insert detail text before content
-        detailText.addEventListener('click', function() {
-            const isExpanded = content.style.display === 'block';
-            content.style.display = isExpanded ? 'none' : 'block';
-            detailText.textContent = isExpanded ? '▶ Show Details' : '▼ Hide Details';
+    document.querySelectorAll('.expand-btn').forEach(button => {
+        const content = document.getElementById(button.getAttribute('aria-controls'));
+        if (!content) return;
+
+        button.addEventListener('click', function() {
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            button.setAttribute('aria-expanded', String(!isExpanded));
+            content.hidden = isExpanded;
         });
     });
 });
