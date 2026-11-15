@@ -2,6 +2,56 @@ document.addEventListener('DOMContentLoaded', () => {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const isExperiencePage = document.body.classList.contains('page-workexperience');
+  const mascotVariationKey = 'mascot-variation-triggered-at';
+  const mascotImages = Array.from(document.querySelectorAll('.mascot-companion img, .why-me-mascot'));
+  const mascotBaseSources = new Map(mascotImages.map((image) => [image, image.getAttribute('src')]));
+  let mascotVariationTimer = 0;
+  let mascotVariationExpiresAt = 0;
+
+  const showMascotVariation = (triggeredAt = Date.now()) => {
+    if (!Number.isFinite(triggeredAt)) return;
+    const remaining = 1000 - (Date.now() - triggeredAt);
+    if (remaining <= 0) return;
+
+    window.clearTimeout(mascotVariationTimer);
+    mascotVariationExpiresAt = triggeredAt + 1000;
+    mascotImages.forEach((image) => {
+      image.src = 'assets/icons/shared/mascot_nobg_variation.png';
+    });
+    mascotVariationTimer = window.setTimeout(() => {
+      mascotImages.forEach((image) => {
+        image.src = mascotBaseSources.get(image);
+      });
+      mascotVariationExpiresAt = 0;
+    }, remaining);
+  };
+
+  const resetExpiredMascotVariation = () => {
+    if (!mascotVariationExpiresAt || Date.now() < mascotVariationExpiresAt) return;
+    window.clearTimeout(mascotVariationTimer);
+    mascotImages.forEach((image) => {
+      image.src = mascotBaseSources.get(image);
+    });
+    mascotVariationExpiresAt = 0;
+  };
+
+  const triggerMascotVariation = () => {
+    const triggeredAt = Date.now();
+    showMascotVariation(triggeredAt);
+    localStorage.setItem(mascotVariationKey, String(triggeredAt));
+  };
+
+  const previousMascotVariation = Number(localStorage.getItem(mascotVariationKey));
+  if (Number.isFinite(previousMascotVariation)) showMascotVariation(previousMascotVariation);
+  window.addEventListener('storage', (event) => {
+    if (event.key === mascotVariationKey && event.newValue) {
+      showMascotVariation(Number(event.newValue));
+    }
+  });
+  window.addEventListener('focus', resetExpiredMascotVariation);
+  document.addEventListener('visibilitychange', resetExpiredMascotVariation);
+
+  document.querySelector('.why-me-mascot-button')?.addEventListener('click', triggerMascotVariation);
 
   document.querySelectorAll('.services-heading, .container, .timeline-item, .carousel-item').forEach((element) => {
     // On the Experience page the outer container also holds the page titles.
@@ -57,9 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const speech = mascot.querySelector('.mascot-speech');
       const speechText = mascot.querySelector('.mascot-speech__text') || speech;
       const speechClose = mascot.querySelector('.mascot-speech__close');
-      const mascotImg = mascot.querySelector('img');
-      const baseMascotSrc = mascotImg ? mascotImg.getAttribute('src') : '';
-      const variationMascotSrc = 'assets/icons/shared/mascot_nobg_variation.png';
       const funFacts = [
         "I once worked with NASA-affiliated researchers to figure out how Mars got its moons.",
         "I spent part of my master's degree simulating how asteroids would break.",
@@ -106,11 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const nextMessage = messageQueue.pop();
       speechText.textContent = nextMessage;
       previousMessage = nextMessage;
-      // Occasionally swap to the alternate mascot art, but not on every click.
-      if (mascotImg && baseMascotSrc) {
-        const showVariation = Math.random() < 0.3;
-        mascotImg.src = showVariation ? variationMascotSrc : baseMascotSrc;
-      }
+      triggerMascotVariation();
       // Reopen a dismissed bubble when the mascot is greeted again.
       mascot.classList.remove('is-dismissed');
       mascot.classList.remove('is-talking');
@@ -133,22 +176,6 @@ document.addEventListener('DOMContentLoaded', () => {
         event.stopPropagation();
       });
     }
-
-    const scheduleMascotVariation = () => {
-      const delay = 4000 + Math.random() * 16000;
-      window.setTimeout(() => {
-        if (mascotImg && baseMascotSrc) {
-          mascotImg.src = variationMascotSrc;
-          window.setTimeout(() => {
-            mascotImg.src = baseMascotSrc;
-            scheduleMascotVariation();
-          }, 1000);
-        } else {
-          scheduleMascotVariation();
-        }
-      }, delay);
-    };
-    scheduleMascotVariation();
 
     mascot.addEventListener('click', greet);
     mascot.addEventListener('keydown', (event) => {

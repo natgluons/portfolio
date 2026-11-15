@@ -38,6 +38,58 @@
   --thumb-color-dark: #2ff3ff; /* neon cyan for dark mode thumb */
 }
 
+body.page-home .main-header,
+body.page-workexperience .main-header,
+body.page-trackrecord .main-header {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+body.page-home .main-nav,
+body.page-workexperience .main-nav,
+body.page-trackrecord .main-nav {
+    width: 100%;
+    align-items: center;
+    min-height: 2.6rem;
+}
+
+@media (max-width: 600px) {
+    body.page-home .main-nav,
+    body.page-workexperience .main-nav,
+    body.page-trackrecord .main-nav {
+        min-height: 1.5rem;
+    }
+}
+
+.site-credit {
+    max-width: 70rem;
+    margin: 2rem auto 1rem;
+    color: var(--color-black-text);
+    font: 400 .56rem/1.4 var(--font-body);
+    text-align: center;
+    opacity: .78;
+}
+
+.site-credit strong {
+    color: var(--color-black-text-title);
+    font-weight: 700;
+}
+
+.site-credit a {
+    color: var(--color-link);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: .12em;
+}
+
+@media (max-width: 600px) {
+    .site-credit {
+        margin: 1.5rem auto .85rem;
+        font-size: .5rem;
+    }
+}
+
 /* ========================================================================== */
 /* Cozy game UI refresh — additive overrides                                  */
 /* ========================================================================== */
@@ -6810,6 +6862,18 @@ html[data-theme='light'] body.page-trackrecord .why-me-feature {
 .why-me-item-icon--pink { --icon-tone: var(--accent-tertiary); }
 .why-me-item-icon--purple { --icon-tone: var(--accent-primary); }
 
+html[data-theme='light'] body.page-trackrecord .why-me-item-icon--cyan {
+    --icon-tone: color-mix(in srgb, var(--accent-secondary) 78%, #342647);
+}
+
+html[data-theme='light'] body.page-trackrecord .why-me-item-icon--pink {
+    --icon-tone: color-mix(in srgb, var(--accent-tertiary) 78%, #342647);
+}
+
+html[data-theme='light'] body.page-trackrecord .why-me-item-icon--purple {
+    --icon-tone: color-mix(in srgb, var(--accent-primary) 78%, #342647);
+}
+
 .why-me-grid .why-me-contact {
     grid-column: 1 / -1;
     display: flex;
@@ -6926,15 +6990,29 @@ html[data-theme='dark'] .why-me-cta {
     color: var(--color-blacker-black) !important;
 }
 
-.why-me-mascot {
+.why-me-mascot-button {
     position: absolute;
     right: -.75rem;
     top: -5.5rem;
     width: clamp(80px, 9.5vw, 125px);
-    height: auto;
+    padding: 0;
+    border: 0;
+    background: transparent;
     z-index: 2;
-    pointer-events: none;
+    cursor: pointer;
+}
+
+.why-me-mascot {
+    display: block;
+    width: 100%;
+    height: auto;
     filter: drop-shadow(0 8px 14px rgba(0, 0, 0, .12));
+}
+
+.why-me-mascot-button:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 4px;
+    border-radius: 50%;
 }
 
 @media (max-width: 820px) {
@@ -6965,8 +7043,10 @@ html[data-theme='dark'] .why-me-cta {
         border-left: 0;
     }
 
-    .why-me-mascot {
-        display: none;
+    .why-me-mascot-button {
+        top: -3.25rem;
+        right: .25rem;
+        width: 64px;
     }
 
     .why-me-grid .why-me-contact-title {
@@ -7425,7 +7505,7 @@ body.page-home .arrow {
 }
 
 body.page-home .mascot-companion {
-    top: .25rem;
+    top: .5rem;
     right: -.75rem;
     width: clamp(160px, 20vw, 245px);
 }
@@ -8104,16 +8184,16 @@ body.page-workexperience {
 }
 
 body.page-workexperience #main > .inner {
-    /* Match the top gap used by the About page content. */
+    /* Match the Quest Log content offset below the fixed navigation. */
     --width: 76rem;
     --padding-horizontal: clamp(1.25rem, 4vw, 3rem);
-    padding-top: 5.5rem;
+    padding-top: 6.5rem;
 }
 
 @media (max-width: 900px) {
     body.page-workexperience #main > .inner {
         --width: 100%;
-        padding-top: 2.5rem;
+        padding-top: 4rem;
     }
 }
 
@@ -8156,7 +8236,7 @@ body.page-workexperience .section-heading {
        would overflow it and drift off-center, so follow the column width. */
     width: 100%;
     max-width: 960px;
-    margin: 3rem auto 2rem !important;
+    margin: 0 auto 2rem !important;
     color: var(--color-black-text-title) !important;
     font-family: var(--font-display);
     font-size: clamp(1.7rem, 3.5vw, 3rem) !important;
@@ -8199,7 +8279,7 @@ body.page-workexperience .section-heading__hash {
 @media (max-width: 768px) {
     body.page-workexperience .section-heading {
         gap: .7rem;
-        margin: 2.3rem auto 1.5rem !important;
+        margin: 0 auto 1.5rem !important;
         font-size: clamp(1.45rem, 6.5vw, 2rem) !important;
     }
 
@@ -8248,7 +8328,7 @@ html[data-theme='dark'] body.page-workexperience .work-ground {
 
     body.page-home .mascot-companion {
         position: absolute !important;
-        top: -3.5rem !important;
+        top: -3.25rem !important;
         right: auto !important;
         left: calc(50% - 24px) !important;
         width: 48px !important;
@@ -8272,7 +8352,7 @@ html[data-theme='dark'] body.page-workexperience .work-ground {
 
 @media (max-width: 480px) {
     body.page-home .mascot-companion {
-        top: -3rem !important;
+        top: -2.75rem !important;
         right: auto !important;
         left: calc(50% - 22px) !important;
         width: 44px !important;
