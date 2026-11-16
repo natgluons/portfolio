@@ -8134,7 +8134,8 @@ html[data-theme='dark'] #workexperience .work-cloud {
 }
 
 #workexperience .work-cloud--5 {
-    top: 82%;
+    /* Sits above the pagoda and the small cloud so the icons never overlap. */
+    top: 71%;
     right: 2.5%;
     width: clamp(150px, 16vw, 250px);
 }
@@ -8568,10 +8569,12 @@ body.page-trackrecord {
     top: clamp(58px, 6vw, 86px);
     left: 0;
     width: 100%;
-    height: clamp(180px, 22vw, 300px);
+    height: auto;
+    /* Match the SVG's 1200 x 250 viewBox so no star gets clipped. */
+    aspect-ratio: 1200 / 250;
     background-image: var(--decor-sparkles);
     background-position: top center;
-    background-size: 100% auto;
+    background-size: 100% 100%;
     opacity: .8;
     z-index: 4;
 }
