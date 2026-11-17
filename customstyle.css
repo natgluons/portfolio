@@ -6802,7 +6802,7 @@ html[data-theme='light'] .why-me-section {
 }
 
 html[data-theme='light'] body.page-trackrecord .why-me-feature {
-    background: color-mix(in srgb, var(--accent-tertiary) 36%, var(--surface-card));
+    background: color-mix(in srgb, var(--accent-tertiary) 24%, var(--surface-card));
 }
 
 .why-me-grid {
@@ -9506,6 +9506,13 @@ body.page-workexperience .education-card p {
     margin: .12rem 0 0;
     color: var(--color-black-text);
     font: 400 clamp(.64rem, .78vw, .72rem)/1.3 var(--font-body);
+}
+
+body.page-workexperience .education-card__rank {
+    display: inline-block;
+    margin-top: .2rem;
+    font-weight: 700;
+    color: var(--accent-primary);
 }
 
 body.page-workexperience .tech-stack-list {
