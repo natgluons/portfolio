@@ -91,7 +91,7 @@ body.page-trackrecord .main-nav {
 }
 
 /* ========================================================================== */
-/* Cozy game UI refresh — additive overrides                                  */
+/* Cozy game UI refresh - additive overrides                                  */
 /* ========================================================================== */
 :root {
   --color-bg: #f6f1fa;
@@ -6030,7 +6030,7 @@ html[data-theme='light'] .work-build-action {
 }
 
 /* ========================================================================== */
-/* Refinements — light-mode "What I Build" panel, mobile avatar, toggle track  */
+/* Refinements - light-mode "What I Build" panel, mobile avatar, toggle track  */
 /* ========================================================================== */
 
 /* 1) "What I Build" card : purple background in both themes ----------------- */
@@ -6054,7 +6054,7 @@ html[data-theme='dark'] .work-build-card .work-build-tag {
     color: #ece0ff !important;
 }
 
-/* The inner ".wrapper" inherits .container.style1's amber bg — make it purple */
+/* The inner ".wrapper" inherits .container.style1's amber bg - make it purple */
 .work-build-card>.wrapper {
     background-color: #ede0ff !important;
 }
@@ -6424,7 +6424,7 @@ html.welcome-seen .welcome-popup {
 }
 
 /* ==========================================================================
-   Track Record — skill areas
+   Track Record - skill areas
    ========================================================================== */
 .service-section {
     padding: clamp(1.5rem, 2.4vw, 2.1rem) clamp(1.25rem, 2.4vw, 2rem) !important;
@@ -7189,7 +7189,7 @@ html[data-theme='dark'] .why-me-cta {
 }
 
 /* ==========================================================================
-   Front page — cozy pixel garden redesign
+   Front page - cozy pixel garden redesign
    ========================================================================== */
 body.page-home {
     position: relative;
@@ -8473,7 +8473,7 @@ body.page-trackrecord .section-heading__hash {
 }
 
 /* ==========================================================================
-   NAT.EXE decorative SVG kit — theme-aware scene layers & ornaments
+   NAT.EXE decorative SVG kit - theme-aware scene layers & ornaments
    Uses assets/icons/{light,dark}/ so every decoration follows the active theme.
    ========================================================================== */
 :root {

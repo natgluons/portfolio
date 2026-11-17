@@ -3,14 +3,14 @@
 A reusable, transparent SVG kit based on the *fantasy-game / lavender / sakura / pixel-art* visual direction of the portfolio mockups. This is an asset package, not a recreation of the complete HTML page.
 
 ## Files
-- `icons/light/` — light lavender icons, decorations, and Experience section icons
-- `icons/dark/` — night-mode icons and decorations
-- `icons/shared/` — theme-independent logos, images, and icons
-- `images/` — carousel and portrait images
-- `images/intro/` — light and dark storybook PNG artwork
-- `css/theme-tokens.css` — two palettes and starter styling
-- `previews/` — previews of both themes
-- `reference/` — screenshots supplied as visual references (not individual extractable artworks)
+- `icons/light/` - light lavender icons, decorations, and Experience section icons
+- `icons/dark/` - night-mode icons and decorations
+- `icons/shared/` - theme-independent logos, images, and icons
+- `images/` - carousel and portrait images
+- `images/intro/` - light and dark storybook PNG artwork
+- `css/theme-tokens.css` - two palettes and starter styling
+- `previews/` - previews of both themes
+- `reference/` - screenshots supplied as visual references (not individual extractable artworks)
 
 Each theme includes: `sakura-branch-left/right`, `mountains-wide/left/right`, `pixel-cloud-1/2`, `pagoda`, `sparkles-wide`, `ornate-corner`, `ornate-frame`, `section-divider`, `quest-badge`, `pixel-grass-footer`, `moon-or-sun`.
 
